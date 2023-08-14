@@ -1,0 +1,21 @@
+# in _config.yml
+title: Curso Python
+author: Alejandro Acosta León
+year: 2023
+logo: images/python-logo.png
+
+# bibtex_bibfiles:
+#     - /home/alejo/OneDrive/References/python-course.bib
+
+execute:
+  execute_notebooks: 'auto'
+
+repository:
+  url: https://github.com/alejo-acosta/curso-python-ciee  # Online location of your book
+
+launch_buttons:
+  colab_url: "https://colab.research.google.com"
+
+sphinx:
+  config:
+    suppress_warnings: ["mystnb.unknown_mime_type"]
