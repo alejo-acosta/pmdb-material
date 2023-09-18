@@ -141,8 +141,8 @@ const thebe_selector_output = ".output, .cell_output"
       
     
     
-    <img src="_static/python-logo.png" class="logo__image only-light" alt="Logo image"/>
-    <script>document.write(`<img src="_static/python-logo.png" class="logo__image only-dark" alt="Logo image"/>`);</script>
+    <img src="_static/python-udla-logo.png" class="logo__image only-light" alt="Logo image"/>
+    <script>document.write(`<img src="_static/python-udla-logo.png" class="logo__image only-dark" alt="Logo image"/>`);</script>
   
   
 </a></div>
@@ -400,13 +400,10 @@ document.write(`
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[                       0%%                      ]
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[*********************100%%**********************]  2 of 3 completed
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[**********************67%%******                ]  2 of 3 completed
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1 Failed download:
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;TSLA&#39;]: Exception(&#39;%ticker%: No data found, symbol may be delisted&#39;)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[*********************100%%**********************]  3 of 3 completed
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
@@ -424,90 +421,16 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[*********************100%%**********************]  2 of 3 completed
-</pre></div>
-</div>
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;Axes: xlabel=&#39;Date&#39;&gt;
 </pre></div>
 </div>
-<img alt="_images/a4acabc6a08c02e9da72919c17511143758dfece59c8dbb4cf2be050ec2f66f8.png" src="_images/a4acabc6a08c02e9da72919c17511143758dfece59c8dbb4cf2be050ec2f66f8.png" />
+<img alt="_images/4d36ba5f754d6725a461a3aa38999ac22debdea1907bfacaba7a71b17e955862.png" src="_images/4d36ba5f754d6725a461a3aa38999ac22debdea1907bfacaba7a71b17e955862.png" />
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># wbtc = btc.resample(&#39;W&#39;).mean()</span>
 <span class="n">mdf</span> <span class="o">=</span> <span class="n">btc</span><span class="o">.</span><span class="n">resample</span><span class="p">(</span><span class="s1">&#39;W&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">TypeError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">4</span><span class="p">],</span> <span class="n">line</span> <span class="mi">2</span>
-<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="c1"># wbtc = btc.resample(&#39;W&#39;).mean()</span>
-<span class="ne">----&gt; </span><span class="mi">2</span> <span class="n">mdf</span> <span class="o">=</span> <span class="n">btc</span><span class="o">.</span><span class="n">resample</span><span class="p">(</span><span class="s1">&#39;W&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
-
-<span class="nn">File ~\AppData\Local\Programs\Python\Python311\Lib\site-packages\pandas\core\frame.py:10994,</span> in <span class="ni">DataFrame.resample</span><span class="nt">(self, rule, axis, closed, label, convention, kind, on, level, origin, offset, group_keys)</span>
-<span class="g g-Whitespace">  </span><span class="mi">10979</span> <span class="nd">@doc</span><span class="p">(</span><span class="n">NDFrame</span><span class="o">.</span><span class="n">resample</span><span class="p">,</span> <span class="o">**</span><span class="n">_shared_doc_kwargs</span><span class="p">)</span>
-<span class="g g-Whitespace">  </span><span class="mi">10980</span> <span class="k">def</span> <span class="nf">resample</span><span class="p">(</span>
-<span class="g g-Whitespace">  </span><span class="mi">10981</span>     <span class="bp">self</span><span class="p">,</span>
-   <span class="p">(</span><span class="o">...</span><span class="p">)</span>
-<span class="g g-Whitespace">  </span><span class="mi">10992</span>     <span class="n">group_keys</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span>
-<span class="g g-Whitespace">  </span><span class="mi">10993</span> <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Resampler</span><span class="p">:</span>
-<span class="ne">&gt; </span><span class="mi">10994</span>     <span class="k">return</span> <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="n">resample</span><span class="p">(</span>
-<span class="g g-Whitespace">  </span><span class="mi">10995</span>         <span class="n">rule</span><span class="o">=</span><span class="n">rule</span><span class="p">,</span>
-<span class="g g-Whitespace">  </span><span class="mi">10996</span>         <span class="n">axis</span><span class="o">=</span><span class="n">axis</span><span class="p">,</span>
-<span class="g g-Whitespace">  </span><span class="mi">10997</span>         <span class="n">closed</span><span class="o">=</span><span class="n">closed</span><span class="p">,</span>
-<span class="g g-Whitespace">  </span><span class="mi">10998</span>         <span class="n">label</span><span class="o">=</span><span class="n">label</span><span class="p">,</span>
-<span class="g g-Whitespace">  </span><span class="mi">10999</span>         <span class="n">convention</span><span class="o">=</span><span class="n">convention</span><span class="p">,</span>
-<span class="g g-Whitespace">  </span><span class="mi">11000</span>         <span class="n">kind</span><span class="o">=</span><span class="n">kind</span><span class="p">,</span>
-<span class="g g-Whitespace">  </span><span class="mi">11001</span>         <span class="n">on</span><span class="o">=</span><span class="n">on</span><span class="p">,</span>
-<span class="g g-Whitespace">  </span><span class="mi">11002</span>         <span class="n">level</span><span class="o">=</span><span class="n">level</span><span class="p">,</span>
-<span class="g g-Whitespace">  </span><span class="mi">11003</span>         <span class="n">origin</span><span class="o">=</span><span class="n">origin</span><span class="p">,</span>
-<span class="g g-Whitespace">  </span><span class="mi">11004</span>         <span class="n">offset</span><span class="o">=</span><span class="n">offset</span><span class="p">,</span>
-<span class="g g-Whitespace">  </span><span class="mi">11005</span>         <span class="n">group_keys</span><span class="o">=</span><span class="n">group_keys</span><span class="p">,</span>
-<span class="g g-Whitespace">  </span><span class="mi">11006</span>     <span class="p">)</span>
-
-<span class="nn">File ~\AppData\Local\Programs\Python\Python311\Lib\site-packages\pandas\core\generic.py:8888,</span> in <span class="ni">NDFrame.resample</span><span class="nt">(self, rule, axis, closed, label, convention, kind, on, level, origin, offset, group_keys)</span>
-<span class="g g-Whitespace">   </span><span class="mi">8885</span> <span class="kn">from</span> <span class="nn">pandas.core.resample</span> <span class="kn">import</span> <span class="n">get_resampler</span>
-<span class="g g-Whitespace">   </span><span class="mi">8887</span> <span class="n">axis</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get_axis_number</span><span class="p">(</span><span class="n">axis</span><span class="p">)</span>
-<span class="ne">-&gt; </span><span class="mi">8888</span> <span class="k">return</span> <span class="n">get_resampler</span><span class="p">(</span>
-<span class="g g-Whitespace">   </span><span class="mi">8889</span>     <span class="n">cast</span><span class="p">(</span><span class="s2">&quot;Series | DataFrame&quot;</span><span class="p">,</span> <span class="bp">self</span><span class="p">),</span>
-<span class="g g-Whitespace">   </span><span class="mi">8890</span>     <span class="n">freq</span><span class="o">=</span><span class="n">rule</span><span class="p">,</span>
-<span class="g g-Whitespace">   </span><span class="mi">8891</span>     <span class="n">label</span><span class="o">=</span><span class="n">label</span><span class="p">,</span>
-<span class="g g-Whitespace">   </span><span class="mi">8892</span>     <span class="n">closed</span><span class="o">=</span><span class="n">closed</span><span class="p">,</span>
-<span class="g g-Whitespace">   </span><span class="mi">8893</span>     <span class="n">axis</span><span class="o">=</span><span class="n">axis</span><span class="p">,</span>
-<span class="g g-Whitespace">   </span><span class="mi">8894</span>     <span class="n">kind</span><span class="o">=</span><span class="n">kind</span><span class="p">,</span>
-<span class="g g-Whitespace">   </span><span class="mi">8895</span>     <span class="n">convention</span><span class="o">=</span><span class="n">convention</span><span class="p">,</span>
-<span class="g g-Whitespace">   </span><span class="mi">8896</span>     <span class="n">key</span><span class="o">=</span><span class="n">on</span><span class="p">,</span>
-<span class="g g-Whitespace">   </span><span class="mi">8897</span>     <span class="n">level</span><span class="o">=</span><span class="n">level</span><span class="p">,</span>
-<span class="g g-Whitespace">   </span><span class="mi">8898</span>     <span class="n">origin</span><span class="o">=</span><span class="n">origin</span><span class="p">,</span>
-<span class="g g-Whitespace">   </span><span class="mi">8899</span>     <span class="n">offset</span><span class="o">=</span><span class="n">offset</span><span class="p">,</span>
-<span class="g g-Whitespace">   </span><span class="mi">8900</span>     <span class="n">group_keys</span><span class="o">=</span><span class="n">group_keys</span><span class="p">,</span>
-<span class="g g-Whitespace">   </span><span class="mi">8901</span> <span class="p">)</span>
-
-<span class="nn">File ~\AppData\Local\Programs\Python\Python311\Lib\site-packages\pandas\core\resample.py:1523,</span> in <span class="ni">get_resampler</span><span class="nt">(obj, kind, **kwds)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1519</span><span class="w"> </span><span class="sd">&quot;&quot;&quot;</span>
-<span class="g g-Whitespace">   </span><span class="mi">1520</span><span class="sd"> Create a TimeGrouper and return our resampler.</span>
-<span class="g g-Whitespace">   </span><span class="mi">1521</span><span class="sd"> &quot;&quot;&quot;</span>
-<span class="g g-Whitespace">   </span><span class="mi">1522</span> <span class="n">tg</span> <span class="o">=</span> <span class="n">TimeGrouper</span><span class="p">(</span><span class="o">**</span><span class="n">kwds</span><span class="p">)</span>
-<span class="ne">-&gt; </span><span class="mi">1523</span> <span class="k">return</span> <span class="n">tg</span><span class="o">.</span><span class="n">_get_resampler</span><span class="p">(</span><span class="n">obj</span><span class="p">,</span> <span class="n">kind</span><span class="o">=</span><span class="n">kind</span><span class="p">)</span>
-
-<span class="nn">File ~\AppData\Local\Programs\Python\Python311\Lib\site-packages\pandas\core\resample.py:1713,</span> in <span class="ni">TimeGrouper._get_resampler</span><span class="nt">(self, obj, kind)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1704</span> <span class="k">elif</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">ax</span><span class="p">,</span> <span class="n">TimedeltaIndex</span><span class="p">):</span>
-<span class="g g-Whitespace">   </span><span class="mi">1705</span>     <span class="k">return</span> <span class="n">TimedeltaIndexResampler</span><span class="p">(</span>
-<span class="g g-Whitespace">   </span><span class="mi">1706</span>         <span class="n">obj</span><span class="p">,</span>
-<span class="g g-Whitespace">   </span><span class="mi">1707</span>         <span class="n">timegrouper</span><span class="o">=</span><span class="bp">self</span><span class="p">,</span>
-   <span class="p">(</span><span class="o">...</span><span class="p">)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1710</span>         <span class="n">gpr_index</span><span class="o">=</span><span class="n">ax</span><span class="p">,</span>
-<span class="g g-Whitespace">   </span><span class="mi">1711</span>     <span class="p">)</span>
-<span class="ne">-&gt; </span><span class="mi">1713</span> <span class="k">raise</span> <span class="ne">TypeError</span><span class="p">(</span>
-<span class="g g-Whitespace">   </span><span class="mi">1714</span>     <span class="s2">&quot;Only valid with DatetimeIndex, &quot;</span>
-<span class="g g-Whitespace">   </span><span class="mi">1715</span>     <span class="s2">&quot;TimedeltaIndex or PeriodIndex, &quot;</span>
-<span class="g g-Whitespace">   </span><span class="mi">1716</span>     <span class="sa">f</span><span class="s2">&quot;but got an instance of &#39;</span><span class="si">{</span><span class="nb">type</span><span class="p">(</span><span class="n">ax</span><span class="p">)</span><span class="o">.</span><span class="vm">__name__</span><span class="si">}</span><span class="s2">&#39;&quot;</span>
-<span class="g g-Whitespace">   </span><span class="mi">1717</span> <span class="p">)</span>
-
-<span class="ne">TypeError</span>: Only valid with DatetimeIndex, TimedeltaIndex or PeriodIndex, but got an instance of &#39;Index&#39;
 </pre></div>
 </div>
 </div>
@@ -536,12 +459,12 @@ document.write(`
 <div class="cell_output docutils container">
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
 <span class="ne">TypeError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="ne">c</span>:\Users\Alejo\OneDrive - Universidad de Las Américas\UDLA\pmdb\pmdb-material\forecast.ipynb Cell 9 line 1
-<span class="o">----&gt;</span> <span class="o">&lt;</span><span class="n">a</span> <span class="n">href</span><span class="o">=</span><span class="s1">&#39;vscode-notebook-cell:/c%3A/Users/Alejo/OneDrive%20-%20Universidad</span><span class="si">%20d</span><span class="s1">e</span><span class="si">%20La</span><span class="s1">s%20Am%C3%A9ricas/UDLA/pmdb/pmdb-material/forecast.ipynb#X12sZmlsZQ%3D%3D?line=0&#39;</span><span class="o">&gt;</span><span class="mi">1</span><span class="o">&lt;/</span><span class="n">a</span><span class="o">&gt;</span> <span class="n">decomp</span> <span class="o">=</span> <span class="n">seasonal_decompose</span><span class="p">(</span><span class="n">mdf</span><span class="p">,</span> <span class="n">model</span><span class="o">=</span><span class="s1">&#39;additive&#39;</span><span class="p">)</span>
-      <span class="o">&lt;</span><span class="n">a</span> <span class="n">href</span><span class="o">=</span><span class="s1">&#39;vscode-notebook-cell:/c%3A/Users/Alejo/OneDrive%20-%20Universidad</span><span class="si">%20d</span><span class="s1">e</span><span class="si">%20La</span><span class="s1">s%20Am%C3%A9ricas/UDLA/pmdb/pmdb-material/forecast.ipynb#X12sZmlsZQ%3D%3D?line=1&#39;</span><span class="o">&gt;</span><span class="mi">2</span><span class="o">&lt;/</span><span class="n">a</span><span class="o">&gt;</span> <span class="n">decomp</span><span class="o">.</span><span class="n">plot</span><span class="p">()</span>
-      <span class="o">&lt;</span><span class="n">a</span> <span class="n">href</span><span class="o">=</span><span class="s1">&#39;vscode-notebook-cell:/c%3A/Users/Alejo/OneDrive%20-%20Universidad</span><span class="si">%20d</span><span class="s1">e</span><span class="si">%20La</span><span class="s1">s%20Am%C3%A9ricas/UDLA/pmdb/pmdb-material/forecast.ipynb#X12sZmlsZQ%3D%3D?line=2&#39;</span><span class="o">&gt;</span><span class="mi">3</span><span class="o">&lt;/</span><span class="n">a</span><span class="o">&gt;</span> <span class="c1"># plt.show()</span>
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">6</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">decomp</span> <span class="o">=</span> <span class="n">seasonal_decompose</span><span class="p">(</span><span class="n">mdf</span><span class="p">,</span> <span class="n">model</span><span class="o">=</span><span class="s1">&#39;additive&#39;</span><span class="p">)</span>
+<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="n">decomp</span><span class="o">.</span><span class="n">plot</span><span class="p">()</span>
+<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="c1"># plt.show()</span>
 
-<span class="nn">File c:\Users\Alejo\AppData\Local\Programs\Python\Python311\Lib\site-packages\statsmodels\tsa\seasonal.py:214,</span> in <span class="ni">seasonal_decompose</span><span class="nt">(x, model, filt, period, two_sided, extrapolate_trend)</span>
+<span class="nn">File ~\AppData\Local\Programs\Python\Python311\Lib\site-packages\statsmodels\tsa\seasonal.py:214,</span> in <span class="ni">seasonal_decompose</span><span class="nt">(x, model, filt, period, two_sided, extrapolate_trend)</span>
 <span class="g g-Whitespace">    </span><span class="mi">210</span> <span class="n">results</span> <span class="o">=</span> <span class="p">[]</span>
 <span class="g g-Whitespace">    </span><span class="mi">211</span> <span class="k">for</span> <span class="n">s</span><span class="p">,</span> <span class="n">name</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span>
 <span class="g g-Whitespace">    </span><span class="mi">212</span>     <span class="p">(</span><span class="n">seasonal</span><span class="p">,</span> <span class="n">trend</span><span class="p">,</span> <span class="n">resid</span><span class="p">,</span> <span class="n">x</span><span class="p">),</span> <span class="p">(</span><span class="s2">&quot;seasonal&quot;</span><span class="p">,</span> <span class="s2">&quot;trend&quot;</span><span class="p">,</span> <span class="s2">&quot;resid&quot;</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span>
@@ -554,14 +477,14 @@ document.write(`
 <span class="g g-Whitespace">    </span><span class="mi">219</span>     <span class="n">observed</span><span class="o">=</span><span class="n">results</span><span class="p">[</span><span class="mi">3</span><span class="p">],</span>
 <span class="g g-Whitespace">    </span><span class="mi">220</span> <span class="p">)</span>
 
-<span class="nn">File c:\Users\Alejo\AppData\Local\Programs\Python\Python311\Lib\site-packages\statsmodels\tools\validation\validation.py:237,</span> in <span class="ni">PandasWrapper.wrap</span><span class="nt">(self, obj, columns, append, trim_start, trim_end)</span>
+<span class="nn">File ~\AppData\Local\Programs\Python\Python311\Lib\site-packages\statsmodels\tools\validation\validation.py:237,</span> in <span class="ni">PandasWrapper.wrap</span><span class="nt">(self, obj, columns, append, trim_start, trim_end)</span>
 <span class="g g-Whitespace">    </span><span class="mi">235</span>             <span class="n">new</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">append</span> <span class="k">if</span> <span class="n">c</span> <span class="ow">is</span> <span class="kc">None</span> <span class="k">else</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">c</span><span class="si">}</span><span class="s2">_</span><span class="si">{</span><span class="n">append</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
 <span class="g g-Whitespace">    </span><span class="mi">236</span>         <span class="n">columns</span> <span class="o">=</span> <span class="n">new</span>
 <span class="ne">--&gt; </span><span class="mi">237</span>     <span class="k">return</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">obj</span><span class="p">,</span> <span class="n">columns</span><span class="o">=</span><span class="n">columns</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="n">index</span><span class="p">)</span>
 <span class="g g-Whitespace">    </span><span class="mi">238</span> <span class="k">else</span><span class="p">:</span>
 <span class="g g-Whitespace">    </span><span class="mi">239</span>     <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;Can only wrap 1 or 2-d array_like&quot;</span><span class="p">)</span>
 
-<span class="nn">File c:\Users\Alejo\AppData\Local\Programs\Python\Python311\Lib\site-packages\pandas\core\frame.py:758,</span> in <span class="ni">DataFrame.__init__</span><span class="nt">(self, data, index, columns, dtype, copy)</span>
+<span class="nn">File ~\AppData\Local\Programs\Python\Python311\Lib\site-packages\pandas\core\frame.py:758,</span> in <span class="ni">DataFrame.__init__</span><span class="nt">(self, data, index, columns, dtype, copy)</span>
 <span class="g g-Whitespace">    </span><span class="mi">747</span>         <span class="n">mgr</span> <span class="o">=</span> <span class="n">dict_to_mgr</span><span class="p">(</span>
 <span class="g g-Whitespace">    </span><span class="mi">748</span>             <span class="c1"># error: Item &quot;ndarray&quot; of &quot;Union[ndarray, Series, Index]&quot; has no</span>
 <span class="g g-Whitespace">    </span><span class="mi">749</span>             <span class="c1"># attribute &quot;name&quot;</span>
@@ -580,7 +503,7 @@ document.write(`
 <span class="g g-Whitespace">    </span><span class="mi">767</span> <span class="c1"># For data is list-like, or Iterable (will consume into list)</span>
 <span class="g g-Whitespace">    </span><span class="mi">768</span> <span class="k">elif</span> <span class="n">is_list_like</span><span class="p">(</span><span class="n">data</span><span class="p">):</span>
 
-<span class="nn">File c:\Users\Alejo\AppData\Local\Programs\Python\Python311\Lib\site-packages\pandas\core\internals\construction.py:333,</span> in <span class="ni">ndarray_to_mgr</span><span class="nt">(values, index, columns, dtype, copy, typ)</span>
+<span class="nn">File ~\AppData\Local\Programs\Python\Python311\Lib\site-packages\pandas\core\internals\construction.py:333,</span> in <span class="ni">ndarray_to_mgr</span><span class="nt">(values, index, columns, dtype, copy, typ)</span>
 <span class="g g-Whitespace">    </span><span class="mi">324</span>     <span class="n">values</span> <span class="o">=</span> <span class="n">sanitize_array</span><span class="p">(</span>
 <span class="g g-Whitespace">    </span><span class="mi">325</span>         <span class="n">values</span><span class="p">,</span>
 <span class="g g-Whitespace">    </span><span class="mi">326</span>         <span class="kc">None</span><span class="p">,</span>
@@ -594,25 +517,25 @@ document.write(`
 <span class="g g-Whitespace">    </span><span class="mi">337</span> <span class="n">_check_values_indices_shape_match</span><span class="p">(</span><span class="n">values</span><span class="p">,</span> <span class="n">index</span><span class="p">,</span> <span class="n">columns</span><span class="p">)</span>
 <span class="g g-Whitespace">    </span><span class="mi">339</span> <span class="k">if</span> <span class="n">typ</span> <span class="o">==</span> <span class="s2">&quot;array&quot;</span><span class="p">:</span>
 
-<span class="nn">File c:\Users\Alejo\AppData\Local\Programs\Python\Python311\Lib\site-packages\pandas\core\internals\construction.py:738,</span> in <span class="ni">_get_axes</span><span class="nt">(N, K, index, columns)</span>
+<span class="nn">File ~\AppData\Local\Programs\Python\Python311\Lib\site-packages\pandas\core\internals\construction.py:738,</span> in <span class="ni">_get_axes</span><span class="nt">(N, K, index, columns)</span>
 <span class="g g-Whitespace">    </span><span class="mi">736</span>     <span class="n">columns</span> <span class="o">=</span> <span class="n">default_index</span><span class="p">(</span><span class="n">K</span><span class="p">)</span>
 <span class="g g-Whitespace">    </span><span class="mi">737</span> <span class="k">else</span><span class="p">:</span>
 <span class="ne">--&gt; </span><span class="mi">738</span>     <span class="n">columns</span> <span class="o">=</span> <span class="n">ensure_index</span><span class="p">(</span><span class="n">columns</span><span class="p">)</span>
 <span class="g g-Whitespace">    </span><span class="mi">739</span> <span class="k">return</span> <span class="n">index</span><span class="p">,</span> <span class="n">columns</span>
 
-<span class="nn">File c:\Users\Alejo\AppData\Local\Programs\Python\Python311\Lib\site-packages\pandas\core\indexes\base.py:7128,</span> in <span class="ni">ensure_index</span><span class="nt">(index_like, copy)</span>
+<span class="nn">File ~\AppData\Local\Programs\Python\Python311\Lib\site-packages\pandas\core\indexes\base.py:7128,</span> in <span class="ni">ensure_index</span><span class="nt">(index_like, copy)</span>
 <span class="g g-Whitespace">   </span><span class="mi">7126</span>         <span class="k">return</span> <span class="n">Index</span><span class="p">(</span><span class="n">index_like</span><span class="p">,</span> <span class="n">copy</span><span class="o">=</span><span class="n">copy</span><span class="p">,</span> <span class="n">tupleize_cols</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
 <span class="g g-Whitespace">   </span><span class="mi">7127</span> <span class="k">else</span><span class="p">:</span>
 <span class="ne">-&gt; </span><span class="mi">7128</span>     <span class="k">return</span> <span class="n">Index</span><span class="p">(</span><span class="n">index_like</span><span class="p">,</span> <span class="n">copy</span><span class="o">=</span><span class="n">copy</span><span class="p">)</span>
 
-<span class="nn">File c:\Users\Alejo\AppData\Local\Programs\Python\Python311\Lib\site-packages\pandas\core\indexes\base.py:516,</span> in <span class="ni">Index.__new__</span><span class="nt">(cls, data, dtype, copy, name, tupleize_cols)</span>
+<span class="nn">File ~\AppData\Local\Programs\Python\Python311\Lib\site-packages\pandas\core\indexes\base.py:516,</span> in <span class="ni">Index.__new__</span><span class="nt">(cls, data, dtype, copy, name, tupleize_cols)</span>
 <span class="g g-Whitespace">    </span><span class="mi">513</span>         <span class="n">data</span> <span class="o">=</span> <span class="n">com</span><span class="o">.</span><span class="n">asarray_tuplesafe</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="n">_dtype_obj</span><span class="p">)</span>
 <span class="g g-Whitespace">    </span><span class="mi">515</span> <span class="k">elif</span> <span class="n">is_scalar</span><span class="p">(</span><span class="n">data</span><span class="p">):</span>
 <span class="ne">--&gt; </span><span class="mi">516</span>     <span class="k">raise</span> <span class="bp">cls</span><span class="o">.</span><span class="n">_raise_scalar_data_error</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
 <span class="g g-Whitespace">    </span><span class="mi">517</span> <span class="k">elif</span> <span class="nb">hasattr</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="s2">&quot;__array__&quot;</span><span class="p">):</span>
 <span class="g g-Whitespace">    </span><span class="mi">518</span>     <span class="k">return</span> <span class="n">Index</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">data</span><span class="p">),</span> <span class="n">dtype</span><span class="o">=</span><span class="n">dtype</span><span class="p">,</span> <span class="n">copy</span><span class="o">=</span><span class="n">copy</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="n">name</span><span class="p">)</span>
 
-<span class="nn">File c:\Users\Alejo\AppData\Local\Programs\Python\Python311\Lib\site-packages\pandas\core\indexes\base.py:5066,</span> in <span class="ni">Index._raise_scalar_data_error</span><span class="nt">(cls, data)</span>
+<span class="nn">File ~\AppData\Local\Programs\Python\Python311\Lib\site-packages\pandas\core\indexes\base.py:5066,</span> in <span class="ni">Index._raise_scalar_data_error</span><span class="nt">(cls, data)</span>
 <span class="g g-Whitespace">   </span><span class="mi">5061</span> <span class="nd">@final</span>
 <span class="g g-Whitespace">   </span><span class="mi">5062</span> <span class="nd">@classmethod</span>
 <span class="g g-Whitespace">   </span><span class="mi">5063</span> <span class="k">def</span> <span class="nf">_raise_scalar_data_error</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">data</span><span class="p">):</span>
