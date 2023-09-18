@@ -1,6 +1,6 @@
 # In _toc.yml
 format: jb-book
-root: 1.0-intro.md
+root: 00-intro.md
 chapters:
 - file: 1.5-jupyter.ipynb
 - file: 2.0-sintaxis-variables-operadores.ipynb
