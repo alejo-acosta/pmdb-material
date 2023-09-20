@@ -63,8 +63,12 @@
 
 - *(40% de nota final)* **Progreso 3**
     - *(50% de P3)* **Controles semanales y participación.**
-    - *(50% de P3)* **Proyecto final:** se seleccionarán al menos dos películas de la página RottenTomatoes, a partir de los comentarios de críticos y audiencia, se deberá calcular un índice de recomendación de la película. El grupo deberá presentar los resultados y explicar el código utilizado para obtenerlos.
+    - *(50% de P3)* **Proyecto final:** se seleccionarán al menos dos películas de la página RottenTomatoes, a partir de los comentarios de críticos y audiencia, se deberá calcular un índice de recomendación de la película. El grupo deberá presentar los resultados y explicar el código utilizado para obtenerlos.  
 
+---
+¿Cómo serán los exámenes?  
+![Alt Text](https://statics.memondo.com/p/s1/hess/2021/12/HES_86955_ab71afc94dcf4d7ea757700c36802c3f_cine_lo_de_siempre.jpg?cb=4780207)
+---
 
 ## Referencias bibliográficas
 
