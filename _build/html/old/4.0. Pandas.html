@@ -1,0 +1,2299 @@
+
+
+<!DOCTYPE html>
+
+
+<html lang="en" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+    <title>4. Pandas &#8212; Curso Python</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+
+  
+  <link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'old/4.0. Pandas';</script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+  
+
+<a class="navbar-brand logo" href="../README.html">
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../_static/python-udla-logo.png" class="logo__image only-light" alt="Logo image"/>
+    <script>document.write(`<img src="../_static/python-udla-logo.png" class="logo__image only-dark" alt="Logo image"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../README.html">
+                    Introducción
+                </a>
+            </li>
+        </ul>
+        <ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../1.0-Introducci%C3%B3n%20a%20la%20programaci%C3%B3n%20y%20bases%20de%20datos.html">UNIDAD 1: Introducción a la programación y bases de datos.</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-launch-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Launch interactive content">
+    <i class="fas fa-rocket"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://colab.research.google.com/github/alejo-acosta/pmdb-material/blob/master/old/4.0. Pandas.ipynb" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch onColab"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  
+    <img src="../_static/images/logo_colab.png">
+  </span>
+<span class="btn__text-container">Colab</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/old/4.0. Pandas.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+<script>
+document.write(`
+  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
+    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
+    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  </button>
+`);
+</script>
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+  </button>
+`);
+</script>
+
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>4. Pandas</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="pandas">
+<h1>4. Pandas<a class="headerlink" href="#pandas" title="Permalink to this heading">#</a></h1>
+<ol class="arabic simple">
+<li><p><strong>Introducción a Pandas</strong></p></li>
+</ol>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">?</span>pd
+</pre></div>
+</div>
+</div>
+</div>
+<ol class="arabic simple" start="2">
+<li><p><strong>Estructuras de Datos en Pandas</strong></p></li>
+</ol>
+<ul class="simple">
+<li><p>Series: Creación y operaciones básicas.</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># una serie es un array unidimensional con un índice</span>
+<span class="c1"># similar a un diccionario de python</span>
+
+<span class="n">serie1</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">([</span><span class="s1">&#39;a&#39;</span><span class="p">,</span> <span class="s1">&#39;b&#39;</span><span class="p">,</span> <span class="s1">&#39;c&#39;</span><span class="p">,</span> <span class="s1">&#39;d&#39;</span><span class="p">,</span> <span class="s1">&#39;e&#39;</span><span class="p">],</span> <span class="n">name</span><span class="o">=</span><span class="s1">&#39;letras&#39;</span><span class="p">)</span>
+<span class="n">serie1</span>
+
+<span class="c1"># los atributos principales de una serie son: nombre, índice, un valor y un tipo de dato (dtype)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0    a
+1    b
+2    c
+3    d
+4    e
+Name: letras, dtype: object
+</pre></div>
+</div>
+</div>
+</div>
+<ul class="simple">
+<li><p>DataFrame: Creación y manipulación.</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Un dataframe es una estructura de datos multidimensional</span>
+<span class="c1"># similar a una hoja de cálculo de excel</span>
+<span class="c1"># se podría decir que es un conjunto de series</span>
+
+<span class="n">df1</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span><span class="s1">&#39;numeros&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">],</span>
+                    <span class="s1">&#39;listas&#39;</span> <span class="p">:</span> <span class="p">[[</span><span class="s1">&#39;matemática&#39;</span><span class="p">,</span> <span class="s1">&#39;lenguaje&#39;</span><span class="p">],</span> <span class="p">[</span><span class="s1">&#39;matemática, economía&#39;</span><span class="p">],</span> <span class="p">[</span><span class="s1">&#39;lenguaje&#39;</span><span class="p">,</span> <span class="s1">&#39;economía&#39;</span><span class="p">,</span> <span class="s1">&#39;matemática&#39;</span><span class="p">],</span> <span class="p">[],</span> <span class="p">[</span><span class="s1">&#39;matemática&#39;</span><span class="p">]],</span>
+                    <span class="s1">&#39;letras&#39;</span> <span class="p">:</span> <span class="p">[</span><span class="s1">&#39;a&#39;</span><span class="p">,</span> <span class="s1">&#39;b&#39;</span><span class="p">,</span> <span class="s1">&#39;c&#39;</span><span class="p">,</span> <span class="s1">&#39;d&#39;</span><span class="p">,</span> <span class="s1">&#39;e&#39;</span><span class="p">]},</span>
+                    <span class="n">index</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;alumno 1&#39;</span><span class="p">,</span> <span class="s1">&#39;alumno 2&#39;</span><span class="p">,</span> <span class="s1">&#39;alumno 3&#39;</span><span class="p">,</span> <span class="s1">&#39;alumno 4&#39;</span><span class="p">,</span> <span class="s1">&#39;alumno 5&#39;</span><span class="p">])</span>
+
+
+
+<span class="n">df1</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>numeros</th>
+      <th>listas</th>
+      <th>letras</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>alumno 1</th>
+      <td>1</td>
+      <td>[matemática, lenguaje]</td>
+      <td>a</td>
+    </tr>
+    <tr>
+      <th>alumno 2</th>
+      <td>2</td>
+      <td>[matemática, economía]</td>
+      <td>b</td>
+    </tr>
+    <tr>
+      <th>alumno 3</th>
+      <td>3</td>
+      <td>[lenguaje, economía, matemática]</td>
+      <td>c</td>
+    </tr>
+    <tr>
+      <th>alumno 4</th>
+      <td>4</td>
+      <td>[]</td>
+      <td>d</td>
+    </tr>
+    <tr>
+      <th>alumno 5</th>
+      <td>5</td>
+      <td>[matemática]</td>
+      <td>e</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># los atributos principales de una serie son: index, columns, values y dtypes</span>
+<span class="n">df1</span><span class="o">.</span><span class="n">index</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Index([&#39;alumno 1&#39;, &#39;alumno 2&#39;, &#39;alumno 3&#39;, &#39;alumno 4&#39;, &#39;alumno 5&#39;], dtype=&#39;object&#39;)
+</pre></div>
+</div>
+</div>
+</div>
+<ul class="simple">
+<li><p>Indexación y selección de datos.</p></li>
+</ul>
+<p>Existen dos formas de acceder a los datos de un dataframe (slicing):</p>
+<ul class="simple">
+<li><p>Por índice</p></li>
+<li><p>Por posición</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># seleccionar listas de alumnos 1 y 2</span>
+<span class="n">df1</span><span class="o">.</span><span class="n">loc</span><span class="p">[[</span><span class="s1">&#39;alumno 1&#39;</span><span class="p">,</span> <span class="s1">&#39;alumno 2&#39;</span><span class="p">],</span> <span class="s1">&#39;listas&#39;</span><span class="p">]</span>
+
+<span class="c1"># loc es para acceder por índice</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>alumno 1    [matemática, lenguaje]
+alumno 2    [matemática, economía]
+Name: listas, dtype: object
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># seleccionar listas de alumnos 1 y 2</span>
+<span class="n">df1</span><span class="o">.</span><span class="n">iloc</span><span class="p">[[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span> <span class="mi">1</span><span class="p">]</span>
+
+<span class="c1"># iloc es para acceder por posición</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>alumno 1    [matemática, lenguaje]
+alumno 2    [matemática, economía]
+Name: listas, dtype: object
+</pre></div>
+</div>
+</div>
+</div>
+<ol class="arabic simple" start="3">
+<li><p><strong>Carga y Almacenamiento de Datos</strong></p>
+<ul class="simple">
+<li><p>Importar datos desde archivos CSV, Excel, y bases de datos.</p></li>
+<li><p>Exportar datos a diferentes formatos.</p></li>
+</ul>
+</li>
+</ol>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;https://gist.githubusercontent.com/noamross/e5d3e859aa0c794be10b/raw/b999fb4425b54c63cab088c0ce2c0d6ce961a563/cars.csv&#39;</span><span class="p">)</span>
+<span class="n">df</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Unnamed: 0</th>
+      <th>mpg</th>
+      <th>cyl</th>
+      <th>disp</th>
+      <th>hp</th>
+      <th>drat</th>
+      <th>wt</th>
+      <th>qsec</th>
+      <th>vs</th>
+      <th>am</th>
+      <th>gear</th>
+      <th>carb</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>Mazda RX4</td>
+      <td>21.0</td>
+      <td>6</td>
+      <td>160.0</td>
+      <td>110</td>
+      <td>3.90</td>
+      <td>2.620</td>
+      <td>16.46</td>
+      <td>0</td>
+      <td>1</td>
+      <td>4</td>
+      <td>4</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>Mazda RX4 Wag</td>
+      <td>21.0</td>
+      <td>6</td>
+      <td>160.0</td>
+      <td>110</td>
+      <td>3.90</td>
+      <td>2.875</td>
+      <td>17.02</td>
+      <td>0</td>
+      <td>1</td>
+      <td>4</td>
+      <td>4</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>Datsun 710</td>
+      <td>22.8</td>
+      <td>4</td>
+      <td>108.0</td>
+      <td>93</td>
+      <td>3.85</td>
+      <td>2.320</td>
+      <td>18.61</td>
+      <td>1</td>
+      <td>1</td>
+      <td>4</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>Hornet 4 Drive</td>
+      <td>21.4</td>
+      <td>6</td>
+      <td>258.0</td>
+      <td>110</td>
+      <td>3.08</td>
+      <td>3.215</td>
+      <td>19.44</td>
+      <td>1</td>
+      <td>0</td>
+      <td>3</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>Hornet Sportabout</td>
+      <td>18.7</td>
+      <td>8</td>
+      <td>360.0</td>
+      <td>175</td>
+      <td>3.15</td>
+      <td>3.440</td>
+      <td>17.02</td>
+      <td>0</td>
+      <td>0</td>
+      <td>3</td>
+      <td>2</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">oecd</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_html</span><span class="p">(</span><span class="s1">&#39;https://en.wikipedia.org/wiki/List_of_countries_by_minimum_wage&#39;</span><span class="p">)[</span><span class="mi">4</span><span class="p">]</span>
+<span class="n">oecd</span> <span class="o">=</span> <span class="n">oecd</span><span class="o">.</span><span class="n">set_index</span><span class="p">(</span><span class="s1">&#39;Country&#39;</span><span class="p">)</span>
+<span class="n">oecd</span>
+
+<span class="c1"># las columnas son unidemensionales?</span>
+<span class="c1"># como eliminaría la última fila?</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead tr th {
+        text-align: left;
+    }
+
+    .dataframe thead tr:last-of-type th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr>
+      <th></th>
+      <th colspan="5" halign="left">2018</th>
+      <th colspan="5" halign="left">2019</th>
+    </tr>
+    <tr>
+      <th></th>
+      <th colspan="2" halign="left">Nominal</th>
+      <th colspan="2" halign="left">PPP</th>
+      <th>Annual working hours(note)</th>
+      <th colspan="2" halign="left">Nominal</th>
+      <th colspan="2" halign="left">PPP</th>
+      <th>Annual working hours(note)</th>
+    </tr>
+    <tr>
+      <th></th>
+      <th>Annual</th>
+      <th>Hourly</th>
+      <th>Annual</th>
+      <th>Hourly</th>
+      <th>Annual working hours(note)</th>
+      <th>Annual</th>
+      <th>Hourly</th>
+      <th>Annual</th>
+      <th>Hourly</th>
+      <th>Annual working hours(note)</th>
+    </tr>
+    <tr>
+      <th>Country</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>(Australia,)</th>
+      <td>25970.8</td>
+      <td>13.1</td>
+      <td>24481.2</td>
+      <td>12.4</td>
+      <td>1976</td>
+      <td>26388.5</td>
+      <td>13.4</td>
+      <td>24874.9</td>
+      <td>12.6</td>
+      <td>1976</td>
+    </tr>
+    <tr>
+      <th>(Belgium,)</th>
+      <td>21293.0</td>
+      <td>10.2</td>
+      <td>22746.8</td>
+      <td>10.9</td>
+      <td>2086</td>
+      <td>21410.8</td>
+      <td>10.3</td>
+      <td>22872.6</td>
+      <td>11.0</td>
+      <td>2086</td>
+    </tr>
+    <tr>
+      <th>(Canada,)</th>
+      <td>20552.5</td>
+      <td>9.9</td>
+      <td>20946.0</td>
+      <td>10.1</td>
+      <td>2080</td>
+      <td>20880.7</td>
+      <td>10.0</td>
+      <td>21280.5</td>
+      <td>10.2</td>
+      <td>2080</td>
+    </tr>
+    <tr>
+      <th>(Chile,)</th>
+      <td>4902.5</td>
+      <td>2.1</td>
+      <td>7044.4</td>
+      <td>3.0</td>
+      <td>2346</td>
+      <td>5101.7</td>
+      <td>2.2</td>
+      <td>7330.7</td>
+      <td>3.1</td>
+      <td>2346</td>
+    </tr>
+    <tr>
+      <th>(Colombia,)</th>
+      <td>3451.3</td>
+      <td>1.2</td>
+      <td>7677.4</td>
+      <td>2.6</td>
+      <td>2920</td>
+      <td>3533.7</td>
+      <td>1.2</td>
+      <td>7860.9</td>
+      <td>2.7</td>
+      <td>2920</td>
+    </tr>
+    <tr>
+      <th>(Czech Republic,)</th>
+      <td>6565.8</td>
+      <td>3.3</td>
+      <td>10789.9</td>
+      <td>5.4</td>
+      <td>2000</td>
+      <td>7064.3</td>
+      <td>3.5</td>
+      <td>11609.0</td>
+      <td>5.8</td>
+      <td>2000</td>
+    </tr>
+    <tr>
+      <th>(Estonia,)</th>
+      <td>6869.8</td>
+      <td>3.4</td>
+      <td>9890.2</td>
+      <td>4.9</td>
+      <td>2020</td>
+      <td>7254.2</td>
+      <td>3.6</td>
+      <td>10443.5</td>
+      <td>5.2</td>
+      <td>2019</td>
+    </tr>
+    <tr>
+      <th>(France,)</th>
+      <td>20353.1</td>
+      <td>11.2</td>
+      <td>21860.3</td>
+      <td>12.0</td>
+      <td>1820</td>
+      <td>20435.6</td>
+      <td>11.2</td>
+      <td>21949.0</td>
+      <td>12.1</td>
+      <td>1820</td>
+    </tr>
+    <tr>
+      <th>(Germany,)</th>
+      <td>20414.6</td>
+      <td>10.0</td>
+      <td>23439.6</td>
+      <td>11.5</td>
+      <td>2033</td>
+      <td>20916.3</td>
+      <td>10.3</td>
+      <td>24015.6</td>
+      <td>11.8</td>
+      <td>2033</td>
+    </tr>
+    <tr>
+      <th>(Greece,)</th>
+      <td>9208.7</td>
+      <td>3.7</td>
+      <td>13040.0</td>
+      <td>5.2</td>
+      <td>2507</td>
+      <td>10103.7</td>
+      <td>4.0</td>
+      <td>14307.4</td>
+      <td>5.7</td>
+      <td>2507</td>
+    </tr>
+    <tr>
+      <th>(Hungary,)</th>
+      <td>5887.6</td>
+      <td>2.8</td>
+      <td>11049.2</td>
+      <td>5.2</td>
+      <td>2112</td>
+      <td>6151.5</td>
+      <td>2.9</td>
+      <td>11544.5</td>
+      <td>5.5</td>
+      <td>2086</td>
+    </tr>
+    <tr>
+      <th>(Ireland,)</th>
+      <td>22446.1</td>
+      <td>10.8</td>
+      <td>20585.9</td>
+      <td>9.9</td>
+      <td>2080</td>
+      <td>22819.4</td>
+      <td>11.0</td>
+      <td>20928.3</td>
+      <td>10.1</td>
+      <td>2080</td>
+    </tr>
+    <tr>
+      <th>(Israel,)</th>
+      <td>17992.6</td>
+      <td>8.1</td>
+      <td>15416.5</td>
+      <td>6.9</td>
+      <td>2232</td>
+      <td>17842.5</td>
+      <td>8.0</td>
+      <td>15287.8</td>
+      <td>6.9</td>
+      <td>2232</td>
+    </tr>
+    <tr>
+      <th>(Japan,)</th>
+      <td>16805.5</td>
+      <td>8.1</td>
+      <td>16607.6</td>
+      <td>8.0</td>
+      <td>2080</td>
+      <td>-</td>
+      <td>-</td>
+      <td>-</td>
+      <td>-</td>
+      <td>-</td>
+    </tr>
+    <tr>
+      <th>(South Korea,)</th>
+      <td>16265.6</td>
+      <td>6.5</td>
+      <td>19540.8</td>
+      <td>7.8</td>
+      <td>2508</td>
+      <td>17968.1</td>
+      <td>7.2</td>
+      <td>21586.1</td>
+      <td>8.6</td>
+      <td>2508</td>
+    </tr>
+    <tr>
+      <th>(Latvia,)</th>
+      <td>5877.2</td>
+      <td>2.8</td>
+      <td>9168.8</td>
+      <td>4.4</td>
+      <td>2086</td>
+      <td>5776.5</td>
+      <td>2.8</td>
+      <td>9011.7</td>
+      <td>4.3</td>
+      <td>2086</td>
+    </tr>
+    <tr>
+      <th>(Lithuania,)</th>
+      <td>5498.9</td>
+      <td>2.8</td>
+      <td>9694.0</td>
+      <td>4.9</td>
+      <td>1959</td>
+      <td>7455.7</td>
+      <td>3.8</td>
+      <td>13143.5</td>
+      <td>6.7</td>
+      <td>1965</td>
+    </tr>
+    <tr>
+      <th>(Luxembourg,)</th>
+      <td>27601.0</td>
+      <td>13.3</td>
+      <td>25811.0</td>
+      <td>12.4</td>
+      <td>2077</td>
+      <td>28073.1</td>
+      <td>13.4</td>
+      <td>26252.5</td>
+      <td>12.5</td>
+      <td>2095</td>
+    </tr>
+    <tr>
+      <th>(Mexico,)</th>
+      <td>1236.0</td>
+      <td>0.6</td>
+      <td>2238.5</td>
+      <td>1.1</td>
+      <td>2080</td>
+      <td>1386.1</td>
+      <td>0.7</td>
+      <td>2510.3</td>
+      <td>1.2</td>
+      <td>2080</td>
+    </tr>
+    <tr>
+      <th>(Netherlands,)</th>
+      <td>23618.0</td>
+      <td>10.5</td>
+      <td>24859.9</td>
+      <td>11.0</td>
+      <td>2253</td>
+      <td>23586.2</td>
+      <td>10.5</td>
+      <td>24826.5</td>
+      <td>11.0</td>
+      <td>2253</td>
+    </tr>
+    <tr>
+      <th>(New Zealand,)</th>
+      <td>22541.6</td>
+      <td>10.8</td>
+      <td>21716.3</td>
+      <td>10.4</td>
+      <td>2080</td>
+      <td>23330.0</td>
+      <td>11.5</td>
+      <td>22475.8</td>
+      <td>11.0</td>
+      <td>2035</td>
+    </tr>
+    <tr>
+      <th>(Poland,)</th>
+      <td>6709.8</td>
+      <td>3.2</td>
+      <td>13704.8</td>
+      <td>6.6</td>
+      <td>2086</td>
+      <td>7032.4</td>
+      <td>3.4</td>
+      <td>14363.8</td>
+      <td>6.9</td>
+      <td>2086</td>
+    </tr>
+    <tr>
+      <th>(Portugal,)</th>
+      <td>9120.9</td>
+      <td>4.4</td>
+      <td>12720.3</td>
+      <td>6.1</td>
+      <td>2086</td>
+      <td>9403.6</td>
+      <td>4.5</td>
+      <td>13114.5</td>
+      <td>6.3</td>
+      <td>2086</td>
+    </tr>
+    <tr>
+      <th>(Slovak Republic,)</th>
+      <td>6620.0</td>
+      <td>2.1</td>
+      <td>10001.1</td>
+      <td>3.2</td>
+      <td>3145</td>
+      <td>6985.5</td>
+      <td>2.1</td>
+      <td>10553.3</td>
+      <td>3.2</td>
+      <td>3319</td>
+    </tr>
+    <tr>
+      <th>(Slovenia,)</th>
+      <td>11506.4</td>
+      <td>5.5</td>
+      <td>16015.8</td>
+      <td>7.7</td>
+      <td>2086</td>
+      <td>11910.7</td>
+      <td>5.7</td>
+      <td>16578.6</td>
+      <td>7.9</td>
+      <td>2086</td>
+    </tr>
+    <tr>
+      <th>(Spain,)</th>
+      <td>11614.2</td>
+      <td>5.6</td>
+      <td>14731.8</td>
+      <td>7.1</td>
+      <td>2086</td>
+      <td>14105.4</td>
+      <td>6.8</td>
+      <td>17891.7</td>
+      <td>8.6</td>
+      <td>2086</td>
+    </tr>
+    <tr>
+      <th>(Turkey,)</th>
+      <td>4943.8</td>
+      <td>2.4</td>
+      <td>12848.3</td>
+      <td>6.2</td>
+      <td>2086</td>
+      <td>5410.1</td>
+      <td>2.6</td>
+      <td>14060.2</td>
+      <td>6.7</td>
+      <td>2086</td>
+    </tr>
+    <tr>
+      <th>(United Kingdom,)</th>
+      <td>20918.7</td>
+      <td>12.23</td>
+      <td>21132.2</td>
+      <td>10.2</td>
+      <td>2079</td>
+      <td>21544.6</td>
+      <td>10.4</td>
+      <td>21764.4</td>
+      <td>10.5</td>
+      <td>2079</td>
+    </tr>
+    <tr>
+      <th>(United States,)</th>
+      <td>15353.3</td>
+      <td>7.4</td>
+      <td>15353.3</td>
+      <td>7.4</td>
+      <td>2080</td>
+      <td>15080.0</td>
+      <td>7.3</td>
+      <td>15080.0</td>
+      <td>7.3</td>
+      <td>2080</td>
+    </tr>
+    <tr>
+      <th>(Costa Rica,)</th>
+      <td>5927.8</td>
+      <td>2.2</td>
+      <td>9326.5</td>
+      <td>3.4</td>
+      <td>2711</td>
+      <td>5961.6</td>
+      <td>2.2</td>
+      <td>9379.6</td>
+      <td>3.5</td>
+      <td>2711</td>
+    </tr>
+    <tr>
+      <th>(Brazil,)</th>
+      <td>3023.8</td>
+      <td>1.3</td>
+      <td>4925.3</td>
+      <td>2.1</td>
+      <td>2346</td>
+      <td>3049.4</td>
+      <td>1.3</td>
+      <td>4967.0</td>
+      <td>2.1</td>
+      <td>2346</td>
+    </tr>
+    <tr>
+      <th>(Russian Federation,)</th>
+      <td>2053.7</td>
+      <td>1.0</td>
+      <td>4936.5</td>
+      <td>2.4</td>
+      <td>2086</td>
+      <td>2090.9</td>
+      <td>1.0</td>
+      <td>5026.0</td>
+      <td>2.4</td>
+      <td>2086</td>
+    </tr>
+    <tr>
+      <th>(Note: Annual wages divided by hourly wages,)</th>
+      <td>Note: Annual wages divided by hourly wages</td>
+      <td>Note: Annual wages divided by hourly wages</td>
+      <td>Note: Annual wages divided by hourly wages</td>
+      <td>Note: Annual wages divided by hourly wages</td>
+      <td>Note: Annual wages divided by hourly wages</td>
+      <td>Note: Annual wages divided by hourly wages</td>
+      <td>Note: Annual wages divided by hourly wages</td>
+      <td>Note: Annual wages divided by hourly wages</td>
+      <td>Note: Annual wages divided by hourly wages</td>
+      <td>Note: Annual wages divided by hourly wages</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p>Exportación</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">oecd</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="s1">&#39;oecd.csv&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<ol class="arabic simple" start="4">
+<li><p><strong>Exploración de Datos con Pandas</strong></p>
+<ul class="simple">
+<li><p>Visualización de los primeros y últimos registros.</p></li>
+<li><p>Resumen estadístico de los datos.</p></li>
+<li><p>Manejo de valores faltantes.</p></li>
+</ul>
+</li>
+</ol>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mw</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_html</span><span class="p">(</span><span class="s1">&#39;https://en.wikipedia.org/wiki/List_of_countries_by_minimum_wage&#39;</span><span class="p">)[</span><span class="mi">3</span><span class="p">]</span>
+<span class="n">mw</span> <span class="o">=</span> <span class="n">mw</span><span class="o">.</span><span class="n">set_index</span><span class="p">((</span><span class="s1">&#39;Country&#39;</span><span class="p">,</span><span class="s1">&#39;Country&#39;</span><span class="p">))</span>
+<span class="n">mw</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead tr th {
+        text-align: left;
+    }
+
+    .dataframe thead tr:last-of-type th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr>
+      <th></th>
+      <th>Minimum wage</th>
+      <th colspan="2" halign="left">Annual</th>
+      <th>Workweek (hours)[4]</th>
+      <th colspan="2" halign="left">Hourly</th>
+      <th>Percent of GDP per capita[5]</th>
+      <th>Effective per</th>
+    </tr>
+    <tr>
+      <th></th>
+      <th>Minimum wage</th>
+      <th>Nominal (US$)[6]</th>
+      <th>PPP (Int$)[7]</th>
+      <th>Workweek (hours)[4]</th>
+      <th>Nominal (US$)[8]</th>
+      <th>PPP (Int$)[9]</th>
+      <th>Percent of GDP per capita[5]</th>
+      <th>Effective per</th>
+    </tr>
+    <tr>
+      <th>(Country, Country)</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>Afghanistan</th>
+      <td>Afs. 5,500 (US$67) per month for non-permanent...</td>
+      <td>858.00</td>
+      <td>3272.0</td>
+      <td>40</td>
+      <td>0.41</td>
+      <td>1.57</td>
+      <td>168.3%</td>
+      <td>2017</td>
+    </tr>
+    <tr>
+      <th>Albania</th>
+      <td>40,000 lek (US$430) per month. The law establi...</td>
+      <td>4637.00</td>
+      <td>8697.0</td>
+      <td>40</td>
+      <td>2.23</td>
+      <td>4.18</td>
+      <td>75.4%</td>
+      <td>1 April 2023</td>
+    </tr>
+    <tr>
+      <th>Algeria</th>
+      <td>DA 20,000 (US$156.19) per month, nationally.[1...</td>
+      <td>1777.00</td>
+      <td>6247.0</td>
+      <td>40</td>
+      <td>0.85</td>
+      <td>3.00</td>
+      <td>41.6%</td>
+      <td>1 May 2020</td>
+    </tr>
+    <tr>
+      <th>Andorra</th>
+      <td>€7.42 (USD8.33) hourly.[16]</td>
+      <td>18253.00</td>
+      <td>13493.0</td>
+      <td>40</td>
+      <td>8.00</td>
+      <td>6.00</td>
+      <td>28%</td>
+      <td>1 January 2023</td>
+    </tr>
+    <tr>
+      <th>Angola</th>
+      <td>Kz 32,181 (US$61) per month; paid thirteen tim...</td>
+      <td>663.00</td>
+      <td>3161.0</td>
+      <td>44</td>
+      <td>0.29</td>
+      <td>1.38</td>
+      <td>49%</td>
+      <td>2022</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>Venezuela</th>
+      <td>The minimum wage in Venezuela is Bs. 400,000 p...</td>
+      <td>10.32</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>1 May 2020</td>
+    </tr>
+    <tr>
+      <th>Vietnam</th>
+      <td>Varies by region; Region I: VND 4,420,000 per ...</td>
+      <td>1591.00</td>
+      <td>4089.0</td>
+      <td>40</td>
+      <td>0.76</td>
+      <td>1.97</td>
+      <td>65%</td>
+      <td>1 January 2020</td>
+    </tr>
+    <tr>
+      <th>Yemen</th>
+      <td>None; the minimum civil service wage was YRls ...</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>48</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>2013</td>
+    </tr>
+    <tr>
+      <th>Zambia</th>
+      <td>Varies by sector; ZK 993.6 (US$81) per month f...</td>
+      <td>596.00</td>
+      <td>3180.0</td>
+      <td>48</td>
+      <td>0.24</td>
+      <td>1.27</td>
+      <td>80.8%</td>
+      <td>10 September 2018</td>
+    </tr>
+    <tr>
+      <th>Zimbabwe</th>
+      <td>None, except for agricultural and domestic wor...</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>2012</td>
+    </tr>
+  </tbody>
+</table>
+<p>201 rows × 8 columns</p>
+</div></div></div>
+</div>
+<ol class="arabic simple" start="5">
+<li><p><strong>Manipulación de Datos con Pandas</strong></p>
+<ul class="simple">
+<li><p>Filtrado de datos basado en condiciones.</p></li>
+<li><p>Agregación y agrupación de datos.</p></li>
+<li><p>Combinación de DataFrames.</p></li>
+</ul>
+</li>
+</ol>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mw</span><span class="o">.</span><span class="n">describe</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead tr th {
+        text-align: left;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr>
+      <th></th>
+      <th colspan="2" halign="left">Annual</th>
+      <th colspan="2" halign="left">Hourly</th>
+    </tr>
+    <tr>
+      <th></th>
+      <th>Nominal (US$)[6]</th>
+      <th>PPP (Int$)[7]</th>
+      <th>Nominal (US$)[8]</th>
+      <th>PPP (Int$)[9]</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>count</th>
+      <td>159.000000</td>
+      <td>156.000000</td>
+      <td>159.000000</td>
+      <td>156.000000</td>
+    </tr>
+    <tr>
+      <th>mean</th>
+      <td>6146.052327</td>
+      <td>9991.320513</td>
+      <td>3.008994</td>
+      <td>4.603782</td>
+    </tr>
+    <tr>
+      <th>std</th>
+      <td>7817.491534</td>
+      <td>15016.380108</td>
+      <td>3.974687</td>
+      <td>6.632247</td>
+    </tr>
+    <tr>
+      <th>min</th>
+      <td>0.000000</td>
+      <td>1.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+    </tr>
+    <tr>
+      <th>25%</th>
+      <td>944.500000</td>
+      <td>2895.750000</td>
+      <td>0.435000</td>
+      <td>1.287500</td>
+    </tr>
+    <tr>
+      <th>50%</th>
+      <td>2946.000000</td>
+      <td>6671.000000</td>
+      <td>1.290000</td>
+      <td>2.880000</td>
+    </tr>
+    <tr>
+      <th>75%</th>
+      <td>7864.500000</td>
+      <td>12334.250000</td>
+      <td>4.165000</td>
+      <td>5.842500</td>
+    </tr>
+    <tr>
+      <th>max</th>
+      <td>34515.000000</td>
+      <td>141906.000000</td>
+      <td>17.470000</td>
+      <td>56.850000</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sales</span>  <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;https://raw.githubusercontent.com/alejo-acosta/curso-python-ciee/main/data/sales.csv&#39;</span><span class="p">)</span>
+<span class="n">items</span>  <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;https://raw.githubusercontent.com/alejo-acosta/curso-python-ciee/main/data/items.csv&#39;</span><span class="p">)</span>
+<span class="n">stores</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;https://raw.githubusercontent.com/alejo-acosta/curso-python-ciee/main/data/stores.csv&#39;</span><span class="p">)</span>
+<span class="n">oil</span>    <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;https://raw.githubusercontent.com/alejo-acosta/curso-python-ciee/main/data/oil.csv&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>C:\Users\Alejo\AppData\Local\Temp\ipykernel_1924\2817981066.py:1: DtypeWarning: Columns (6) have mixed types. Specify dtype option on import or set low_memory=False.
+  sales  = pd.read_csv(&#39;https://raw.githubusercontent.com/alejo-acosta/curso-python-ciee/main/data/sales.csv&#39;)
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sales</span><span class="p">[</span><span class="s1">&#39;date&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="s1">&#39;datetime64[s]&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0         2013-01-01
+1         2013-01-01
+2         2013-01-01
+3         2013-01-01
+4         2013-01-01
+             ...    
+1131724   2017-08-15
+1131725   2017-08-15
+1131726   2017-08-15
+1131727   2017-08-15
+1131728   2017-08-15
+Name: date, Length: 1131729, dtype: datetime64[s]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sales</span><span class="o">.</span><span class="n">shape</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(1131729, 7)
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">oil</span><span class="o">.</span><span class="n">dtypes</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>date           object
+dcoilwtico    float64
+dtype: object
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">oecd</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead tr th {
+        text-align: left;
+    }
+
+    .dataframe thead tr:last-of-type th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr>
+      <th></th>
+      <th colspan="5" halign="left">2018</th>
+      <th colspan="5" halign="left">2019</th>
+    </tr>
+    <tr>
+      <th></th>
+      <th colspan="2" halign="left">Nominal</th>
+      <th colspan="2" halign="left">PPP</th>
+      <th>Annual working hours(note)</th>
+      <th colspan="2" halign="left">Nominal</th>
+      <th colspan="2" halign="left">PPP</th>
+      <th>Annual working hours(note)</th>
+    </tr>
+    <tr>
+      <th></th>
+      <th>Annual</th>
+      <th>Hourly</th>
+      <th>Annual</th>
+      <th>Hourly</th>
+      <th>Annual working hours(note)</th>
+      <th>Annual</th>
+      <th>Hourly</th>
+      <th>Annual</th>
+      <th>Hourly</th>
+      <th>Annual working hours(note)</th>
+    </tr>
+    <tr>
+      <th>Country</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>(Australia,)</th>
+      <td>25970.8</td>
+      <td>13.1</td>
+      <td>24481.2</td>
+      <td>12.4</td>
+      <td>1976</td>
+      <td>26388.5</td>
+      <td>13.4</td>
+      <td>24874.9</td>
+      <td>12.6</td>
+      <td>1976</td>
+    </tr>
+    <tr>
+      <th>(Belgium,)</th>
+      <td>21293.0</td>
+      <td>10.2</td>
+      <td>22746.8</td>
+      <td>10.9</td>
+      <td>2086</td>
+      <td>21410.8</td>
+      <td>10.3</td>
+      <td>22872.6</td>
+      <td>11.0</td>
+      <td>2086</td>
+    </tr>
+    <tr>
+      <th>(Canada,)</th>
+      <td>20552.5</td>
+      <td>9.9</td>
+      <td>20946.0</td>
+      <td>10.1</td>
+      <td>2080</td>
+      <td>20880.7</td>
+      <td>10.0</td>
+      <td>21280.5</td>
+      <td>10.2</td>
+      <td>2080</td>
+    </tr>
+    <tr>
+      <th>(Chile,)</th>
+      <td>4902.5</td>
+      <td>2.1</td>
+      <td>7044.4</td>
+      <td>3.0</td>
+      <td>2346</td>
+      <td>5101.7</td>
+      <td>2.2</td>
+      <td>7330.7</td>
+      <td>3.1</td>
+      <td>2346</td>
+    </tr>
+    <tr>
+      <th>(Colombia,)</th>
+      <td>3451.3</td>
+      <td>1.2</td>
+      <td>7677.4</td>
+      <td>2.6</td>
+      <td>2920</td>
+      <td>3533.7</td>
+      <td>1.2</td>
+      <td>7860.9</td>
+      <td>2.7</td>
+      <td>2920</td>
+    </tr>
+    <tr>
+      <th>(Czech Republic,)</th>
+      <td>6565.8</td>
+      <td>3.3</td>
+      <td>10789.9</td>
+      <td>5.4</td>
+      <td>2000</td>
+      <td>7064.3</td>
+      <td>3.5</td>
+      <td>11609.0</td>
+      <td>5.8</td>
+      <td>2000</td>
+    </tr>
+    <tr>
+      <th>(Estonia,)</th>
+      <td>6869.8</td>
+      <td>3.4</td>
+      <td>9890.2</td>
+      <td>4.9</td>
+      <td>2020</td>
+      <td>7254.2</td>
+      <td>3.6</td>
+      <td>10443.5</td>
+      <td>5.2</td>
+      <td>2019</td>
+    </tr>
+    <tr>
+      <th>(France,)</th>
+      <td>20353.1</td>
+      <td>11.2</td>
+      <td>21860.3</td>
+      <td>12.0</td>
+      <td>1820</td>
+      <td>20435.6</td>
+      <td>11.2</td>
+      <td>21949.0</td>
+      <td>12.1</td>
+      <td>1820</td>
+    </tr>
+    <tr>
+      <th>(Germany,)</th>
+      <td>20414.6</td>
+      <td>10.0</td>
+      <td>23439.6</td>
+      <td>11.5</td>
+      <td>2033</td>
+      <td>20916.3</td>
+      <td>10.3</td>
+      <td>24015.6</td>
+      <td>11.8</td>
+      <td>2033</td>
+    </tr>
+    <tr>
+      <th>(Greece,)</th>
+      <td>9208.7</td>
+      <td>3.7</td>
+      <td>13040.0</td>
+      <td>5.2</td>
+      <td>2507</td>
+      <td>10103.7</td>
+      <td>4.0</td>
+      <td>14307.4</td>
+      <td>5.7</td>
+      <td>2507</td>
+    </tr>
+    <tr>
+      <th>(Hungary,)</th>
+      <td>5887.6</td>
+      <td>2.8</td>
+      <td>11049.2</td>
+      <td>5.2</td>
+      <td>2112</td>
+      <td>6151.5</td>
+      <td>2.9</td>
+      <td>11544.5</td>
+      <td>5.5</td>
+      <td>2086</td>
+    </tr>
+    <tr>
+      <th>(Ireland,)</th>
+      <td>22446.1</td>
+      <td>10.8</td>
+      <td>20585.9</td>
+      <td>9.9</td>
+      <td>2080</td>
+      <td>22819.4</td>
+      <td>11.0</td>
+      <td>20928.3</td>
+      <td>10.1</td>
+      <td>2080</td>
+    </tr>
+    <tr>
+      <th>(Israel,)</th>
+      <td>17992.6</td>
+      <td>8.1</td>
+      <td>15416.5</td>
+      <td>6.9</td>
+      <td>2232</td>
+      <td>17842.5</td>
+      <td>8.0</td>
+      <td>15287.8</td>
+      <td>6.9</td>
+      <td>2232</td>
+    </tr>
+    <tr>
+      <th>(Japan,)</th>
+      <td>16805.5</td>
+      <td>8.1</td>
+      <td>16607.6</td>
+      <td>8.0</td>
+      <td>2080</td>
+      <td>-</td>
+      <td>-</td>
+      <td>-</td>
+      <td>-</td>
+      <td>-</td>
+    </tr>
+    <tr>
+      <th>(South Korea,)</th>
+      <td>16265.6</td>
+      <td>6.5</td>
+      <td>19540.8</td>
+      <td>7.8</td>
+      <td>2508</td>
+      <td>17968.1</td>
+      <td>7.2</td>
+      <td>21586.1</td>
+      <td>8.6</td>
+      <td>2508</td>
+    </tr>
+    <tr>
+      <th>(Latvia,)</th>
+      <td>5877.2</td>
+      <td>2.8</td>
+      <td>9168.8</td>
+      <td>4.4</td>
+      <td>2086</td>
+      <td>5776.5</td>
+      <td>2.8</td>
+      <td>9011.7</td>
+      <td>4.3</td>
+      <td>2086</td>
+    </tr>
+    <tr>
+      <th>(Lithuania,)</th>
+      <td>5498.9</td>
+      <td>2.8</td>
+      <td>9694.0</td>
+      <td>4.9</td>
+      <td>1959</td>
+      <td>7455.7</td>
+      <td>3.8</td>
+      <td>13143.5</td>
+      <td>6.7</td>
+      <td>1965</td>
+    </tr>
+    <tr>
+      <th>(Luxembourg,)</th>
+      <td>27601.0</td>
+      <td>13.3</td>
+      <td>25811.0</td>
+      <td>12.4</td>
+      <td>2077</td>
+      <td>28073.1</td>
+      <td>13.4</td>
+      <td>26252.5</td>
+      <td>12.5</td>
+      <td>2095</td>
+    </tr>
+    <tr>
+      <th>(Mexico,)</th>
+      <td>1236.0</td>
+      <td>0.6</td>
+      <td>2238.5</td>
+      <td>1.1</td>
+      <td>2080</td>
+      <td>1386.1</td>
+      <td>0.7</td>
+      <td>2510.3</td>
+      <td>1.2</td>
+      <td>2080</td>
+    </tr>
+    <tr>
+      <th>(Netherlands,)</th>
+      <td>23618.0</td>
+      <td>10.5</td>
+      <td>24859.9</td>
+      <td>11.0</td>
+      <td>2253</td>
+      <td>23586.2</td>
+      <td>10.5</td>
+      <td>24826.5</td>
+      <td>11.0</td>
+      <td>2253</td>
+    </tr>
+    <tr>
+      <th>(New Zealand,)</th>
+      <td>22541.6</td>
+      <td>10.8</td>
+      <td>21716.3</td>
+      <td>10.4</td>
+      <td>2080</td>
+      <td>23330.0</td>
+      <td>11.5</td>
+      <td>22475.8</td>
+      <td>11.0</td>
+      <td>2035</td>
+    </tr>
+    <tr>
+      <th>(Poland,)</th>
+      <td>6709.8</td>
+      <td>3.2</td>
+      <td>13704.8</td>
+      <td>6.6</td>
+      <td>2086</td>
+      <td>7032.4</td>
+      <td>3.4</td>
+      <td>14363.8</td>
+      <td>6.9</td>
+      <td>2086</td>
+    </tr>
+    <tr>
+      <th>(Portugal,)</th>
+      <td>9120.9</td>
+      <td>4.4</td>
+      <td>12720.3</td>
+      <td>6.1</td>
+      <td>2086</td>
+      <td>9403.6</td>
+      <td>4.5</td>
+      <td>13114.5</td>
+      <td>6.3</td>
+      <td>2086</td>
+    </tr>
+    <tr>
+      <th>(Slovak Republic,)</th>
+      <td>6620.0</td>
+      <td>2.1</td>
+      <td>10001.1</td>
+      <td>3.2</td>
+      <td>3145</td>
+      <td>6985.5</td>
+      <td>2.1</td>
+      <td>10553.3</td>
+      <td>3.2</td>
+      <td>3319</td>
+    </tr>
+    <tr>
+      <th>(Slovenia,)</th>
+      <td>11506.4</td>
+      <td>5.5</td>
+      <td>16015.8</td>
+      <td>7.7</td>
+      <td>2086</td>
+      <td>11910.7</td>
+      <td>5.7</td>
+      <td>16578.6</td>
+      <td>7.9</td>
+      <td>2086</td>
+    </tr>
+    <tr>
+      <th>(Spain,)</th>
+      <td>11614.2</td>
+      <td>5.6</td>
+      <td>14731.8</td>
+      <td>7.1</td>
+      <td>2086</td>
+      <td>14105.4</td>
+      <td>6.8</td>
+      <td>17891.7</td>
+      <td>8.6</td>
+      <td>2086</td>
+    </tr>
+    <tr>
+      <th>(Turkey,)</th>
+      <td>4943.8</td>
+      <td>2.4</td>
+      <td>12848.3</td>
+      <td>6.2</td>
+      <td>2086</td>
+      <td>5410.1</td>
+      <td>2.6</td>
+      <td>14060.2</td>
+      <td>6.7</td>
+      <td>2086</td>
+    </tr>
+    <tr>
+      <th>(United Kingdom,)</th>
+      <td>20918.7</td>
+      <td>12.23</td>
+      <td>21132.2</td>
+      <td>10.2</td>
+      <td>2079</td>
+      <td>21544.6</td>
+      <td>10.4</td>
+      <td>21764.4</td>
+      <td>10.5</td>
+      <td>2079</td>
+    </tr>
+    <tr>
+      <th>(United States,)</th>
+      <td>15353.3</td>
+      <td>7.4</td>
+      <td>15353.3</td>
+      <td>7.4</td>
+      <td>2080</td>
+      <td>15080.0</td>
+      <td>7.3</td>
+      <td>15080.0</td>
+      <td>7.3</td>
+      <td>2080</td>
+    </tr>
+    <tr>
+      <th>(Costa Rica,)</th>
+      <td>5927.8</td>
+      <td>2.2</td>
+      <td>9326.5</td>
+      <td>3.4</td>
+      <td>2711</td>
+      <td>5961.6</td>
+      <td>2.2</td>
+      <td>9379.6</td>
+      <td>3.5</td>
+      <td>2711</td>
+    </tr>
+    <tr>
+      <th>(Brazil,)</th>
+      <td>3023.8</td>
+      <td>1.3</td>
+      <td>4925.3</td>
+      <td>2.1</td>
+      <td>2346</td>
+      <td>3049.4</td>
+      <td>1.3</td>
+      <td>4967.0</td>
+      <td>2.1</td>
+      <td>2346</td>
+    </tr>
+    <tr>
+      <th>(Russian Federation,)</th>
+      <td>2053.7</td>
+      <td>1.0</td>
+      <td>4936.5</td>
+      <td>2.4</td>
+      <td>2086</td>
+      <td>2090.9</td>
+      <td>1.0</td>
+      <td>5026.0</td>
+      <td>2.4</td>
+      <td>2086</td>
+    </tr>
+    <tr>
+      <th>(Note: Annual wages divided by hourly wages,)</th>
+      <td>Note: Annual wages divided by hourly wages</td>
+      <td>Note: Annual wages divided by hourly wages</td>
+      <td>Note: Annual wages divided by hourly wages</td>
+      <td>Note: Annual wages divided by hourly wages</td>
+      <td>Note: Annual wages divided by hourly wages</td>
+      <td>Note: Annual wages divided by hourly wages</td>
+      <td>Note: Annual wages divided by hourly wages</td>
+      <td>Note: Annual wages divided by hourly wages</td>
+      <td>Note: Annual wages divided by hourly wages</td>
+      <td>Note: Annual wages divided by hourly wages</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sales</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Unnamed: 0</th>
+      <th>id</th>
+      <th>date</th>
+      <th>store_nbr</th>
+      <th>item_nbr</th>
+      <th>unit_sales</th>
+      <th>onpromotion</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>137</td>
+      <td>137</td>
+      <td>2013-01-01</td>
+      <td>25</td>
+      <td>329362</td>
+      <td>1.0</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>167</td>
+      <td>167</td>
+      <td>2013-01-01</td>
+      <td>25</td>
+      <td>378685</td>
+      <td>8.0</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>171</td>
+      <td>171</td>
+      <td>2013-01-01</td>
+      <td>25</td>
+      <td>410257</td>
+      <td>1.0</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>201</td>
+      <td>201</td>
+      <td>2013-01-01</td>
+      <td>25</td>
+      <td>464263</td>
+      <td>2.0</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>225</td>
+      <td>225</td>
+      <td>2013-01-01</td>
+      <td>25</td>
+      <td>514242</td>
+      <td>4.0</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>365</td>
+      <td>365</td>
+      <td>2013-01-01</td>
+      <td>25</td>
+      <td>789905</td>
+      <td>5.0</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>528</td>
+      <td>528</td>
+      <td>2013-01-01</td>
+      <td>25</td>
+      <td>1047756</td>
+      <td>8.0</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>719</td>
+      <td>719</td>
+      <td>2013-01-02</td>
+      <td>1</td>
+      <td>227728</td>
+      <td>7.0</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>823</td>
+      <td>823</td>
+      <td>2013-01-02</td>
+      <td>1</td>
+      <td>329071</td>
+      <td>5.0</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>9</th>
+      <td>824</td>
+      <td>824</td>
+      <td>2013-01-02</td>
+      <td>1</td>
+      <td>329362</td>
+      <td>5.0</td>
+      <td>NaN</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sales</span><span class="o">.</span><span class="n">dtypes</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Unnamed: 0       int64
+id               int64
+date            object
+store_nbr        int64
+item_nbr         int64
+unit_sales     float64
+onpromotion     object
+dtype: object
+</pre></div>
+</div>
+</div>
+</div>
+<ol class="arabic simple" start="6">
+<li><p><strong>Operaciones Avanzadas</strong></p>
+<ul class="simple">
+<li><p>Aplicación de funciones a los datos.</p></li>
+<li><p>Operaciones con fechas y tiempos.</p></li>
+<li><p>Uso de expresiones lambda y apply.</p></li>
+</ul>
+</li>
+</ol>
+<ol class="arabic simple" start="8">
+<li><p><strong>Visualización de Datos con Pandas</strong></p>
+<ul class="simple">
+<li><p>Gráficos básicos con Pandas.</p></li>
+<li><p>Uso de bibliotecas de visualización externas (ej. Matplotlib, Seaborn).</p></li>
+</ul>
+</li>
+</ol>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./old"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+                <footer class="bd-footer-article">
+                  
+<div class="footer-article-items footer-article__inner">
+  
+    <div class="footer-article-item"><!-- Previous / next buttons -->
+<div class="prev-next-area">
+</div></div>
+  
+</div>
+
+                </footer>
+              
+            </div>
+            
+            
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Alejandro Acosta León
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  <p class="copyright">
+    
+      © Copyright 2022.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
