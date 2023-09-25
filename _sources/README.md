@@ -16,7 +16,6 @@
 | **Horas de aprendizaje práctico experimental**      |                                              |
 |             Horas   Aplicación:                     |     64 horas                                 |
 |         Horas de aprendizaje autónomo:              |     32 horas                                 |
-|         Coordinador:                                |     JULIO GALARRAGA                          |
 |         Pre-Requisito:                              |     ESTZ0055-PROBABILIDADES Y ESTADISTICA    |
 |         Co-Requisito:                               |     N/A                                      |
 
@@ -53,7 +52,7 @@
 
 - *(25% de nota final)* **Progreso 1**
     - *(25% de P1)* **Controles semanales y participación:** todas las semanas tendremos micro-controles (5-10 minutos) referentes al material revisado en la clase anterior. Durante las clases se harán preguntas referentes al material de lectura de la clase, los puntos de participación se sumarán a la nota de los controles.
-    - *(25% de P1)* **Taller grupal 1:** a partir de una base de datos de ventas, el grupo deberá generar consultas en SQL para extraer datos y obtener conclusiones sobre las dinámica de una empresa. Deberán explicar dichas conclusiones junto con el código utilizado para llegar a los resultados.
+    - *(25% de P1)* **Taller grupal 1:** usando una base de datos de ventas, el grupo deberá generar consultas en SQL para extraer datos y obtener conclusiones sobre las dinámica de la empresa analizada. Deberán explicar dichas conclusiones junto con el código utilizado para llegar a los resultados.
     - *(50% de P1)* **Examen P1:** temas 1.1 al 3.2
 
 - *(35% de nota final)* **Progreso 2**
