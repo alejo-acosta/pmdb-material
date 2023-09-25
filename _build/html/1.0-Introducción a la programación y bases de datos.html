@@ -335,10 +335,19 @@ document.write(`
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#primero-algunas-definiciones">Primero algunas definiciones</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduccion-a-los-datos-y-su-importancia">1.1. Introducción a los datos y su importancia</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#elementos-de-una-base-de-datos">1.2. Elementos de una base de datos</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduccion-a-los-datos-y-su-importancia">1.1. Introducción a los datos y su importancia</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#veamos-un-ejemplo">Veamos un ejemplo</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#elementos-de-una-base-de-datos">1.2. Elementos de una base de datos</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#tipos-de-datos-mas-comunes">Tipos de datos más comunes</a></li>
+</ul>
+</li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduccion-al-lenguaje-de-consultas-sql">1.3. Introducción al lenguaje de consultas SQL</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sintaxis-basica-de-sql-para-consultas">1.4. Sintaxis básica de SQL para consultas</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sintaxis-basica-de-sql-para-consultas">1.4. Sintaxis básica de SQL para consultas</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ejercicios-consulta-sql">Ejercicios consulta SQL</a></li>
+</ul>
+</li>
 </ul>
             </nav>
         </div>
@@ -355,27 +364,48 @@ document.write(`
 <section id="primero-algunas-definiciones">
 <h2>Primero algunas definiciones<a class="headerlink" href="#primero-algunas-definiciones" title="Permalink to this heading">#</a></h2>
 <p><strong>¿Qué es una base de datos?</strong></p>
-<p>“Una base de datos es una herramienta para recopilar y organizar información. Las bases de datos pueden almacenar información sobre personas, productos, pedidos u otras cosas. Muchas bases de datos comienzan como una lista en una hoja de cálculo o en un programa de procesamiento de texto. A medida que la lista aumenta su tamaño, empiezan a aparecer redundancias e inconsistencias en los datos. Cada vez es más difícil comprender los datos en forma de lista y los métodos de búsqueda o extracción de subconjuntos de datos para revisión son limitados. Una vez que estos problemas comienzan a aparecer, una buena idea es transferir los datos a una base de datos creada con un sistema de administración de bases de datos (DBMS), como Access, MySQL, SQL Server, MariaDB.”</p>
+<p>Es una herramienta para recopilar y organizar información. Las bases de datos pueden almacenar información sobre personas, productos, pedidos u otras cosas. Muchas bases de datos comienzan como una lista en una hoja de cálculo o en un programa de procesamiento de texto. A medida que la lista aumenta su tamaño, empiezan a aparecer redundancias e inconsistencias en los datos. Cada vez es más difícil comprender los datos en forma de lista y los métodos de búsqueda o extracción de subconjuntos de datos para revisión son limitados. Una vez que estos problemas comienzan a aparecer, una buena idea es transferir los datos a una base de datos creada con un sistema de administración de bases de datos (DBMS), como Access, MySQL, SQL Server, MariaDB.</p>
 <p>Tomado de: <a class="reference external" href="https://support.microsoft.com/es-es/office/conceptos-b%C3%A1sicos-sobre-bases-de-datos-a849ac16-07c7-4a31-9948-3c8c94a7c204#__toc257378454">https://support.microsoft.com/es-es/office/conceptos-básicos-sobre-bases-de-datos-a849ac16-07c7-4a31-9948-3c8c94a7c204#__toc257378454</a></p>
-<p><img alt="Alt text" src="ciclo-datos.png" /></p>
+<p><img alt="ciclo_vida" src="_images/ciclo-datos.png" /></p>
 <p><strong>¿Qué es programar?</strong></p>
 <p>La programación, o codificación, es el proceso de emitir una serie de órdenes que un ordenador puede entender y ejecutar para realizar una tarea. Hoy en día, casi todas las investigaciones con algún aspecto cuantitativo implican programación.</p>
 <p>Imaginemos que un ordenador es como un genio especialmente travieso: si nuestras instrucciones no son totalmente inequívocas, el ordenador no hará lo que le pedimos. Por eso escribimos nuestro código, nuestra lista de instrucciones para el ordenador, de forma muy explícita, para asegurarnos de que escribimos lo que queríamos decir y de que el ordenador lo hará de la forma prevista. Pero, al igual que un genio, si consigues que las instrucciones sean las correctas, puedes crear cosas mágicas <em>(Turrell, 2022)</em>.</p>
 </section>
 <section id="introduccion-a-los-datos-y-su-importancia">
 <h2>1.1. Introducción a los datos y su importancia<a class="headerlink" href="#introduccion-a-los-datos-y-su-importancia" title="Permalink to this heading">#</a></h2>
-<p>En los últimos años, la ciencia de los datos se ha convertido en una herramienta de negocios esencial. El acceso a cantidades masivas de datos —gracias a la informática avanzada y la «internet de las cosas»— permite que hoy en día las empresas puedan medir todos los aspectos de sus operaciones hasta el más mínimo detalle. Pero muchos directores de empresa, desbordados por el continuo aluvión de indicadores, vacilan en implicarse en un proceso que consideran de índole técnica.</p>
+<p>En los últimos años, la ciencia de los datos se ha convertido en una herramienta de negocios esencial. El acceso a cantidades masivas de datos —gracias a la informática avanzada y el “internet de las cosas”— permite que hoy en día las empresas puedan medir todos los aspectos de sus operaciones hasta el más mínimo detalle. Pero muchos directores de empresa, desbordados por el continuo aluvión de indicadores, vacilan en implicarse en un proceso que consideran de índole técnica.</p>
 <p>A quién le cabe en la cabeza que un director de finanzas vaya al director ejecutivo y le diga:</p>
 <ul class="simple">
-<li><p>Yo francamente no sé cómo leer un balance, pero tengo a alguien en mi equipo que lo sabe hacer muy bien.
-Lo echaríamos de la sala a carcajadas.</p></li>
+<li><p>“Yo francamente no sé cómo leer un balance, pero tengo a alguien en mi equipo que lo sabe hacer muy bien”</p></li>
 </ul>
-<p>Y sin embargo, yo conozco cantidad de gente en otras disciplinas, como por ejemplo, el marketing, que, sin pensarlo dos veces, irían al director ejecutivo y le dirían:</p>
+<p>Lo echaríamos de la sala a carcajadas. Y sin embargo, yo conozco cantidad de gente en otras disciplinas, como por ejemplo, el marketing, que, sin pensarlo dos veces, irían al director ejecutivo y le dirían:</p>
 <ul class="simple">
 <li><p>“Esto de la analítica es muy complicado. No lo entiendo del todo. Pero he reunido un equipo de auténticos genios de la analítica que nos van a propulsar al siguiente nivel”.</p></li>
 </ul>
 <p>Yo creo que ésta es una respuesta que ya no es aceptable.</p>
 <p>Tomado de: <a class="reference external" href="https://insight.kellogg.northwestern.edu/es/article/a-leaders-guide-to-data-analytics">https://insight.kellogg.northwestern.edu/es/article/a-leaders-guide-to-data-analytics</a></p>
+<hr class="docutils" />
+<p>En resumen, saber como manejar datos mediante la programación nos permite:</p>
+<ul class="simple">
+<li><p>Automatizar procesos: realizar el trabajo de varias personas en unas cuantas (a  veces muchas) líneas de código.</p></li>
+<li><p>Modelar: abstraer un fenómeno del mundo real en una expresión matemática/estadística que nos permita entender y predecir dicho fenómeno.</p></li>
+<li><p>Predecir: a partir del modelo, podemos generar proyecciones que nos ayuden a minimizar el riesgo.</p></li>
+</ul>
+<hr class="docutils" />
+<p>Además, los lenguajes que aprenderemos se encuentran entre los más demandados.</p>
+<p><img alt="prog_lang" src="https://www.uplers.com/wp-content/uploads/2022/03/in-demand-programming-languages.png" /></p>
+<p>Tomado de: <a class="reference external" href="https://insights.stackoverflow.com/survey/2021#most-popular-technologies-language">Stack Overflow</a></p>
+<section id="veamos-un-ejemplo">
+<h3>Veamos un ejemplo<a class="headerlink" href="#veamos-un-ejemplo" title="Permalink to this heading">#</a></h3>
+<p>Se estima que hoy en día la cantidad de datos que el mundo genera es de al rededor de [23 zettabytes]</p>
+<blockquote>
+<div><p>¿Qué es un zettabyte?</p>
+</div></blockquote>
+<p>Imaginemos que deseamos hacer un breve reporte de la tendencia de la cantidad de datos generados en los últimos años, generar un modelo que se ajuste a las observaciones, predecir lo que sucederá hasta el 2027, enviar un boletín a una lista de destinatarios.</p>
+<p><em>Por ahora, no se enfoquen en el código, solo en el proceso.</em></p>
+<ol class="arabic simple">
+<li><p>Inicializamos nuestro ambiente</p></li>
+</ol>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
@@ -390,66 +420,324 @@ Lo echaríamos de la sala a carcajadas.</p></li>
 </div>
 </div>
 </div>
+<ol class="arabic simple" start="2">
+<li><p>Extracción  de datos (webscrapping)</p></li>
+</ol>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">url</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;https://explodingtopics.com/blog/data-generated-per-day&#39;</span><span class="p">)</span>
 <span class="n">df</span>  <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_html</span><span class="p">(</span><span class="n">url</span><span class="o">.</span><span class="n">text</span><span class="p">)[</span><span class="mi">1</span><span class="p">][[</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">]]</span>
 <span class="n">df</span><span class="o">.</span><span class="n">columns</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
 <span class="n">df</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="mi">1</span><span class="p">:]</span>
-<span class="n">df</span><span class="p">[</span><span class="s1">&#39;Year&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;Year&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">str</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">4</span><span class="p">]</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">int</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<ol class="arabic simple" start="3">
+<li><p>Limpieza de datos</p></li>
+</ol>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;Year&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;Year&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">str</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">4</span><span class="p">]</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">int</span><span class="p">)</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;Year&#39;</span><span class="p">]</span> <span class="o">&lt;=</span> <span class="mi">2023</span><span class="p">]</span>
 <span class="n">df</span><span class="p">[</span><span class="s1">&#39;Data Generated&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;Data Generated&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39; &#39;</span><span class="p">,</span> <span class="n">expand</span><span class="o">=</span><span class="kc">True</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">float</span><span class="p">)</span>
 <span class="n">df</span><span class="o">.</span><span class="n">set_index</span><span class="p">(</span><span class="s1">&#39;Year&#39;</span><span class="p">,</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">drop</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<ol class="arabic simple" start="4">
+<li><p>Análisis exploratorio</p></li>
+</ol>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
 
-<span class="n">df</span><span class="o">.</span><span class="n">plot</span><span class="o">.</span><span class="n">area</span><span class="p">(</span><span class="n">alpha</span><span class="o">=</span><span class="mf">0.5</span><span class="p">)</span>
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Data Generated</th>
+    </tr>
+    <tr>
+      <th>Year</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>2010</th>
+      <td>2.0</td>
+    </tr>
+    <tr>
+      <th>2011</th>
+      <td>5.0</td>
+    </tr>
+    <tr>
+      <th>2012</th>
+      <td>6.5</td>
+    </tr>
+    <tr>
+      <th>2013</th>
+      <td>9.0</td>
+    </tr>
+    <tr>
+      <th>2014</th>
+      <td>12.5</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">plot</span><span class="o">.</span><span class="n">area</span><span class="p">(</span><span class="n">alpha</span><span class="o">=</span><span class="mf">0.5</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Data Generated (ZettaBytes)&#39;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">title</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">savefig</span><span class="p">(</span><span class="s1">&#39;./images/data_generated.png&#39;</span><span class="p">,</span> <span class="n">dpi</span><span class="o">=</span><span class="mi">300</span><span class="p">)</span>
+<span class="c1"># plt.savefig(&#39;./images/data_generated.png&#39;, dpi=100)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/7e76f40fc88374b33ff62c024de59746fc1de5f6edb08822b33e864abd43d786.png" src="_images/7e76f40fc88374b33ff62c024de59746fc1de5f6edb08822b33e864abd43d786.png" />
+<img alt="_images/2343bbbfbce4bc5af6b8313c0ca87b49934d8e3dda7a97ad8a324e3f25fd7c28.png" src="_images/2343bbbfbce4bc5af6b8313c0ca87b49934d8e3dda7a97ad8a324e3f25fd7c28.png" />
 </div>
 </div>
+<ol class="arabic simple" start="5">
+<li><p>Modelamiento</p></li>
+</ol>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># fit line to data</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">values</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;Data Generated&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">values</span>
+
+<span class="n">m</span><span class="p">,</span> <span class="n">b</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">polyfit</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="n">y</span><span class="p">),</span> <span class="mi">1</span><span class="p">)</span>
+
+<span class="c1"># plot data</span>
+<span class="n">df</span><span class="o">.</span><span class="n">plot</span><span class="o">.</span><span class="n">area</span><span class="p">(</span><span class="n">alpha</span><span class="o">=</span><span class="mf">0.5</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Data Generated (ZettaBytes)&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">title</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
+<span class="n">x_pred</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">2010</span><span class="p">,</span> <span class="mi">2029</span><span class="p">)</span>
+<span class="n">y_pred</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="n">m</span><span class="o">*</span><span class="n">x_pred</span> <span class="o">+</span> <span class="n">b</span><span class="p">)</span>
+<span class="n">df_pred</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span><span class="s1">&#39;Fcst&#39;</span><span class="p">:</span> <span class="n">y_pred</span><span class="p">},</span> <span class="n">index</span><span class="o">=</span><span class="n">x_pred</span><span class="p">)</span>
+<span class="n">df_pred</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span><span class="n">df_pred</span><span class="p">,</span> <span class="n">how</span><span class="o">=</span><span class="s1">&#39;outer&#39;</span><span class="p">,</span> <span class="n">left_index</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">right_index</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x_pred</span><span class="p">,</span> <span class="n">y_pred</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Fit&#39;</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;--&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xticks</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">2010</span><span class="p">,</span> <span class="mi">2029</span><span class="p">,</span> <span class="mi">2</span><span class="p">),</span> <span class="n">rotation</span><span class="o">=</span><span class="mi">45</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">ylim</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">600</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">savefig</span><span class="p">(</span><span class="s1">&#39;./images/data_generated_fit.png&#39;</span><span class="p">,</span> <span class="n">dpi</span><span class="o">=</span><span class="mi">100</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/ffbfb4cd2e705dcbabd7d461a457e078e0a35f076b7fa15c695abeb9302cdeaa.png" src="_images/ffbfb4cd2e705dcbabd7d461a457e078e0a35f076b7fa15c695abeb9302cdeaa.png" />
+</div>
+</div>
+<ol class="arabic simple" start="6">
+<li><p>Reportería (BI)</p></li>
+</ol>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mail</span> <span class="o">=</span> <span class="n">win32</span><span class="o">.</span><span class="n">Dispatch</span><span class="p">(</span><span class="s1">&#39;outlook.application&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">CreateItem</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
 <span class="n">mail</span><span class="o">.</span><span class="n">Bcc</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;listado.txt&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">read</span><span class="p">()</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">,</span> <span class="s1">&#39;; &#39;</span><span class="p">)</span>
 <span class="n">mail</span><span class="o">.</span><span class="n">Subject</span> <span class="o">=</span> <span class="sa">f</span><span class="s1">&#39;Cantidad de datos generados por año&#39;</span>
 <span class="n">mail</span><span class="o">.</span><span class="n">HTMLBody</span> <span class="o">=</span> <span class="sa">fr</span><span class="s1">&#39;&#39;&#39;</span>
-<span class="s1">&lt;html&gt;</span>
-<span class="s1">  &lt;head&gt;&lt;/head&gt;</span>
-<span class="s1">    &lt;body&gt;</span>
-<span class="s1">        Hola alumnos, &lt;br&gt;</span>
-<span class="s1">        &lt;p&gt;Les comparto la cantidad de datos generados por año&lt;/p&gt;</span>
-<span class="s1">        &lt;br&gt;</span>
-<span class="s1">        </span><span class="si">{</span><span class="n">df</span><span class="o">.</span><span class="n">to_html</span><span class="p">()</span><span class="si">}</span>
-<span class="s1">        &lt;br&gt;</span>
-<span class="s1">        &lt;img src=&quot;C:\Users\Alejo\OneDrive - Universidad de Las Américas\UDLA\pmdb\pmdb-material\images\data_generated.png&quot;&gt;</span>
-<span class="s1">        &lt;br&gt;</span>
-<span class="s1">        Fuente: &lt;a href=&quot;https://explodingtopics.com/blog/data-generated-per-day&quot;&gt;Exploding Topics&lt;/a&gt;</span>
-<span class="s1">        &lt;br&gt;</span>
-<span class="s1">        &lt;p&gt;Saludos,&lt;/p&gt;</span>
-<span class="s1">        &lt;p&gt;Alejo&lt;/p&gt;</span>
-<span class="s1">    &lt;/body&gt;</span>
-<span class="s1">&lt;/html&gt;</span>
+<span class="s1">&lt;html&gt; &lt;head&gt;&lt;/head&gt;&lt;body&gt;</span>
+<span class="s1">  Hola tod@s, &lt;br&gt;</span>
+<span class="s1">  &lt;p&gt;Les comparto la cantidad de datos generados por año:&lt;/p&gt; &lt;br&gt;</span>
+<span class="s1">  </span><span class="si">{</span><span class="n">df_pred</span><span class="o">.</span><span class="n">reset_index</span><span class="p">()</span><span class="o">.</span><span class="n">to_html</span><span class="p">(</span><span class="n">index</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span><span class="si">}</span><span class="s1">&lt;br&gt;</span>
+<span class="s1">  &lt;img src=&quot;https://raw.githubusercontent.com/alejo-acosta/pmdb-material/master/images/data_generated_fit.png&quot;&gt;</span>
+<span class="s1">  &lt;br&gt;</span>
+<span class="s1">  Fuente: &lt;a href=&quot;https://explodingtopics.com/blog/data-generated-per-day&quot;&gt;Exploding Topics&lt;/a&gt;</span>
+<span class="s1">  &lt;br&gt;&lt;p&gt;Saludos,&lt;/p&gt;</span>
+<span class="s1">&lt;p&gt;Alejo&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</span>
 <span class="s1">&#39;&#39;&#39;</span>
-<span class="k">if</span> <span class="kc">False</span><span class="p">:</span> <span class="n">mail</span><span class="o">.</span><span class="n">Send</span><span class="p">()</span>
+<span class="k">if</span> <span class="kc">True</span><span class="p">:</span> <span class="n">mail</span><span class="o">.</span><span class="n">Send</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
 </div>
-<p>df</p>
+</section>
 </section>
 <section id="elementos-de-una-base-de-datos">
 <h2>1.2. Elementos de una base de datos<a class="headerlink" href="#elementos-de-una-base-de-datos" title="Permalink to this heading">#</a></h2>
+<ul class="simple">
+<li><p>Tabla: es análogo a una hoja de cálculo ya que los datos se almacenan en filas y columnas.</p>
+<ul>
+<li><p>Las <strong>filas</strong>, también llamados registros, representan la unidad de observación de la cual queremos almacenar información.</p></li>
+<li><p>Las <strong>columnas</strong>, también llamados campos, representan las características de dicha unidad de observación. Cada campo solo podrá contener un tipo de datos y usualmente uno (o más campos) representan una clave principal, es decir un identificador único que no podrá repetirse.</p></li>
+</ul>
+</li>
+</ul>
+<section id="tipos-de-datos-mas-comunes">
+<h3>Tipos de datos más comunes<a class="headerlink" href="#tipos-de-datos-mas-comunes" title="Permalink to this heading">#</a></h3>
+<ul class="simple">
+<li><p>INT, TINYINT, BIGINT: Número entero.</p></li>
+<li><p>FLOAT: Número decimal.</p></li>
+<li><p>CHAR, VARCHAR, TEXT, STR: texto (string).</p></li>
+<li><p>BINARY, BIT: variable dicotómica (0/1).</p></li>
+<li><p>DATE, TIME: fecha u hora.</p></li>
+</ul>
+</section>
+<ul class="simple">
+<li><p>Formulario: es la interfaz mediante la cual se ingresan los datos.</p></li>
+<li><p>Informe: se usan para dar formato a los datos, resumirlos y presentarlos.</p>
+<ul>
+<li><p>Vista: es una tabla virtual, no existe físicamente dentro de la base de datos.</p></li>
+</ul>
+</li>
+<li><p>Consulta: sirven para realizar muchas funciones en una base de datos. La más común es recuperar datos específicos de las tablas.</p></li>
+</ul>
+<p>Tomado de: <a class="reference external" href="https://support.microsoft.com/es-es/office/conceptos-b%C3%A1sicos-sobre-bases-de-datos-a849ac16-07c7-4a31-9948-3c8c94a7c204">Conceptos básicos sobre bases de datos.</a></p>
+<blockquote>
+<div><p><strong>Ejercicio:</strong> identifiquemos algunos de los elementos revisados para los siguientes casos.</p>
+<ul class="simple">
+<li><p>Una base de datos de clientes.</p></li>
+<li><p>Una base de datos de facturación.</p></li>
+<li><p>Una base de datos notas de alumnos.</p></li>
+</ul>
+</div></blockquote>
 </section>
 <section id="introduccion-al-lenguaje-de-consultas-sql">
 <h2>1.3. Introducción al lenguaje de consultas SQL<a class="headerlink" href="#introduccion-al-lenguaje-de-consultas-sql" title="Permalink to this heading">#</a></h2>
+<p>En éste punto, vamos a comenzar a programar. Para ello usaremos una herramienta en línea <a class="reference external" href="https://www.sql-practice.com/">www.sql-practice.com</a>.</p>
+<p>Otro recurso valioso para aprender el lenguaje es <a class="reference external" href="https://www.w3schools.com/sql/">w3schools</a>.</p>
+<p>SQL (standard query language) es un lenguaje para almacenar, manipular y recuperar datos en bases de datos.</p>
+<p>A pesar de que es un lenguaje “estándar” existen variantes que a veces complican, el que veremos aquí aprenderemos la variante más común que sirve en: MySQL, SQL Server, MS Access, Oracle, Sybase, Informix, Postgres.</p>
 </section>
 <section id="sintaxis-basica-de-sql-para-consultas">
 <h2>1.4. Sintaxis básica de SQL para consultas<a class="headerlink" href="#sintaxis-basica-de-sql-para-consultas" title="Permalink to this heading">#</a></h2>
+<p>La sintaxis básica de SQL para realizar consultas tiene 6 elementos:</p>
+<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span><span class="w"> </span><span class="n">campo_1</span><span class="p">,</span><span class="w"> </span><span class="n">campo_2</span><span class="p">,</span><span class="w"> </span><span class="n">campo_3</span><span class="w">  </span>
+<span class="k">FROM</span><span class="w"> </span><span class="n">tabla_1</span>
+<span class="k">JOIN</span><span class="w"> </span><span class="n">tabla_2</span>
+<span class="k">WHERE</span><span class="w"> </span><span class="n">condición_1</span><span class="p">,</span><span class="w"> </span><span class="n">condición_2</span><span class="p">,</span><span class="w"> </span><span class="n">condición_3</span><span class="w"> </span>
+<span class="k">GROUP</span><span class="w"> </span><span class="k">BY</span><span class="w"> </span><span class="n">grupo_1</span><span class="p">,</span><span class="w"> </span><span class="n">grupo_2</span><span class="p">,</span><span class="w"> </span><span class="n">grupo_3</span>
+<span class="k">ORDER</span><span class="w"> </span><span class="k">BY</span><span class="w"> </span><span class="n">columna_1</span><span class="p">,</span><span class="w"> </span><span class="n">columna_2</span><span class="p">,</span><span class="w"> </span><span class="n">columna_3</span><span class="w">  </span>
+</pre></div>
+</div>
+<blockquote>
+<div><p>SQL es indiferente a mayúsculas y minúsculas (case insensitive)</p>
+</div></blockquote>
+<p>Se puede usar un * para seleccionar todos los campos, y el comando LIMIT para seleccionar los n primeros registros.</p>
+<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span><span class="w"> </span><span class="o">*</span><span class="w">  </span>
+<span class="k">FROM</span><span class="w"> </span><span class="n">tabla_1</span>
+<span class="k">LIMIT</span><span class="w"> </span><span class="mi">10</span>
+</pre></div>
+</div>
+<p>Veamos algunos ejemplos utilizando la base de hospitales en <a class="reference external" href="https://www.sql-practice.com/">www.sql-practice.com</a>.</p>
+<p>Seleccionar los 10 primeros pacientes:</p>
+<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span><span class="w"> </span><span class="o">*</span>
+<span class="k">FROM</span><span class="w"> </span><span class="n">patients</span>
+<span class="k">LIMIT</span><span class="w"> </span><span class="mi">10</span>
+</pre></div>
+</div>
+<p>Seleccionar los 10 primeros pacientes de género masculino:</p>
+<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">patients</span><span class="w"> </span><span class="k">WHERE</span><span class="w"> </span><span class="n">gender</span><span class="o">=</span><span class="s1">&#39;M&#39;</span><span class="w"> </span><span class="k">LIMIT</span><span class="w"> </span><span class="mi">10</span>
+</pre></div>
+</div>
+<p>Seleccionar los 10 primeros pacientes que pesan entre 100 y 120:</p>
+<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">patients</span><span class="w"> </span><span class="k">WHERE</span><span class="w"> </span><span class="n">weight</span><span class="o">&gt;=</span><span class="mi">100</span><span class="w"> </span><span class="k">AND</span><span class="w"> </span><span class="n">weight</span><span class="o">&lt;=</span><span class="mi">120</span><span class="w"> </span><span class="k">LIMIT</span><span class="w"> </span><span class="mi">10</span>
+</pre></div>
+</div>
+<p>Seleccionar solo campos específicos:</p>
+<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span><span class="w"> </span><span class="n">patient_id</span><span class="p">,</span><span class="w"> </span><span class="n">first_name</span><span class="p">,</span><span class="w"> </span><span class="n">last_name</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">patients</span><span class="w"> </span><span class="k">LIMIT</span><span class="w"> </span><span class="mi">10</span>
+</pre></div>
+</div>
+<p>Usar aliases para las columnas:</p>
+<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span>
+<span class="w">    </span><span class="n">patient_id</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">identificación</span><span class="p">,</span>
+<span class="w">    </span><span class="n">first_name</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">nombre</span><span class="p">,</span>
+<span class="w">    </span><span class="n">last_name</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">apellido</span>
+<span class="k">FROM</span><span class="w"> </span><span class="n">patients</span>
+<span class="k">LIMIT</span><span class="w"> </span><span class="mi">10</span>
+</pre></div>
+</div>
+<p>Podemos resumir las tablas con algunos comandos, por ejemplo:</p>
+<ul class="simple">
+<li><p>Seleccionar elementos únicos:</p></li>
+</ul>
+<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span><span class="w"> </span><span class="k">DISTINCT</span><span class="w"> </span><span class="n">city</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">patients</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>Realizar operaciones aritméticas:</p></li>
+</ul>
+<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span><span class="w"> </span>
+<span class="w">    </span><span class="o">*</span><span class="p">,</span>
+<span class="w">    </span><span class="n">weight</span><span class="o">/</span><span class="n">POWER</span><span class="p">(</span><span class="n">height</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span><span class="o">*</span><span class="mi">10000</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">bmi</span>
+<span class="k">FROM</span><span class="w"> </span><span class="n">patients</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>Realizar cálculos con columnas</p></li>
+</ul>
+<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span><span class="w"> </span><span class="k">COUNT</span><span class="p">(</span><span class="n">first_name</span><span class="p">)</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">patients</span>
+</pre></div>
+</div>
+<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span><span class="w"> </span><span class="k">AVG</span><span class="p">(</span><span class="n">height</span><span class="p">)</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">patients</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>Todo ésto se puede hacer agrupando por algun campo:</p></li>
+</ul>
+<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span><span class="w"> </span><span class="n">gender</span><span class="p">,</span><span class="w"> </span><span class="k">avg</span><span class="p">(</span><span class="n">height</span><span class="p">)</span><span class="w"> </span><span class="k">from</span><span class="w"> </span><span class="n">patients</span><span class="w"> </span><span class="k">group</span><span class="w"> </span><span class="k">by</span><span class="w"> </span><span class="n">gender</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>Unir texto:</p></li>
+</ul>
+<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span>
+<span class="n">CONCAT</span><span class="p">(</span><span class="n">first_name</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39; &#39;</span><span class="p">,</span><span class="w"> </span><span class="n">last_name</span><span class="p">)</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="n">nombre_completo</span>
+<span class="k">FROM</span><span class="w"> </span><span class="n">patients</span>
+<span class="k">LIMIT</span><span class="w"> </span><span class="mi">10</span><span class="w">  </span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>Extraer pedazos de texto:</p></li>
+</ul>
+<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span>
+<span class="k">SUBSTRING</span><span class="p">(</span><span class="n">first_name</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">)</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="n">inicial_nombre</span><span class="p">,</span>
+<span class="k">SUBSTRING</span><span class="p">(</span><span class="n">last_name</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">)</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="n">inicial_apellido</span>
+<span class="k">FROM</span><span class="w"> </span><span class="n">patients</span>
+<span class="k">LIMIT</span><span class="w"> </span><span class="mi">10</span><span class="w">  </span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>También se puede hacer una consulta dentro de otra consulta:</p></li>
+</ul>
+<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span><span class="w"> </span><span class="n">first_name</span><span class="p">,</span><span class="w"> </span><span class="n">last_name</span><span class="p">,</span><span class="w"> </span><span class="n">height</span><span class="w"> </span>
+<span class="k">FROM</span><span class="w"> </span><span class="n">patients</span>
+<span class="k">WHERE</span><span class="w"> </span><span class="n">height</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="k">SELECT</span><span class="w"> </span><span class="k">MAX</span><span class="p">(</span><span class="n">height</span><span class="p">)</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">patients</span><span class="p">)</span>
+</pre></div>
+</div>
+<section id="ejercicios-consulta-sql">
+<h3>Ejercicios consulta SQL<a class="headerlink" href="#ejercicios-consulta-sql" title="Permalink to this heading">#</a></h3>
+<ul class="simple">
+<li><p>Seleccionar nombres únicos que comiencen con la letra “C”.</p></li>
+<li><p>Seleccionar a la persona con mayor peso.</p></li>
+<li><p>Obtener una altura promedio por ciudad y ordenarlo.</p></li>
+</ul>
+</section>
 </section>
 </section>
 
@@ -512,10 +800,19 @@ Lo echaríamos de la sala a carcajadas.</p></li>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#primero-algunas-definiciones">Primero algunas definiciones</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduccion-a-los-datos-y-su-importancia">1.1. Introducción a los datos y su importancia</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#elementos-de-una-base-de-datos">1.2. Elementos de una base de datos</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduccion-a-los-datos-y-su-importancia">1.1. Introducción a los datos y su importancia</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#veamos-un-ejemplo">Veamos un ejemplo</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#elementos-de-una-base-de-datos">1.2. Elementos de una base de datos</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#tipos-de-datos-mas-comunes">Tipos de datos más comunes</a></li>
+</ul>
+</li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduccion-al-lenguaje-de-consultas-sql">1.3. Introducción al lenguaje de consultas SQL</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sintaxis-basica-de-sql-para-consultas">1.4. Sintaxis básica de SQL para consultas</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sintaxis-basica-de-sql-para-consultas">1.4. Sintaxis básica de SQL para consultas</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ejercicios-consulta-sql">Ejercicios consulta SQL</a></li>
+</ul>
+</li>
 </ul>
   </nav></div>
 
