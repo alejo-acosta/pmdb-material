@@ -3,6 +3,7 @@ format: jb-book
 root: README.md
 chapters:
 - file: 1.0-Introducción a la programación y bases de datos.ipynb
+- file: 2.0-Bases de datos relacionales.ipynb
 # - file: 2.0-sintaxis-variables-operadores.ipynb
 # - file: 3.0-librerias.ipynb
 # - file: 4.0. Pandas.ipynb
