@@ -64,6 +64,7 @@ const thebe_selector_output = ".output, .cell_output"
     <script>DOCUMENTATION_OPTIONS.pagename = '1.0-Introducción a la programación y bases de datos';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="UNIDAD 2: Bases de datos relacionales" href="2.0-Bases%20de%20datos%20relacionales.html" />
     <link rel="prev" title="Introducción" href="README.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
@@ -157,6 +158,7 @@ const thebe_selector_output = ".output, .cell_output"
         </ul>
         <ul class="current nav bd-sidenav">
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">UNIDAD 1: Introducción a la programación y bases de datos.</a></li>
+<li class="toctree-l1"><a class="reference internal" href="2.0-Bases%20de%20datos%20relacionales.html">UNIDAD 2: Bases de datos relacionales</a></li>
 </ul>
 
     </div>
@@ -390,7 +392,7 @@ document.write(`
 <ul class="simple">
 <li><p>Automatizar procesos: realizar el trabajo de varias personas en unas cuantas (a  veces muchas) líneas de código.</p></li>
 <li><p>Modelar: abstraer un fenómeno del mundo real en una expresión matemática/estadística que nos permita entender y predecir dicho fenómeno.</p></li>
-<li><p>Predecir: a partir del modelo, podemos generar proyecciones que nos ayuden a minimizar el riesgo.</p></li>
+<li><p>Predecir: a partir del modelo, podemos generar proyecciones que nos ayuden a maximizar un beneficio o minimizar un riesgo.</p></li>
 </ul>
 <hr class="docutils" />
 <p>Además, los lenguajes que aprenderemos se encuentran entre los más demandados.</p>
@@ -580,11 +582,15 @@ document.write(`
 </section>
 <section id="elementos-de-una-base-de-datos">
 <h2>1.2. Elementos de una base de datos<a class="headerlink" href="#elementos-de-una-base-de-datos" title="Permalink to this heading">#</a></h2>
+<p>Primero, algunas definiciones más técnicas sobre una base de datos:</p>
+<p><img alt="Base de datos" src="https://www.csestack.org/wp-content/uploads/2017/08/Difference-Between-Database-and-Database-Management-System.png" /><br />
+Nota: APP=application, API=application programming interface.<br />
+Tomado de: <a class="reference external" href="https://www.csestack.org/difference-database-database-management-system-dbms/">csestack</a>.</p>
 <ul class="simple">
 <li><p>Tabla: es análogo a una hoja de cálculo ya que los datos se almacenan en filas y columnas.</p>
 <ul>
-<li><p>Las <strong>filas</strong>, también llamados registros, representan la unidad de observación de la cual queremos almacenar información.</p></li>
-<li><p>Las <strong>columnas</strong>, también llamados campos, representan las características de dicha unidad de observación. Cada campo solo podrá contener un tipo de datos y usualmente uno (o más campos) representan una clave principal, es decir un identificador único que no podrá repetirse.</p></li>
+<li><p>Las <strong>filas</strong>, también llamados <strong>registros</strong>, representan la unidad de observación de la cual queremos almacenar información.</p></li>
+<li><p>Las <strong>columnas</strong>, también llamados <strong>campos</strong>, representan las características de dicha unidad de observación. Cada campo solo podrá contener un tipo de datos y usualmente uno (o más campos) representan una clave principal, es decir un identificador único que no podrá repetirse.</p></li>
 </ul>
 </li>
 </ul>
@@ -635,6 +641,7 @@ document.write(`
 <span class="k">ORDER</span><span class="w"> </span><span class="k">BY</span><span class="w"> </span><span class="n">columna_1</span><span class="p">,</span><span class="w"> </span><span class="n">columna_2</span><span class="p">,</span><span class="w"> </span><span class="n">columna_3</span><span class="w">  </span>
 </pre></div>
 </div>
+<p>De los cuales los dos primeros son imprescindibles. No puede haber una consulta sin un <em>SELECT</em> y un <em>FROM</em>.</p>
 <blockquote>
 <div><p>SQL es indiferente a mayúsculas y minúsculas (case insensitive)</p>
 </div></blockquote>
@@ -736,6 +743,7 @@ document.write(`
 <li><p>Seleccionar nombres únicos que comiencen con la letra “C”.</p></li>
 <li><p>Seleccionar a la persona con mayor peso.</p></li>
 <li><p>Obtener una altura promedio por ciudad y ordenarlo.</p></li>
+<li><p>¿Cuál es la proporción de pacientes alérgicos?</p></li>
 </ul>
 </section>
 </section>
@@ -780,6 +788,15 @@ document.write(`
         <p class="prev-next-subtitle">previous</p>
         <p class="prev-next-title">Introducción</p>
       </div>
+    </a>
+    <a class="right-next"
+       href="2.0-Bases%20de%20datos%20relacionales.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">UNIDAD 2: Bases de datos relacionales</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
     </a>
 </div></div>
   
