@@ -345,7 +345,12 @@ document.write(`
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#teoria-de-conjuntos">Teoría de conjuntos</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#uniones-e-intersecciones-join-append">2.3. Uniones e intersecciones (join, append)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#uniones-e-intersecciones-join-append">2.3. Uniones e intersecciones (join, append)</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#union">UNION</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#join">JOIN</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#taller">Taller</a></li>
+</ul>
+</li>
 </ul>
             </nav>
         </div>
@@ -554,6 +559,61 @@ Un conjunto es una colección de elementos. Por ejemplo:</p>
 </section>
 <section id="uniones-e-intersecciones-join-append">
 <h2>2.3. Uniones e intersecciones (join, append)<a class="headerlink" href="#uniones-e-intersecciones-join-append" title="Permalink to this heading">#</a></h2>
+<p>Es posible combinar tablas en SQL usando los operadores de conjuntos. Ésto se hace usando las cláusulas <strong>JOIN</strong> y <strong>UNION</strong>.</p>
+<section id="union">
+<h3>UNION<a class="headerlink" href="#union" title="Permalink to this heading">#</a></h3>
+<p>También llamado <strong>append</strong>. Devuelve un conjunto con todos los elementos de los conjuntos que se están uniendo. Usualmente se utilizan para unir tablas con la misma estructura.</p>
+<p>Por ejemplo, utilizando el ejemplo de la base hospital.db, si quisiéramos obtener un listado de todos los pacientes y doctores podríamos hacer lo siguiente:</p>
+<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span><span class="w"> </span>
+<span class="w">    </span><span class="n">CONCAT</span><span class="p">(</span><span class="n">first_name</span><span class="p">,</span><span class="s1">&#39; &#39;</span><span class="p">,</span><span class="n">last_name</span><span class="p">)</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">Nombre</span><span class="p">,</span>
+<span class="w">    </span><span class="ss">&quot;Paciente&quot;</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">Cargo</span>
+<span class="k">FROM</span><span class="w"> </span><span class="n">patients</span>
+<span class="k">UNION</span>
+<span class="k">SELECT</span>
+<span class="w">    </span><span class="n">CONCAT</span><span class="p">(</span><span class="n">first_name</span><span class="p">,</span><span class="s1">&#39; &#39;</span><span class="p">,</span><span class="n">last_name</span><span class="p">)</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">Nombre</span><span class="p">,</span>
+<span class="w">    </span><span class="ss">&quot;Doctor&quot;</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">Cargo</span>
+<span class="k">FROM</span><span class="w"> </span><span class="n">doctors</span>
+</pre></div>
+</div>
+<p>En éste caso parte de la estructura de la tabla es similar, por lo que podemos unir los resultados de ambas consultas.</p>
+</section>
+<section id="join">
+<h3>JOIN<a class="headerlink" href="#join" title="Permalink to this heading">#</a></h3>
+<p>También llamado <strong>merge</strong> o <strong>concatenate</strong>. Devuelve variables que están en diferentes tablas. Usualmente se utilizan para unir tablas con diferente estructura.</p>
+<p>Siempre se requiere especificar la condición de la union.</p>
+<p>Existen diferentes tipos de JOINS dependiendo de la relación que se quiera obtener:</p>
+<p align="left">
+  <img src="https://miro.medium.com/v2/resize:fit:1400/0*rFMChX4SAmQ9RzF9.png" alt="" width="700"/> <br>
+</p><p>Gráficamente se verían de las siguiente forma:</p>
+<p align="left">
+  <img src="https://dataschool.com/assets/images/how-to-teach-people-sql/sqlJoins/sqlJoins_7.png" alt="" width="700"/> <br>
+</p>
+<p>Tomado de: <a class="reference external" href="https://dataschool.com/how-to-teach-people-sql/sql-join-types-explained-visually/">DataSchool</a></p>
+<p>Veamos algunos ejemplos utilizando la base de datos <a class="reference external" href="https://www.sql-practice.com/">hospital.db</a>:</p>
+<p>Obtengamos el nombre de la provincia en la tabla pacientes:</p>
+<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span><span class="w"> </span>
+<span class="w">    </span><span class="n">A</span><span class="p">.</span><span class="o">*</span><span class="p">,</span>
+<span class="w">    </span><span class="n">B</span><span class="p">.</span><span class="n">province_name</span>
+<span class="k">FROM</span><span class="w"> </span><span class="n">patients</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">A</span>
+<span class="k">LEFT</span><span class="w"> </span><span class="k">JOIN</span><span class="w"> </span><span class="n">province_names</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">B</span><span class="w"> </span><span class="k">ON</span><span class="w"> </span><span class="n">A</span><span class="p">.</span><span class="n">province_id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">B</span><span class="p">.</span><span class="n">province_id</span>
+</pre></div>
+</div>
+</section>
+<section id="taller">
+<h3>Taller<a class="headerlink" href="#taller" title="Permalink to this heading">#</a></h3>
+<p>Ahora vamos a pasar a usar una base más compleja, la base de datos <a class="reference external" href="https://www.sql-practice.com/">nordwind.db</a>.</p>
+<p>Han sido nombrados CEO de la empresa NordWind. El directorio de la empresa le pide que realice una presentación de las su plan de acción de corto plazo para familiarizarse con el negocio.</p>
+<ul class="simple">
+<li><p>Su primera tarea es preparar una agenda de reuniones con el equipo a su cargo ¿Con quienes se debería reunir y en que orden?</p></li>
+<li><p>Segundo, deberá reunirse con los clientes más importantes ¿Quienes son y cómo priorizaría las reuniones?</p></li>
+<li><p>Tercero, deberá reunirse con los proveedores más importantes ¿Quienes son y cómo priorizaría las reuniones?</p></li>
+<li><p>Cuarto, deberá proponer al menos una estrategia de ventas ¿En qué productos se enfocaría y por qué?</p></li>
+<li><p>Quinto, deberá proponer al menos una estrategia de operaciones ¿Tenemos productos con problemas de inventario, cómo lo solucionamos?</p></li>
+<li><p>Por último, para la <em>milla extra</em> podrá proponer cualquier otro asunto que considere importante.</p></li>
+</ul>
+<p>El directorio le ha dado 10 minutos para presentar su plan de acción, más de eso y seguramente tendrá una penalización en su evaluación de desempeño anual.</p>
+<p>Además, debera generar un archivo con todas las consultas SQL en caso de que un auditor quiera revisar su trabajo.</p>
+</section>
 </section>
 </section>
 
@@ -625,7 +685,12 @@ Un conjunto es una colección de elementos. Por ejemplo:</p>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#teoria-de-conjuntos">Teoría de conjuntos</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#uniones-e-intersecciones-join-append">2.3. Uniones e intersecciones (join, append)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#uniones-e-intersecciones-join-append">2.3. Uniones e intersecciones (join, append)</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#union">UNION</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#join">JOIN</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#taller">Taller</a></li>
+</ul>
+</li>
 </ul>
   </nav></div>
 
