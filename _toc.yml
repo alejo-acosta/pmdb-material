@@ -4,11 +4,14 @@ root: README.md
 chapters:
 - file: 1.0-Introducción a la programación y bases de datos.ipynb
 - file: 2.0-Bases de datos relacionales.ipynb
+- file: 3.1-Intro a Python.md
+- file: 3.2-jupyter.ipynb
+- file: 3.3-sintaxis.ipynb
 # - file: 2.0-sintaxis-variables-operadores.ipynb
 # - file: 3.0-librerias.ipynb
 # - file: 4.0. Pandas.ipynb
 # - file: 5.0.Modelos-y-regresiones.ipynb
-# - file: 9.0-curva-indiferencia.ipynb
-# - file: 9.1-simulacion-shock-mercado.ipynb
-# - file: 9.2-simulacion-gini.ipynb
-# - file: 9.3-var.ipynb
+- file: 9.0-curva-indiferencia.ipynb
+- file: 9.1-simulacion-shock-mercado.ipynb
+- file: 9.2-simulacion-gini.ipynb
+- file: 9.3-var.ipynb

@@ -157,6 +157,14 @@ const thebe_selector_output = ".output, .cell_output"
         <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../1.0-Introducci%C3%B3n%20a%20la%20programaci%C3%B3n%20y%20bases%20de%20datos.html">UNIDAD 1: Introducción a la programación y bases de datos.</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../2.0-Bases%20de%20datos%20relacionales.html">UNIDAD 2: Bases de datos relacionales</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../3.1-Intro%20a%20Python.html">UNIDAD 3.1 Programación en Python para el manejo de datos</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../3.2-jupyter.html">UNIDAD 3.2 Jupyter notebooks</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="../3.3-sintaxis.html">UNIDAD 3.2 Sintaxis, variables y operadores</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../9.0-curva-indiferencia.html">Ejemplo: Curvas de indiferencia</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../9.1-simulacion-shock-mercado.html">Ejemplo: Simulación Shocks oferta y demanda</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../9.2-simulacion-gini.html">Ejemplo: Simulación Gini</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../9.3-var.html">Vector Autoregression</a></li>
 </ul>
 
     </div>
@@ -549,16 +557,16 @@ Requirement already satisfied: six&gt;=1.5 in c:\users\alejo\appdata\local\progr
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[87, 23, 72, 96, 10, 67, 65, 99,  7, 54],
-       [40, 83, 59, 58, 49, 34, 89, 62, 80, 71],
-       [ 1, 17, 49, 10, 39, 89, 95, 74, 68, 43],
-       [91, 28, 45, 64, 47,  7, 40,  2, 82, 58],
-       [ 8, 68, 24, 35,  2, 73,  3, 73, 80, 41],
-       [67, 28, 57, 45, 20, 28, 90, 34, 68, 55],
-       [97, 58, 46, 73, 72, 28, 39, 81, 61, 43],
-       [46, 92, 77, 41, 56, 99, 28, 64, 89, 97],
-       [ 5, 34, 49, 36, 91, 42, 81, 11, 30, 74],
-       [84, 98, 61, 20,  9, 66, 76,  2, 56, 71]])
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[82, 98, 89, 77, 56, 59,  9, 45, 74, 19],
+       [98, 49, 60, 45, 69, 67, 85, 82, 23, 95],
+       [71, 89,  1, 53, 28, 81, 53, 24, 98, 38],
+       [63, 57,  1, 80, 19, 32, 82, 30, 61, 22],
+       [99, 55, 18, 90, 40, 18, 93, 95, 29, 55],
+       [99, 75, 31, 73, 51, 91, 70, 52, 90, 41],
+       [58, 23, 19, 57, 89, 27, 60, 27, 69, 55],
+       [15, 48, 19, 75, 50,  6, 52, 75, 48, 17],
+       [16, 66, 93, 64, 91, 13, 41, 55, 18, 98],
+       [47, 51, 61, 86, 22, 24, 10, 15, 31,  7]])
 </pre></div>
 </div>
 </div>
@@ -616,133 +624,133 @@ Requirement already satisfied: six&gt;=1.5 in c:\users\alejo\appdata\local\progr
   <tbody>
     <tr>
       <th>0</th>
-      <td>81</td>
-      <td>20</td>
-      <td>65</td>
-      <td>42</td>
-      <td>87</td>
+      <td>48</td>
+      <td>59</td>
       <td>91</td>
-      <td>88</td>
-      <td>30</td>
-      <td>40</td>
-      <td>13</td>
+      <td>38</td>
+      <td>97</td>
+      <td>92</td>
+      <td>7</td>
+      <td>41</td>
+      <td>97</td>
+      <td>65</td>
     </tr>
     <tr>
       <th>1</th>
-      <td>3</td>
-      <td>60</td>
-      <td>95</td>
-      <td>19</td>
-      <td>24</td>
-      <td>62</td>
-      <td>53</td>
-      <td>92</td>
-      <td>86</td>
-      <td>52</td>
+      <td>67</td>
+      <td>55</td>
+      <td>32</td>
+      <td>39</td>
+      <td>83</td>
+      <td>35</td>
+      <td>97</td>
+      <td>84</td>
+      <td>50</td>
+      <td>18</td>
     </tr>
     <tr>
       <th>2</th>
-      <td>57</td>
-      <td>48</td>
-      <td>58</td>
-      <td>90</td>
-      <td>90</td>
-      <td>48</td>
-      <td>56</td>
       <td>36</td>
-      <td>79</td>
-      <td>67</td>
+      <td>58</td>
+      <td>11</td>
+      <td>46</td>
+      <td>39</td>
+      <td>36</td>
+      <td>8</td>
+      <td>58</td>
+      <td>65</td>
+      <td>14</td>
     </tr>
     <tr>
       <th>3</th>
-      <td>50</td>
-      <td>55</td>
-      <td>63</td>
-      <td>59</td>
-      <td>51</td>
-      <td>20</td>
-      <td>95</td>
+      <td>54</td>
+      <td>25</td>
+      <td>91</td>
+      <td>38</td>
+      <td>79</td>
+      <td>76</td>
       <td>40</td>
-      <td>73</td>
-      <td>39</td>
+      <td>17</td>
+      <td>16</td>
+      <td>63</td>
     </tr>
     <tr>
       <th>4</th>
-      <td>20</td>
-      <td>9</td>
-      <td>6</td>
-      <td>26</td>
-      <td>10</td>
-      <td>33</td>
-      <td>5</td>
-      <td>96</td>
-      <td>28</td>
-      <td>13</td>
+      <td>53</td>
+      <td>69</td>
+      <td>25</td>
+      <td>99</td>
+      <td>29</td>
+      <td>34</td>
+      <td>8</td>
+      <td>56</td>
+      <td>52</td>
+      <td>99</td>
     </tr>
     <tr>
       <th>5</th>
-      <td>33</td>
-      <td>84</td>
-      <td>5</td>
-      <td>20</td>
+      <td>23</td>
+      <td>7</td>
+      <td>83</td>
       <td>66</td>
-      <td>70</td>
-      <td>62</td>
-      <td>90</td>
-      <td>88</td>
-      <td>27</td>
+      <td>26</td>
+      <td>60</td>
+      <td>83</td>
+      <td>85</td>
+      <td>96</td>
+      <td>35</td>
     </tr>
     <tr>
       <th>6</th>
-      <td>57</td>
-      <td>17</td>
-      <td>86</td>
-      <td>78</td>
-      <td>47</td>
-      <td>74</td>
-      <td>23</td>
-      <td>81</td>
-      <td>49</td>
-      <td>67</td>
+      <td>40</td>
+      <td>18</td>
+      <td>72</td>
+      <td>52</td>
+      <td>22</td>
+      <td>7</td>
+      <td>34</td>
+      <td>68</td>
+      <td>48</td>
+      <td>91</td>
     </tr>
     <tr>
       <th>7</th>
-      <td>96</td>
-      <td>49</td>
-      <td>69</td>
-      <td>8</td>
-      <td>40</td>
-      <td>72</td>
-      <td>40</td>
-      <td>84</td>
-      <td>73</td>
+      <td>61</td>
+      <td>23</td>
+      <td>14</td>
+      <td>80</td>
+      <td>16</td>
+      <td>37</td>
       <td>94</td>
+      <td>42</td>
+      <td>32</td>
+      <td>84</td>
     </tr>
     <tr>
       <th>8</th>
-      <td>37</td>
-      <td>45</td>
-      <td>80</td>
+      <td>29</td>
+      <td>11</td>
+      <td>92</td>
+      <td>24</td>
+      <td>95</td>
       <td>4</td>
-      <td>77</td>
-      <td>46</td>
-      <td>57</td>
-      <td>80</td>
-      <td>54</td>
-      <td>96</td>
+      <td>21</td>
+      <td>23</td>
+      <td>29</td>
+      <td>66</td>
     </tr>
     <tr>
       <th>9</th>
-      <td>92</td>
-      <td>32</td>
-      <td>50</td>
-      <td>28</td>
-      <td>22</td>
-      <td>25</td>
-      <td>3</td>
-      <td>16</td>
-      <td>73</td>
+      <td>42</td>
+      <td>26</td>
+      <td>57</td>
+      <td>77</td>
       <td>62</td>
+      <td>88</td>
+      <td>67</td>
+      <td>62</td>
+      <td>81</td>
+      <td>37</td>
     </tr>
   </tbody>
 </table>
@@ -759,7 +767,7 @@ Requirement already satisfied: six&gt;=1.5 in c:\users\alejo\appdata\local\progr
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;Axes: &gt;
 </pre></div>
 </div>
-<img alt="../_images/b415910df5f531be530ca42ef5a28daeaead140607562303745f7488729934d4.png" src="../_images/b415910df5f531be530ca42ef5a28daeaead140607562303745f7488729934d4.png" />
+<img alt="../_images/6803e8427ee0d79210690fa31e7cc66704747f5c5d32143c3807d85ba2f86274.png" src="../_images/6803e8427ee0d79210690fa31e7cc66704747f5c5d32143c3807d85ba2f86274.png" />
 </div>
 </div>
 </section>
