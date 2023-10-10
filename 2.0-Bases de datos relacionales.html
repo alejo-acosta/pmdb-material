@@ -64,6 +64,7 @@ const thebe_selector_output = ".output, .cell_output"
     <script>DOCUMENTATION_OPTIONS.pagename = '2.0-Bases de datos relacionales';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="UNIDAD 3.1 Programación en Python para el manejo de datos" href="3.1-Intro%20a%20Python.html" />
     <link rel="prev" title="UNIDAD 1: Introducción a la programación y bases de datos." href="1.0-Introducci%C3%B3n%20a%20la%20programaci%C3%B3n%20y%20bases%20de%20datos.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
@@ -158,6 +159,14 @@ const thebe_selector_output = ".output, .cell_output"
         <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="1.0-Introducci%C3%B3n%20a%20la%20programaci%C3%B3n%20y%20bases%20de%20datos.html">UNIDAD 1: Introducción a la programación y bases de datos.</a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">UNIDAD 2: Bases de datos relacionales</a></li>
+<li class="toctree-l1"><a class="reference internal" href="3.1-Intro%20a%20Python.html">UNIDAD 3.1 Programación en Python para el manejo de datos</a></li>
+<li class="toctree-l1"><a class="reference internal" href="3.2-jupyter.html">UNIDAD 3.2 Jupyter notebooks</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="3.3-sintaxis.html">UNIDAD 3.2 Sintaxis, variables y operadores</a></li>
+<li class="toctree-l1"><a class="reference internal" href="9.0-curva-indiferencia.html">Ejemplo: Curvas de indiferencia</a></li>
+<li class="toctree-l1"><a class="reference internal" href="9.1-simulacion-shock-mercado.html">Ejemplo: Simulación Shocks oferta y demanda</a></li>
+<li class="toctree-l1"><a class="reference internal" href="9.2-simulacion-gini.html">Ejemplo: Simulación Gini</a></li>
+<li class="toctree-l1"><a class="reference internal" href="9.3-var.html">Vector Autoregression</a></li>
 </ul>
 
     </div>
@@ -484,9 +493,26 @@ Un conjunto es una colección de elementos. Por ejemplo:</p>
 </ul>
 <p>Los conjuntos se pueden combinar con operadores para formar nuevos conjuntos. Los operadores más comunes son:</p>
 <ul class="simple">
-<li><p><strong>UNION, unión</strong>: Devuelve un conjunto con <strong>todos</strong> los elementos de los conjuntos que se están uniendo.</p></li>
-<li><p><strong>INTERSECT, intersección</strong>: Devuelve un conjunto con los elementos que están en <strong>ambos</strong> conjuntos.</p></li>
-<li><p><strong>EXCEPT, diferencia</strong>: Devuelve un conjunto con los elementos que están en el primer conjunto <strong>pero no</strong> en el segundo.</p></li>
+<li><p><strong>UNION, unión</strong>: Devuelve un conjunto con <strong>todos</strong> los elementos de los conjuntos que se están uniendo.</p>
+<ul>
+<li><p>A ∪ B = {x | x ∈ A ∨ x ∈ B}</p></li>
+</ul>
+</li>
+<li><p><strong>INTERSECT, intersección</strong>: Devuelve un conjunto con los elementos que están en <strong>ambos</strong> conjuntos.</p>
+<ul>
+<li><p>A ∩ B = {x | x ∈ A ∧ x ∈ B}</p></li>
+</ul>
+</li>
+<li><p><strong>COMPLEMENT, complemento</strong>: Devuelve un conjunto con los elementos que NO están en el conjunto.</p>
+<ul>
+<li><p>A’ = {x | x ∉ A}</p></li>
+</ul>
+</li>
+<li><p><strong>EXCEPT, diferencia</strong>: Devuelve un conjunto con los elementos que están en el primer conjunto <strong>pero no</strong> en el segundo.</p>
+<ul>
+<li><p>A - B = {x | x ∈ A ∧ x ∉ B}</p></li>
+</ul>
+</li>
 </ul>
 <p>Se suelen representar con diagramas de Venn:</p>
 <div class="cell docutils container">
@@ -589,7 +615,7 @@ Un conjunto es una colección de elementos. Por ejemplo:</p>
   <img src="https://dataschool.com/assets/images/how-to-teach-people-sql/sqlJoins/sqlJoins_7.png" alt="" width="700"/> <br>
 </p>
 <p>Tomado de: <a class="reference external" href="https://dataschool.com/how-to-teach-people-sql/sql-join-types-explained-visually/">DataSchool</a></p>
-<p>Veamos algunos ejemplos utilizando la base de datos <a class="reference external" href="https://www.sql-practice.com/">hospital.db</a>:</p>
+<p>Veamos algunos ejemplos utilizando la base de datos <a class="reference external" href="https://www.sql-practice.com/">hospital.db</a>.</p>
 <p>Obtengamos el nombre de la provincia en la tabla pacientes:</p>
 <div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span><span class="w"> </span>
 <span class="w">    </span><span class="n">A</span><span class="p">.</span><span class="o">*</span><span class="p">,</span>
@@ -602,7 +628,7 @@ Un conjunto es una colección de elementos. Por ejemplo:</p>
 <section id="taller">
 <h3>Taller<a class="headerlink" href="#taller" title="Permalink to this heading">#</a></h3>
 <p>Ahora vamos a pasar a usar una base más compleja, la base de datos <a class="reference external" href="https://www.sql-practice.com/">nordwind.db</a>.</p>
-<p>Han sido nombrados CEO de la empresa NordWind. El directorio de la empresa le pide que realice una presentación de las su plan de acción de corto plazo para familiarizarse con el negocio.</p>
+<p>Han sido nombrados CEO de la empresa NordWind. El directorio de la empresa le pide que realice una presentación de su plan de acción de corto plazo para familiarizarse con el negocio.</p>
 <ul class="simple">
 <li><p>Su primera tarea es preparar una agenda de reuniones con el equipo a su cargo ¿Con quienes se debería reunir y en que orden?</p></li>
 <li><p>Segundo, deberá reunirse con los clientes más importantes ¿Quienes son y cómo priorizaría las reuniones?</p></li>
@@ -656,6 +682,15 @@ Un conjunto es una colección de elementos. Por ejemplo:</p>
         <p class="prev-next-subtitle">previous</p>
         <p class="prev-next-title">UNIDAD 1: Introducción a la programación y bases de datos.</p>
       </div>
+    </a>
+    <a class="right-next"
+       href="3.1-Intro%20a%20Python.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">UNIDAD 3.1 Programación en Python para el manejo de datos</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
     </a>
 </div></div>
   
