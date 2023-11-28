@@ -17,3 +17,6 @@ chapters:
 - file: 9.1-simulacion-shock-mercado.ipynb
 - file: 9.2-simulacion-gini.ipynb
 - file: 9.3-var.ipynb
+- file: 9.4.twitter-scraping.ipynb
+- file: 9.5.endi.ipynb
+
