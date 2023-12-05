@@ -9,6 +9,7 @@ chapters:
 - file: 3.3-sintaxis.ipynb
 - file: 3.4-librerias.ipynb
 - file: 3.5-pandas.ipynb
+- file: 4.0-visualizacion.ipynb
 # - file: 2.0-sintaxis-variables-operadores.ipynb
 # - file: 3.0-librerias.ipynb
 # - file: 4.0. Pandas.ipynb
