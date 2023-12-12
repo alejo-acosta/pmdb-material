@@ -3,7 +3,7 @@
 <!DOCTYPE html>
 
 
-<html lang="en" >
+<html lang="en" data-content_root="" >
 
   <head>
     <meta charset="utf-8" />
@@ -19,12 +19,12 @@
   </script>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
-<link href="_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
-<link href="_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link href="_static/styles/theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=5b4479735964841361fd" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
 
   
-  <link href="_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link href="_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=5b4479735964841361fd" rel="stylesheet" />
   <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
@@ -38,8 +38,9 @@
     <link rel="stylesheet" type="text/css" href="_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
-<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=5b4479735964841361fd" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd" />
+  <script src="_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=5b4479735964841361fd"></script>
 
     <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
     <script src="_static/jquery.js"></script>
@@ -76,6 +77,15 @@ const thebe_selector_output = ".output, .cell_output"
   
   
   <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
   
   <input type="checkbox"
           class="sidebar-toggle"
@@ -129,9 +139,11 @@ const thebe_selector_output = ".output, .cell_output"
   
     <div class="sidebar-primary-items__start sidebar-primary__section">
         <div class="sidebar-primary-item">
+
   
 
 <a class="navbar-brand logo" href="README.html">
+  
   
   
   
@@ -141,8 +153,8 @@ const thebe_selector_output = ".output, .cell_output"
       
     
     
-    <img src="_static/python-udla-logo.png" class="logo__image only-light" alt="Logo image"/>
-    <script>document.write(`<img src="_static/python-udla-logo.png" class="logo__image only-dark" alt="Logo image"/>`);</script>
+    <img src="_static/python-udla-logo.png" class="logo__image only-light" alt="Curso Python - Home"/>
+    <script>document.write(`<img src="_static/python-udla-logo.png" class="logo__image only-dark" alt="Curso Python - Home"/>`);</script>
   
   
 </a></div>
@@ -309,20 +321,22 @@ const thebe_selector_output = ".output, .cell_output"
 </button>
 
 
+
 <script>
 document.write(`
-  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
-    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
-    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
   </button>
 `);
 </script>
 
+
 <script>
 document.write(`
   <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <i class="fa-solid fa-magnifying-glass"></i>
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
   </button>
 `);
 </script>
@@ -501,12 +515,14 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: pandas in c:\users\alejo\appdata\local\programs\python\python311\lib\site-packages (2.0.3)
-Requirement already satisfied: python-dateutil&gt;=2.8.2 in c:\users\alejo\appdata\local\programs\python\python311\lib\site-packages (from pandas) (2.8.2)
-Requirement already satisfied: pytz&gt;=2020.1 in c:\users\alejo\appdata\local\programs\python\python311\lib\site-packages (from pandas) (2023.3)
-Requirement already satisfied: tzdata&gt;=2022.1 in c:\users\alejo\appdata\local\programs\python\python311\lib\site-packages (from pandas) (2023.3)
-Requirement already satisfied: numpy&gt;=1.21.0 in c:\users\alejo\appdata\local\programs\python\python311\lib\site-packages (from pandas) (1.24.3)
-Requirement already satisfied: six&gt;=1.5 in c:\users\alejo\appdata\local\programs\python\python311\lib\site-packages (from python-dateutil&gt;=2.8.2-&gt;pandas) (1.16.0)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Defaulting to user installation because normal site-packages is not writeable
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: pandas in /home/alejo/.local/lib/python3.10/site-packages (1.5.3)
+Requirement already satisfied: numpy&gt;=1.21.0 in /home/alejo/.local/lib/python3.10/site-packages (from pandas) (1.24.4)
+Requirement already satisfied: pytz&gt;=2020.1 in /home/alejo/.local/lib/python3.10/site-packages (from pandas) (2023.3.post1)
+Requirement already satisfied: python-dateutil&gt;=2.8.1 in /home/alejo/.local/lib/python3.10/site-packages (from pandas) (2.8.2)
+Requirement already satisfied: six&gt;=1.5 in /usr/lib/python3/dist-packages (from python-dateutil&gt;=2.8.1-&gt;pandas) (1.16.0)
 </pre></div>
 </div>
 </div>
@@ -562,16 +578,16 @@ Requirement already satisfied: six&gt;=1.5 in c:\users\alejo\appdata\local\progr
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[48,  6, 23,  7,  3, 92, 10, 26, 96, 36],
-       [ 5, 91, 68,  5, 46, 54, 42, 37, 13, 98],
-       [81, 93, 47, 98, 41, 30, 95, 52, 39, 27],
-       [74, 20, 25, 59,  6,  6, 33, 39, 87, 65],
-       [89, 63,  5, 85, 25, 83, 21, 90, 31, 60],
-       [42, 36, 92, 43, 18, 28, 18,  1, 99, 49],
-       [69, 22, 75,  1,  1, 35,  9, 31, 88, 18],
-       [19, 77, 80, 13, 40,  8, 17, 89, 19, 75],
-       [83, 34, 65, 88, 74, 26, 93, 62, 20, 71],
-       [88,  3, 28, 43, 21, 28, 75, 54, 45, 34]])
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[44, 54, 80, 48, 95,  8, 36, 81, 49, 96],
+       [81, 45, 44, 88, 42, 27, 88, 41, 55, 15],
+       [34, 93, 99, 36, 96, 19, 59, 46, 88, 86],
+       [48, 52, 58, 79, 91, 56, 60, 45, 26, 12],
+       [20, 92, 75, 31, 74, 69, 52, 10, 97, 95],
+       [21, 54,  9, 30, 70, 37, 32, 40, 23, 92],
+       [85, 68, 25, 21, 92, 22, 80, 68, 46, 99],
+       [14, 44, 80, 80,  2, 31, 69, 84, 94,  5],
+       [ 4, 38, 30, 93, 62,  5, 23,  8, 25, 84],
+       [26, 77, 28, 99, 78, 21, 40, 82, 28, 61]])
 </pre></div>
 </div>
 </div>
@@ -629,133 +645,133 @@ Requirement already satisfied: six&gt;=1.5 in c:\users\alejo\appdata\local\progr
   <tbody>
     <tr>
       <th>0</th>
-      <td>75</td>
-      <td>21</td>
-      <td>27</td>
-      <td>21</td>
-      <td>62</td>
-      <td>57</td>
-      <td>94</td>
-      <td>18</td>
-      <td>35</td>
-      <td>31</td>
+      <td>65</td>
+      <td>36</td>
+      <td>1</td>
+      <td>93</td>
+      <td>67</td>
+      <td>53</td>
+      <td>36</td>
+      <td>87</td>
+      <td>77</td>
+      <td>77</td>
     </tr>
     <tr>
       <th>1</th>
-      <td>22</td>
-      <td>27</td>
-      <td>62</td>
-      <td>92</td>
-      <td>15</td>
       <td>54</td>
-      <td>99</td>
-      <td>25</td>
-      <td>62</td>
-      <td>37</td>
+      <td>13</td>
+      <td>93</td>
+      <td>15</td>
+      <td>73</td>
+      <td>42</td>
+      <td>38</td>
+      <td>97</td>
+      <td>95</td>
+      <td>34</td>
     </tr>
     <tr>
       <th>2</th>
-      <td>35</td>
-      <td>45</td>
-      <td>45</td>
-      <td>95</td>
-      <td>88</td>
-      <td>28</td>
-      <td>27</td>
-      <td>56</td>
-      <td>52</td>
-      <td>90</td>
+      <td>94</td>
+      <td>71</td>
+      <td>18</td>
+      <td>72</td>
+      <td>64</td>
+      <td>3</td>
+      <td>99</td>
+      <td>18</td>
+      <td>34</td>
+      <td>32</td>
     </tr>
     <tr>
       <th>3</th>
-      <td>85</td>
-      <td>41</td>
+      <td>99</td>
+      <td>69</td>
       <td>46</td>
-      <td>83</td>
-      <td>72</td>
-      <td>78</td>
-      <td>86</td>
-      <td>83</td>
-      <td>70</td>
-      <td>36</td>
+      <td>35</td>
+      <td>34</td>
+      <td>76</td>
+      <td>17</td>
+      <td>1</td>
+      <td>85</td>
+      <td>65</td>
     </tr>
     <tr>
       <th>4</th>
-      <td>2</td>
-      <td>8</td>
-      <td>92</td>
-      <td>13</td>
+      <td>36</td>
+      <td>19</td>
+      <td>68</td>
+      <td>42</td>
+      <td>88</td>
       <td>48</td>
-      <td>8</td>
-      <td>17</td>
-      <td>65</td>
-      <td>7</td>
-      <td>94</td>
+      <td>6</td>
+      <td>39</td>
+      <td>56</td>
+      <td>73</td>
     </tr>
     <tr>
       <th>5</th>
-      <td>42</td>
-      <td>70</td>
-      <td>70</td>
-      <td>47</td>
-      <td>71</td>
-      <td>84</td>
-      <td>77</td>
-      <td>78</td>
-      <td>27</td>
+      <td>6</td>
       <td>66</td>
+      <td>97</td>
+      <td>29</td>
+      <td>19</td>
+      <td>18</td>
+      <td>13</td>
+      <td>42</td>
+      <td>69</td>
+      <td>19</td>
     </tr>
     <tr>
       <th>6</th>
-      <td>26</td>
-      <td>88</td>
-      <td>77</td>
+      <td>15</td>
+      <td>11</td>
+      <td>1</td>
+      <td>34</td>
+      <td>81</td>
+      <td>38</td>
+      <td>96</td>
       <td>49</td>
-      <td>12</td>
-      <td>99</td>
-      <td>73</td>
-      <td>33</td>
-      <td>53</td>
-      <td>12</td>
+      <td>11</td>
+      <td>27</td>
     </tr>
     <tr>
       <th>7</th>
+      <td>28</td>
+      <td>57</td>
+      <td>90</td>
+      <td>96</td>
+      <td>82</td>
+      <td>62</td>
+      <td>50</td>
+      <td>43</td>
+      <td>50</td>
       <td>47</td>
-      <td>85</td>
-      <td>74</td>
-      <td>17</td>
-      <td>13</td>
-      <td>70</td>
-      <td>61</td>
-      <td>46</td>
-      <td>17</td>
-      <td>87</td>
     </tr>
     <tr>
       <th>8</th>
-      <td>4</td>
-      <td>56</td>
-      <td>93</td>
-      <td>1</td>
-      <td>97</td>
-      <td>23</td>
-      <td>42</td>
+      <td>30</td>
       <td>6</td>
-      <td>99</td>
-      <td>3</td>
+      <td>50</td>
+      <td>10</td>
+      <td>81</td>
+      <td>32</td>
+      <td>45</td>
+      <td>55</td>
+      <td>73</td>
+      <td>23</td>
     </tr>
     <tr>
       <th>9</th>
-      <td>71</td>
-      <td>13</td>
-      <td>9</td>
-      <td>31</td>
-      <td>77</td>
-      <td>85</td>
-      <td>27</td>
-      <td>90</td>
-      <td>50</td>
-      <td>56</td>
+      <td>93</td>
+      <td>1</td>
+      <td>88</td>
+      <td>94</td>
+      <td>67</td>
+      <td>7</td>
+      <td>75</td>
+      <td>82</td>
+      <td>60</td>
+      <td>74</td>
     </tr>
   </tbody>
 </table>
@@ -772,7 +788,7 @@ Requirement already satisfied: six&gt;=1.5 in c:\users\alejo\appdata\local\progr
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;Axes: &gt;
 </pre></div>
 </div>
-<img alt="_images/b599f55b729db26b123bc3a7b040c36f1ab96a3e31233d407e4be8f3ed71464b.png" src="_images/b599f55b729db26b123bc3a7b040c36f1ab96a3e31233d407e4be8f3ed71464b.png" />
+<img alt="_images/875800c2ea8087422dd29c9e209911de01d015e4d93a018861b76a31706e2a8b.png" src="_images/875800c2ea8087422dd29c9e209911de01d015e4d93a018861b76a31706e2a8b.png" />
 </div>
 </div>
 </section>
@@ -803,11 +819,10 @@ Requirement already satisfied: six&gt;=1.5 in c:\users\alejo\appdata\local\progr
 
               
               
-                <footer class="bd-footer-article">
+              
+              
+                <footer class="prev-next-footer">
                   
-<div class="footer-article-items footer-article__inner">
-  
-    <div class="footer-article-item"><!-- Previous / next buttons -->
 <div class="prev-next-area">
     <a class="left-prev"
        href="3.3-sintaxis.html"
@@ -827,10 +842,7 @@ Requirement already satisfied: six&gt;=1.5 in c:\users\alejo\appdata\local\progr
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
-</div></div>
-  
 </div>
-
                 </footer>
               
             </div>
@@ -873,6 +885,7 @@ By Alejandro Acosta León
   
   <div class="footer-item">
     
+
   <p class="copyright">
     
       © Copyright 2022.
@@ -899,8 +912,8 @@ By Alejandro Acosta León
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
-<script src="_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
+  <script src="_static/scripts/bootstrap.js?digest=5b4479735964841361fd"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd"></script>
 
   <footer class="bd-footer">
   </footer>

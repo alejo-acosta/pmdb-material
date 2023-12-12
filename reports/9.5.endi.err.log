@@ -15,31 +15,19 @@ Traceback (most recent call last):
     raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
 nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
 ------------------
-import numpy as np
-import pandas as pd
-import matplotlib.pyplot as plt
-import seaborn as sns
+# read .rds file
+import pyreadr
+df = pyreadr.read_r('./data/ENDI/BDD_ENDI_R1_rds/rds/BDD_ENDI_R1_f1_personas.rds')
 
-from statsmodels.tsa.seasonal import seasonal_decompose
-import pmdarima as pm
-
-import yfinance as yf
-yf.pdr_override()
-import pandas_datareader.data as web
-import datetime
-
-plt.style.use('ggplot')
 ------------------
 
 
 [0;31m---------------------------------------------------------------------------[0m
 [0;31mModuleNotFoundError[0m                       Traceback (most recent call last)
-Cell [0;32mIn[1], line 6[0m
-[1;32m      3[0m [38;5;28;01mimport[39;00m [38;5;21;01mmatplotlib[39;00m[38;5;21;01m.[39;00m[38;5;21;01mpyplot[39;00m [38;5;28;01mas[39;00m [38;5;21;01mplt[39;00m
-[1;32m      4[0m [38;5;28;01mimport[39;00m [38;5;21;01mseaborn[39;00m [38;5;28;01mas[39;00m [38;5;21;01msns[39;00m
-[0;32m----> 6[0m [38;5;28;01mfrom[39;00m [38;5;21;01mstatsmodels[39;00m[38;5;21;01m.[39;00m[38;5;21;01mtsa[39;00m[38;5;21;01m.[39;00m[38;5;21;01mseasonal[39;00m [38;5;28;01mimport[39;00m seasonal_decompose
-[1;32m      7[0m [38;5;28;01mimport[39;00m [38;5;21;01mpmdarima[39;00m [38;5;28;01mas[39;00m [38;5;21;01mpm[39;00m
-[1;32m      9[0m [38;5;28;01mimport[39;00m [38;5;21;01myfinance[39;00m [38;5;28;01mas[39;00m [38;5;21;01myf[39;00m
+Cell [0;32mIn[4], line 2[0m
+[1;32m      1[0m [38;5;66;03m# read .rds file[39;00m
+[0;32m----> 2[0m [38;5;28;01mimport[39;00m [38;5;21;01mpyreadr[39;00m
+[1;32m      3[0m df [38;5;241m=[39m pyreadr[38;5;241m.[39mread_r([38;5;124m'[39m[38;5;124m./data/ENDI/BDD_ENDI_R1_rds/rds/BDD_ENDI_R1_f1_personas.rds[39m[38;5;124m'[39m)
 
-[0;31mModuleNotFoundError[0m: No module named 'statsmodels'
+[0;31mModuleNotFoundError[0m: No module named 'pyreadr'
 

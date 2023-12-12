@@ -3,7 +3,7 @@
 <!DOCTYPE html>
 
 
-<html lang="en" >
+<html lang="en" data-content_root="" >
 
   <head>
     <meta charset="utf-8" />
@@ -19,12 +19,12 @@
   </script>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
-<link href="_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
-<link href="_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link href="_static/styles/theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=5b4479735964841361fd" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
 
   
-  <link href="_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link href="_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=5b4479735964841361fd" rel="stylesheet" />
   <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
@@ -38,8 +38,9 @@
     <link rel="stylesheet" type="text/css" href="_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
-<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=5b4479735964841361fd" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd" />
+  <script src="_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=5b4479735964841361fd"></script>
 
     <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
     <script src="_static/jquery.js"></script>
@@ -76,6 +77,15 @@ const thebe_selector_output = ".output, .cell_output"
   
   
   <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
   
   <input type="checkbox"
           class="sidebar-toggle"
@@ -129,9 +139,11 @@ const thebe_selector_output = ".output, .cell_output"
   
     <div class="sidebar-primary-items__start sidebar-primary__section">
         <div class="sidebar-primary-item">
+
   
 
 <a class="navbar-brand logo" href="README.html">
+  
   
   
   
@@ -141,8 +153,8 @@ const thebe_selector_output = ".output, .cell_output"
       
     
     
-    <img src="_static/python-udla-logo.png" class="logo__image only-light" alt="Logo image"/>
-    <script>document.write(`<img src="_static/python-udla-logo.png" class="logo__image only-dark" alt="Logo image"/>`);</script>
+    <img src="_static/python-udla-logo.png" class="logo__image only-light" alt="Curso Python - Home"/>
+    <script>document.write(`<img src="_static/python-udla-logo.png" class="logo__image only-dark" alt="Curso Python - Home"/>`);</script>
   
   
 </a></div>
@@ -309,24 +321,28 @@ const thebe_selector_output = ".output, .cell_output"
 </button>
 
 
+
 <script>
 document.write(`
-  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
-    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
-    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
   </button>
 `);
 </script>
+
 
 <script>
 document.write(`
   <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <i class="fa-solid fa-magnifying-glass"></i>
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
   </button>
 `);
 </script>
-
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
 </div></div>
       
     </div>
@@ -342,6 +358,14 @@ document.write(`
     <div id="print-main-content">
         <div id="jb-print-toc">
             
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ejemplo-dataset">Ejemplo dataset</a></li>
+</ul>
+            </nav>
         </div>
     </div>
 </div>
@@ -376,7 +400,7 @@ document.write(`
 
 <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
 <span class="kn">import</span> <span class="nn">seaborn</span> <span class="k">as</span> <span class="nn">sns</span>
-<span class="kn">import</span> <span class="nn">plotly.express</span> <span class="k">as</span> <span class="nn">px</span>
+<span class="c1"># import plotly.express as px</span>
 
 <span class="n">sns</span><span class="o">.</span><span class="n">set</span><span class="p">()</span>
 </pre></div>
@@ -809,7 +833,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/c566f024edac7cff741107c5dd52f04f94988e303bc33e04f42a8d5b1273a19c.png" src="_images/c566f024edac7cff741107c5dd52f04f94988e303bc33e04f42a8d5b1273a19c.png" />
+<img alt="_images/e4015e085002bc21cb6f7241006b9bacd8e7b693fa923f5a62e5ce64bf799c14.png" src="_images/e4015e085002bc21cb6f7241006b9bacd8e7b693fa923f5a62e5ce64bf799c14.png" />
 </div>
 </div>
 <p>¿Conclusión?</p>
@@ -868,6 +892,404 @@ document.write(`
 </div></div></div>
 </div>
 <p>¿Son iguales?</p>
+<section id="ejemplo-dataset">
+<h2>Ejemplo dataset<a class="headerlink" href="#ejemplo-dataset" title="Permalink to this heading">#</a></h2>
+<p>Vamos a trabajar con datos de:</p>
+<p><a class="reference external" href="https://www.kaggle.com/datasets/dansbecker/melbourne-housing-snapshot">https://www.kaggle.com/datasets/dansbecker/melbourne-housing-snapshot</a></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;https://raw.githubusercontent.com/alejo-acosta/pmdb-material/master/data/melb_data.csv&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Suburb</th>
+      <th>Address</th>
+      <th>Rooms</th>
+      <th>Type</th>
+      <th>Price</th>
+      <th>Method</th>
+      <th>SellerG</th>
+      <th>Date</th>
+      <th>Distance</th>
+      <th>Postcode</th>
+      <th>...</th>
+      <th>Bathroom</th>
+      <th>Car</th>
+      <th>Landsize</th>
+      <th>BuildingArea</th>
+      <th>YearBuilt</th>
+      <th>CouncilArea</th>
+      <th>Lattitude</th>
+      <th>Longtitude</th>
+      <th>Regionname</th>
+      <th>Propertycount</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>Abbotsford</td>
+      <td>85 Turner St</td>
+      <td>2</td>
+      <td>h</td>
+      <td>1480000.0</td>
+      <td>S</td>
+      <td>Biggin</td>
+      <td>3/12/2016</td>
+      <td>2.5</td>
+      <td>3067.0</td>
+      <td>...</td>
+      <td>1.0</td>
+      <td>1.0</td>
+      <td>202.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>Yarra</td>
+      <td>-37.7996</td>
+      <td>144.9984</td>
+      <td>Northern Metropolitan</td>
+      <td>4019.0</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>Abbotsford</td>
+      <td>25 Bloomburg St</td>
+      <td>2</td>
+      <td>h</td>
+      <td>1035000.0</td>
+      <td>S</td>
+      <td>Biggin</td>
+      <td>4/02/2016</td>
+      <td>2.5</td>
+      <td>3067.0</td>
+      <td>...</td>
+      <td>1.0</td>
+      <td>0.0</td>
+      <td>156.0</td>
+      <td>79.0</td>
+      <td>1900.0</td>
+      <td>Yarra</td>
+      <td>-37.8079</td>
+      <td>144.9934</td>
+      <td>Northern Metropolitan</td>
+      <td>4019.0</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>Abbotsford</td>
+      <td>5 Charles St</td>
+      <td>3</td>
+      <td>h</td>
+      <td>1465000.0</td>
+      <td>SP</td>
+      <td>Biggin</td>
+      <td>4/03/2017</td>
+      <td>2.5</td>
+      <td>3067.0</td>
+      <td>...</td>
+      <td>2.0</td>
+      <td>0.0</td>
+      <td>134.0</td>
+      <td>150.0</td>
+      <td>1900.0</td>
+      <td>Yarra</td>
+      <td>-37.8093</td>
+      <td>144.9944</td>
+      <td>Northern Metropolitan</td>
+      <td>4019.0</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>Abbotsford</td>
+      <td>40 Federation La</td>
+      <td>3</td>
+      <td>h</td>
+      <td>850000.0</td>
+      <td>PI</td>
+      <td>Biggin</td>
+      <td>4/03/2017</td>
+      <td>2.5</td>
+      <td>3067.0</td>
+      <td>...</td>
+      <td>2.0</td>
+      <td>1.0</td>
+      <td>94.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>Yarra</td>
+      <td>-37.7969</td>
+      <td>144.9969</td>
+      <td>Northern Metropolitan</td>
+      <td>4019.0</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>Abbotsford</td>
+      <td>55a Park St</td>
+      <td>4</td>
+      <td>h</td>
+      <td>1600000.0</td>
+      <td>VB</td>
+      <td>Nelson</td>
+      <td>4/06/2016</td>
+      <td>2.5</td>
+      <td>3067.0</td>
+      <td>...</td>
+      <td>1.0</td>
+      <td>2.0</td>
+      <td>120.0</td>
+      <td>142.0</td>
+      <td>2014.0</td>
+      <td>Yarra</td>
+      <td>-37.8072</td>
+      <td>144.9941</td>
+      <td>Northern Metropolitan</td>
+      <td>4019.0</td>
+    </tr>
+  </tbody>
+</table>
+<p>5 rows × 21 columns</p>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">info</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;class &#39;pandas.core.frame.DataFrame&#39;&gt;
+RangeIndex: 13580 entries, 0 to 13579
+Data columns (total 21 columns):
+ #   Column         Non-Null Count  Dtype  
+---  ------         --------------  -----  
+ 0   Suburb         13580 non-null  object 
+ 1   Address        13580 non-null  object 
+ 2   Rooms          13580 non-null  int64  
+ 3   Type           13580 non-null  object 
+ 4   Price          13580 non-null  float64
+ 5   Method         13580 non-null  object 
+ 6   SellerG        13580 non-null  object 
+ 7   Date           13580 non-null  object 
+ 8   Distance       13580 non-null  float64
+ 9   Postcode       13580 non-null  float64
+ 10  Bedroom2       13580 non-null  float64
+ 11  Bathroom       13580 non-null  float64
+ 12  Car            13518 non-null  float64
+ 13  Landsize       13580 non-null  float64
+ 14  BuildingArea   7130 non-null   float64
+ 15  YearBuilt      8205 non-null   float64
+ 16  CouncilArea    12211 non-null  object 
+ 17  Lattitude      13580 non-null  float64
+ 18  Longtitude     13580 non-null  float64
+ 19  Regionname     13580 non-null  object 
+ 20  Propertycount  13580 non-null  float64
+dtypes: float64(12), int64(1), object(8)
+memory usage: 2.2+ MB
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">describe</span><span class="p">()</span><span class="o">.</span><span class="n">round</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Rooms</th>
+      <th>Price</th>
+      <th>Distance</th>
+      <th>Postcode</th>
+      <th>Bedroom2</th>
+      <th>Bathroom</th>
+      <th>Car</th>
+      <th>Landsize</th>
+      <th>BuildingArea</th>
+      <th>YearBuilt</th>
+      <th>Lattitude</th>
+      <th>Longtitude</th>
+      <th>Propertycount</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>count</th>
+      <td>13580.00</td>
+      <td>13580.00</td>
+      <td>13580.00</td>
+      <td>13580.00</td>
+      <td>13580.00</td>
+      <td>13580.00</td>
+      <td>13518.00</td>
+      <td>13580.00</td>
+      <td>7130.00</td>
+      <td>8205.00</td>
+      <td>13580.00</td>
+      <td>13580.00</td>
+      <td>13580.00</td>
+    </tr>
+    <tr>
+      <th>mean</th>
+      <td>2.94</td>
+      <td>1075684.08</td>
+      <td>10.14</td>
+      <td>3105.30</td>
+      <td>2.91</td>
+      <td>1.53</td>
+      <td>1.61</td>
+      <td>558.42</td>
+      <td>151.97</td>
+      <td>1964.68</td>
+      <td>-37.81</td>
+      <td>145.00</td>
+      <td>7454.42</td>
+    </tr>
+    <tr>
+      <th>std</th>
+      <td>0.96</td>
+      <td>639310.72</td>
+      <td>5.87</td>
+      <td>90.68</td>
+      <td>0.97</td>
+      <td>0.69</td>
+      <td>0.96</td>
+      <td>3990.67</td>
+      <td>541.01</td>
+      <td>37.27</td>
+      <td>0.08</td>
+      <td>0.10</td>
+      <td>4378.58</td>
+    </tr>
+    <tr>
+      <th>min</th>
+      <td>1.00</td>
+      <td>85000.00</td>
+      <td>0.00</td>
+      <td>3000.00</td>
+      <td>0.00</td>
+      <td>0.00</td>
+      <td>0.00</td>
+      <td>0.00</td>
+      <td>0.00</td>
+      <td>1196.00</td>
+      <td>-38.18</td>
+      <td>144.43</td>
+      <td>249.00</td>
+    </tr>
+    <tr>
+      <th>25%</th>
+      <td>2.00</td>
+      <td>650000.00</td>
+      <td>6.10</td>
+      <td>3044.00</td>
+      <td>2.00</td>
+      <td>1.00</td>
+      <td>1.00</td>
+      <td>177.00</td>
+      <td>93.00</td>
+      <td>1940.00</td>
+      <td>-37.86</td>
+      <td>144.93</td>
+      <td>4380.00</td>
+    </tr>
+    <tr>
+      <th>50%</th>
+      <td>3.00</td>
+      <td>903000.00</td>
+      <td>9.20</td>
+      <td>3084.00</td>
+      <td>3.00</td>
+      <td>1.00</td>
+      <td>2.00</td>
+      <td>440.00</td>
+      <td>126.00</td>
+      <td>1970.00</td>
+      <td>-37.80</td>
+      <td>145.00</td>
+      <td>6555.00</td>
+    </tr>
+    <tr>
+      <th>75%</th>
+      <td>3.00</td>
+      <td>1330000.00</td>
+      <td>13.00</td>
+      <td>3148.00</td>
+      <td>3.00</td>
+      <td>2.00</td>
+      <td>2.00</td>
+      <td>651.00</td>
+      <td>174.00</td>
+      <td>1999.00</td>
+      <td>-37.76</td>
+      <td>145.06</td>
+      <td>10331.00</td>
+    </tr>
+    <tr>
+      <th>max</th>
+      <td>10.00</td>
+      <td>9000000.00</td>
+      <td>48.10</td>
+      <td>3977.00</td>
+      <td>20.00</td>
+      <td>8.00</td>
+      <td>10.00</td>
+      <td>433014.00</td>
+      <td>44515.00</td>
+      <td>2018.00</td>
+      <td>-37.41</td>
+      <td>145.53</td>
+      <td>21650.00</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -895,11 +1317,10 @@ document.write(`
 
               
               
-                <footer class="bd-footer-article">
+              
+              
+                <footer class="prev-next-footer">
                   
-<div class="footer-article-items footer-article__inner">
-  
-    <div class="footer-article-item"><!-- Previous / next buttons -->
 <div class="prev-next-area">
     <a class="left-prev"
        href="3.5-pandas.html"
@@ -919,15 +1340,26 @@ document.write(`
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
-</div></div>
-  
 </div>
-
                 </footer>
               
             </div>
             
             
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ejemplo-dataset">Ejemplo dataset</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
               
             
           </div>
@@ -945,6 +1377,7 @@ By Alejandro Acosta León
   
   <div class="footer-item">
     
+
   <p class="copyright">
     
       © Copyright 2022.
@@ -971,8 +1404,8 @@ By Alejandro Acosta León
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
-<script src="_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
+  <script src="_static/scripts/bootstrap.js?digest=5b4479735964841361fd"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd"></script>
 
   <footer class="bd-footer">
   </footer>
