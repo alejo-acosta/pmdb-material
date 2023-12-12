@@ -3,7 +3,7 @@
 <!DOCTYPE html>
 
 
-<html lang="en" >
+<html lang="en" data-content_root="" >
 
   <head>
     <meta charset="utf-8" />
@@ -19,12 +19,12 @@
   </script>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
-<link href="_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
-<link href="_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link href="_static/styles/theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=5b4479735964841361fd" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
 
   
-  <link href="_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link href="_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=5b4479735964841361fd" rel="stylesheet" />
   <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
@@ -38,8 +38,9 @@
     <link rel="stylesheet" type="text/css" href="_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
-<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=5b4479735964841361fd" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd" />
+  <script src="_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=5b4479735964841361fd"></script>
 
     <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
     <script src="_static/jquery.js"></script>
@@ -76,6 +77,15 @@ const thebe_selector_output = ".output, .cell_output"
   
   
   <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
   
   <input type="checkbox"
           class="sidebar-toggle"
@@ -129,9 +139,11 @@ const thebe_selector_output = ".output, .cell_output"
   
     <div class="sidebar-primary-items__start sidebar-primary__section">
         <div class="sidebar-primary-item">
+
   
 
 <a class="navbar-brand logo" href="README.html">
+  
   
   
   
@@ -141,8 +153,8 @@ const thebe_selector_output = ".output, .cell_output"
       
     
     
-    <img src="_static/python-udla-logo.png" class="logo__image only-light" alt="Logo image"/>
-    <script>document.write(`<img src="_static/python-udla-logo.png" class="logo__image only-dark" alt="Logo image"/>`);</script>
+    <img src="_static/python-udla-logo.png" class="logo__image only-light" alt="Curso Python - Home"/>
+    <script>document.write(`<img src="_static/python-udla-logo.png" class="logo__image only-dark" alt="Curso Python - Home"/>`);</script>
   
   
 </a></div>
@@ -309,20 +321,22 @@ const thebe_selector_output = ".output, .cell_output"
 </button>
 
 
+
 <script>
 document.write(`
-  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
-    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
-    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
   </button>
 `);
 </script>
 
+
 <script>
 document.write(`
   <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <i class="fa-solid fa-magnifying-glass"></i>
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
   </button>
 `);
 </script>
@@ -392,6 +406,20 @@ document.write(`
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">ModuleNotFoundError</span><span class="g g-Whitespace">                       </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">line</span> <span class="mi">6</span>
+<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="kn">import</span> <span class="nn">seaborn</span> <span class="k">as</span> <span class="nn">sns</span>
+<span class="ne">----&gt; </span><span class="mi">6</span> <span class="kn">from</span> <span class="nn">statsmodels.tsa.seasonal</span> <span class="kn">import</span> <span class="n">seasonal_decompose</span>
+<span class="g g-Whitespace">      </span><span class="mi">7</span> <span class="kn">import</span> <span class="nn">pmdarima</span> <span class="k">as</span> <span class="nn">pm</span>
+<span class="g g-Whitespace">      </span><span class="mi">9</span> <span class="kn">import</span> <span class="nn">yfinance</span> <span class="k">as</span> <span class="nn">yf</span>
+
+<span class="ne">ModuleNotFoundError</span>: No module named &#39;statsmodels&#39;
+</pre></div>
+</div>
+</div>
 </div>
 <section id="primer-paso-leer-los-datos">
 <h2>Primer paso: leer los datos<a class="headerlink" href="#primer-paso-leer-los-datos" title="Permalink to this heading">#</a></h2>
@@ -402,16 +430,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[                       0%%                      ]
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[**********************67%%******                ]  2 of 3 completed
-</pre></div>
-</div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[*********************100%%**********************]  3 of 3 completed
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
 </pre></div>
 </div>
 </div>
@@ -464,12 +483,12 @@ document.write(`
 <div class="cell_output docutils container">
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
 <span class="ne">TypeError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">6</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">decomp</span> <span class="o">=</span> <span class="n">seasonal_decompose</span><span class="p">(</span><span class="n">mdf</span><span class="p">,</span> <span class="n">model</span><span class="o">=</span><span class="s1">&#39;additive&#39;</span><span class="p">)</span>
-<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="n">decomp</span><span class="o">.</span><span class="n">plot</span><span class="p">()</span>
-<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="c1"># plt.show()</span>
+<span class="ne">c</span>:\Users\Alejo\OneDrive - Universidad de Las Américas\UDLA\pmdb\pmdb-material\forecast.ipynb Cell 9 line 1
+<span class="o">----&gt;</span> <span class="o">&lt;</span><span class="n">a</span> <span class="n">href</span><span class="o">=</span><span class="s1">&#39;vscode-notebook-cell:/c%3A/Users/Alejo/OneDrive%20-%20Universidad</span><span class="si">%20d</span><span class="s1">e</span><span class="si">%20La</span><span class="s1">s%20Am%C3%A9ricas/UDLA/pmdb/pmdb-material/forecast.ipynb#X12sZmlsZQ%3D%3D?line=0&#39;</span><span class="o">&gt;</span><span class="mi">1</span><span class="o">&lt;/</span><span class="n">a</span><span class="o">&gt;</span> <span class="n">decomp</span> <span class="o">=</span> <span class="n">seasonal_decompose</span><span class="p">(</span><span class="n">mdf</span><span class="p">,</span> <span class="n">model</span><span class="o">=</span><span class="s1">&#39;additive&#39;</span><span class="p">)</span>
+      <span class="o">&lt;</span><span class="n">a</span> <span class="n">href</span><span class="o">=</span><span class="s1">&#39;vscode-notebook-cell:/c%3A/Users/Alejo/OneDrive%20-%20Universidad</span><span class="si">%20d</span><span class="s1">e</span><span class="si">%20La</span><span class="s1">s%20Am%C3%A9ricas/UDLA/pmdb/pmdb-material/forecast.ipynb#X12sZmlsZQ%3D%3D?line=1&#39;</span><span class="o">&gt;</span><span class="mi">2</span><span class="o">&lt;/</span><span class="n">a</span><span class="o">&gt;</span> <span class="n">decomp</span><span class="o">.</span><span class="n">plot</span><span class="p">()</span>
+      <span class="o">&lt;</span><span class="n">a</span> <span class="n">href</span><span class="o">=</span><span class="s1">&#39;vscode-notebook-cell:/c%3A/Users/Alejo/OneDrive%20-%20Universidad</span><span class="si">%20d</span><span class="s1">e</span><span class="si">%20La</span><span class="s1">s%20Am%C3%A9ricas/UDLA/pmdb/pmdb-material/forecast.ipynb#X12sZmlsZQ%3D%3D?line=2&#39;</span><span class="o">&gt;</span><span class="mi">3</span><span class="o">&lt;/</span><span class="n">a</span><span class="o">&gt;</span> <span class="c1"># plt.show()</span>
 
-<span class="nn">File ~\AppData\Local\Programs\Python\Python311\Lib\site-packages\statsmodels\tsa\seasonal.py:214,</span> in <span class="ni">seasonal_decompose</span><span class="nt">(x, model, filt, period, two_sided, extrapolate_trend)</span>
+<span class="nn">File c:\Users\Alejo\AppData\Local\Programs\Python\Python311\Lib\site-packages\statsmodels\tsa\seasonal.py:214,</span> in <span class="ni">seasonal_decompose</span><span class="nt">(x, model, filt, period, two_sided, extrapolate_trend)</span>
 <span class="g g-Whitespace">    </span><span class="mi">210</span> <span class="n">results</span> <span class="o">=</span> <span class="p">[]</span>
 <span class="g g-Whitespace">    </span><span class="mi">211</span> <span class="k">for</span> <span class="n">s</span><span class="p">,</span> <span class="n">name</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span>
 <span class="g g-Whitespace">    </span><span class="mi">212</span>     <span class="p">(</span><span class="n">seasonal</span><span class="p">,</span> <span class="n">trend</span><span class="p">,</span> <span class="n">resid</span><span class="p">,</span> <span class="n">x</span><span class="p">),</span> <span class="p">(</span><span class="s2">&quot;seasonal&quot;</span><span class="p">,</span> <span class="s2">&quot;trend&quot;</span><span class="p">,</span> <span class="s2">&quot;resid&quot;</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span>
@@ -482,14 +501,14 @@ document.write(`
 <span class="g g-Whitespace">    </span><span class="mi">219</span>     <span class="n">observed</span><span class="o">=</span><span class="n">results</span><span class="p">[</span><span class="mi">3</span><span class="p">],</span>
 <span class="g g-Whitespace">    </span><span class="mi">220</span> <span class="p">)</span>
 
-<span class="nn">File ~\AppData\Local\Programs\Python\Python311\Lib\site-packages\statsmodels\tools\validation\validation.py:237,</span> in <span class="ni">PandasWrapper.wrap</span><span class="nt">(self, obj, columns, append, trim_start, trim_end)</span>
+<span class="nn">File c:\Users\Alejo\AppData\Local\Programs\Python\Python311\Lib\site-packages\statsmodels\tools\validation\validation.py:237,</span> in <span class="ni">PandasWrapper.wrap</span><span class="nt">(self, obj, columns, append, trim_start, trim_end)</span>
 <span class="g g-Whitespace">    </span><span class="mi">235</span>             <span class="n">new</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">append</span> <span class="k">if</span> <span class="n">c</span> <span class="ow">is</span> <span class="kc">None</span> <span class="k">else</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">c</span><span class="si">}</span><span class="s2">_</span><span class="si">{</span><span class="n">append</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
 <span class="g g-Whitespace">    </span><span class="mi">236</span>         <span class="n">columns</span> <span class="o">=</span> <span class="n">new</span>
 <span class="ne">--&gt; </span><span class="mi">237</span>     <span class="k">return</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">obj</span><span class="p">,</span> <span class="n">columns</span><span class="o">=</span><span class="n">columns</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="n">index</span><span class="p">)</span>
 <span class="g g-Whitespace">    </span><span class="mi">238</span> <span class="k">else</span><span class="p">:</span>
 <span class="g g-Whitespace">    </span><span class="mi">239</span>     <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;Can only wrap 1 or 2-d array_like&quot;</span><span class="p">)</span>
 
-<span class="nn">File ~\AppData\Local\Programs\Python\Python311\Lib\site-packages\pandas\core\frame.py:758,</span> in <span class="ni">DataFrame.__init__</span><span class="nt">(self, data, index, columns, dtype, copy)</span>
+<span class="nn">File c:\Users\Alejo\AppData\Local\Programs\Python\Python311\Lib\site-packages\pandas\core\frame.py:758,</span> in <span class="ni">DataFrame.__init__</span><span class="nt">(self, data, index, columns, dtype, copy)</span>
 <span class="g g-Whitespace">    </span><span class="mi">747</span>         <span class="n">mgr</span> <span class="o">=</span> <span class="n">dict_to_mgr</span><span class="p">(</span>
 <span class="g g-Whitespace">    </span><span class="mi">748</span>             <span class="c1"># error: Item &quot;ndarray&quot; of &quot;Union[ndarray, Series, Index]&quot; has no</span>
 <span class="g g-Whitespace">    </span><span class="mi">749</span>             <span class="c1"># attribute &quot;name&quot;</span>
@@ -508,7 +527,7 @@ document.write(`
 <span class="g g-Whitespace">    </span><span class="mi">767</span> <span class="c1"># For data is list-like, or Iterable (will consume into list)</span>
 <span class="g g-Whitespace">    </span><span class="mi">768</span> <span class="k">elif</span> <span class="n">is_list_like</span><span class="p">(</span><span class="n">data</span><span class="p">):</span>
 
-<span class="nn">File ~\AppData\Local\Programs\Python\Python311\Lib\site-packages\pandas\core\internals\construction.py:333,</span> in <span class="ni">ndarray_to_mgr</span><span class="nt">(values, index, columns, dtype, copy, typ)</span>
+<span class="nn">File c:\Users\Alejo\AppData\Local\Programs\Python\Python311\Lib\site-packages\pandas\core\internals\construction.py:333,</span> in <span class="ni">ndarray_to_mgr</span><span class="nt">(values, index, columns, dtype, copy, typ)</span>
 <span class="g g-Whitespace">    </span><span class="mi">324</span>     <span class="n">values</span> <span class="o">=</span> <span class="n">sanitize_array</span><span class="p">(</span>
 <span class="g g-Whitespace">    </span><span class="mi">325</span>         <span class="n">values</span><span class="p">,</span>
 <span class="g g-Whitespace">    </span><span class="mi">326</span>         <span class="kc">None</span><span class="p">,</span>
@@ -522,25 +541,25 @@ document.write(`
 <span class="g g-Whitespace">    </span><span class="mi">337</span> <span class="n">_check_values_indices_shape_match</span><span class="p">(</span><span class="n">values</span><span class="p">,</span> <span class="n">index</span><span class="p">,</span> <span class="n">columns</span><span class="p">)</span>
 <span class="g g-Whitespace">    </span><span class="mi">339</span> <span class="k">if</span> <span class="n">typ</span> <span class="o">==</span> <span class="s2">&quot;array&quot;</span><span class="p">:</span>
 
-<span class="nn">File ~\AppData\Local\Programs\Python\Python311\Lib\site-packages\pandas\core\internals\construction.py:738,</span> in <span class="ni">_get_axes</span><span class="nt">(N, K, index, columns)</span>
+<span class="nn">File c:\Users\Alejo\AppData\Local\Programs\Python\Python311\Lib\site-packages\pandas\core\internals\construction.py:738,</span> in <span class="ni">_get_axes</span><span class="nt">(N, K, index, columns)</span>
 <span class="g g-Whitespace">    </span><span class="mi">736</span>     <span class="n">columns</span> <span class="o">=</span> <span class="n">default_index</span><span class="p">(</span><span class="n">K</span><span class="p">)</span>
 <span class="g g-Whitespace">    </span><span class="mi">737</span> <span class="k">else</span><span class="p">:</span>
 <span class="ne">--&gt; </span><span class="mi">738</span>     <span class="n">columns</span> <span class="o">=</span> <span class="n">ensure_index</span><span class="p">(</span><span class="n">columns</span><span class="p">)</span>
 <span class="g g-Whitespace">    </span><span class="mi">739</span> <span class="k">return</span> <span class="n">index</span><span class="p">,</span> <span class="n">columns</span>
 
-<span class="nn">File ~\AppData\Local\Programs\Python\Python311\Lib\site-packages\pandas\core\indexes\base.py:7128,</span> in <span class="ni">ensure_index</span><span class="nt">(index_like, copy)</span>
+<span class="nn">File c:\Users\Alejo\AppData\Local\Programs\Python\Python311\Lib\site-packages\pandas\core\indexes\base.py:7128,</span> in <span class="ni">ensure_index</span><span class="nt">(index_like, copy)</span>
 <span class="g g-Whitespace">   </span><span class="mi">7126</span>         <span class="k">return</span> <span class="n">Index</span><span class="p">(</span><span class="n">index_like</span><span class="p">,</span> <span class="n">copy</span><span class="o">=</span><span class="n">copy</span><span class="p">,</span> <span class="n">tupleize_cols</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
 <span class="g g-Whitespace">   </span><span class="mi">7127</span> <span class="k">else</span><span class="p">:</span>
 <span class="ne">-&gt; </span><span class="mi">7128</span>     <span class="k">return</span> <span class="n">Index</span><span class="p">(</span><span class="n">index_like</span><span class="p">,</span> <span class="n">copy</span><span class="o">=</span><span class="n">copy</span><span class="p">)</span>
 
-<span class="nn">File ~\AppData\Local\Programs\Python\Python311\Lib\site-packages\pandas\core\indexes\base.py:516,</span> in <span class="ni">Index.__new__</span><span class="nt">(cls, data, dtype, copy, name, tupleize_cols)</span>
+<span class="nn">File c:\Users\Alejo\AppData\Local\Programs\Python\Python311\Lib\site-packages\pandas\core\indexes\base.py:516,</span> in <span class="ni">Index.__new__</span><span class="nt">(cls, data, dtype, copy, name, tupleize_cols)</span>
 <span class="g g-Whitespace">    </span><span class="mi">513</span>         <span class="n">data</span> <span class="o">=</span> <span class="n">com</span><span class="o">.</span><span class="n">asarray_tuplesafe</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="n">_dtype_obj</span><span class="p">)</span>
 <span class="g g-Whitespace">    </span><span class="mi">515</span> <span class="k">elif</span> <span class="n">is_scalar</span><span class="p">(</span><span class="n">data</span><span class="p">):</span>
 <span class="ne">--&gt; </span><span class="mi">516</span>     <span class="k">raise</span> <span class="bp">cls</span><span class="o">.</span><span class="n">_raise_scalar_data_error</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
 <span class="g g-Whitespace">    </span><span class="mi">517</span> <span class="k">elif</span> <span class="nb">hasattr</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="s2">&quot;__array__&quot;</span><span class="p">):</span>
 <span class="g g-Whitespace">    </span><span class="mi">518</span>     <span class="k">return</span> <span class="n">Index</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">data</span><span class="p">),</span> <span class="n">dtype</span><span class="o">=</span><span class="n">dtype</span><span class="p">,</span> <span class="n">copy</span><span class="o">=</span><span class="n">copy</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="n">name</span><span class="p">)</span>
 
-<span class="nn">File ~\AppData\Local\Programs\Python\Python311\Lib\site-packages\pandas\core\indexes\base.py:5066,</span> in <span class="ni">Index._raise_scalar_data_error</span><span class="nt">(cls, data)</span>
+<span class="nn">File c:\Users\Alejo\AppData\Local\Programs\Python\Python311\Lib\site-packages\pandas\core\indexes\base.py:5066,</span> in <span class="ni">Index._raise_scalar_data_error</span><span class="nt">(cls, data)</span>
 <span class="g g-Whitespace">   </span><span class="mi">5061</span> <span class="nd">@final</span>
 <span class="g g-Whitespace">   </span><span class="mi">5062</span> <span class="nd">@classmethod</span>
 <span class="g g-Whitespace">   </span><span class="mi">5063</span> <span class="k">def</span> <span class="nf">_raise_scalar_data_error</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">data</span><span class="p">):</span>
@@ -920,16 +939,12 @@ document.write(`
 
               
               
-                <footer class="bd-footer-article">
+              
+              
+                <footer class="prev-next-footer">
                   
-<div class="footer-article-items footer-article__inner">
-  
-    <div class="footer-article-item"><!-- Previous / next buttons -->
 <div class="prev-next-area">
-</div></div>
-  
 </div>
-
                 </footer>
               
             </div>
@@ -976,6 +991,7 @@ By Alejandro Acosta León
   
   <div class="footer-item">
     
+
   <p class="copyright">
     
       © Copyright 2022.
@@ -1002,8 +1018,8 @@ By Alejandro Acosta León
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
-<script src="_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
+  <script src="_static/scripts/bootstrap.js?digest=5b4479735964841361fd"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd"></script>
 
   <footer class="bd-footer">
   </footer>

@@ -1,117 +1,45 @@
 Traceback (most recent call last):
-  File "C:\Users\Alejo\AppData\Local\Programs\Python\Python311\Lib\site-packages\jupyter_cache\executors\utils.py", line 58, in single_nb_execution
+  File "/home/alejo/.local/lib/python3.10/site-packages/jupyter_cache/executors/utils.py", line 58, in single_nb_execution
     executenb(
-  File "C:\Users\Alejo\AppData\Local\Programs\Python\Python311\Lib\site-packages\nbclient\client.py", line 1305, in execute
+  File "/home/alejo/.local/lib/python3.10/site-packages/nbclient/client.py", line 1305, in execute
     return NotebookClient(nb=nb, resources=resources, km=km, **kwargs).execute()
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\Alejo\AppData\Local\Programs\Python\Python311\Lib\site-packages\jupyter_core\utils\__init__.py", line 166, in wrapped
+  File "/home/alejo/.local/lib/python3.10/site-packages/jupyter_core/utils/__init__.py", line 173, in wrapped
     return loop.run_until_complete(inner)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\Alejo\AppData\Local\Programs\Python\Python311\Lib\asyncio\base_events.py", line 653, in run_until_complete
+  File "/usr/lib/python3.10/asyncio/base_events.py", line 649, in run_until_complete
     return future.result()
-           ^^^^^^^^^^^^^^^
-  File "C:\Users\Alejo\AppData\Local\Programs\Python\Python311\Lib\site-packages\nbclient\client.py", line 705, in async_execute
+  File "/home/alejo/.local/lib/python3.10/site-packages/nbclient/client.py", line 705, in async_execute
     await self.async_execute_cell(
-  File "C:\Users\Alejo\AppData\Local\Programs\Python\Python311\Lib\site-packages\nbclient\client.py", line 1058, in async_execute_cell
+  File "/home/alejo/.local/lib/python3.10/site-packages/nbclient/client.py", line 1058, in async_execute_cell
     await self._check_raise_for_error(cell, cell_index, exec_reply)
-  File "C:\Users\Alejo\AppData\Local\Programs\Python\Python311\Lib\site-packages\nbclient\client.py", line 914, in _check_raise_for_error
+  File "/home/alejo/.local/lib/python3.10/site-packages/nbclient/client.py", line 914, in _check_raise_for_error
     raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
 nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
 ------------------
-decomp = seasonal_decompose(mdf, model='additive')
-decomp.plot()
-# plt.show()
+import numpy as np
+import pandas as pd
+import matplotlib.pyplot as plt
+import seaborn as sns
+
+from statsmodels.tsa.seasonal import seasonal_decompose
+import pmdarima as pm
+
+import yfinance as yf
+yf.pdr_override()
+import pandas_datareader.data as web
+import datetime
+
+plt.style.use('ggplot')
 ------------------
 
 
-[1;31m---------------------------------------------------------------------------[0m
-[1;31mTypeError[0m                                 Traceback (most recent call last)
-Cell [1;32mIn[6], line 1[0m
-[1;32m----> 1[0m decomp [38;5;241m=[39m [43mseasonal_decompose[49m[43m([49m[43mmdf[49m[43m,[49m[43m [49m[43mmodel[49m[38;5;241;43m=[39;49m[38;5;124;43m'[39;49m[38;5;124;43madditive[39;49m[38;5;124;43m'[39;49m[43m)[49m
-[0;32m      2[0m decomp[38;5;241m.[39mplot()
-[0;32m      3[0m [38;5;66;03m# plt.show()[39;00m
+[0;31m---------------------------------------------------------------------------[0m
+[0;31mModuleNotFoundError[0m                       Traceback (most recent call last)
+Cell [0;32mIn[1], line 6[0m
+[1;32m      3[0m [38;5;28;01mimport[39;00m [38;5;21;01mmatplotlib[39;00m[38;5;21;01m.[39;00m[38;5;21;01mpyplot[39;00m [38;5;28;01mas[39;00m [38;5;21;01mplt[39;00m
+[1;32m      4[0m [38;5;28;01mimport[39;00m [38;5;21;01mseaborn[39;00m [38;5;28;01mas[39;00m [38;5;21;01msns[39;00m
+[0;32m----> 6[0m [38;5;28;01mfrom[39;00m [38;5;21;01mstatsmodels[39;00m[38;5;21;01m.[39;00m[38;5;21;01mtsa[39;00m[38;5;21;01m.[39;00m[38;5;21;01mseasonal[39;00m [38;5;28;01mimport[39;00m seasonal_decompose
+[1;32m      7[0m [38;5;28;01mimport[39;00m [38;5;21;01mpmdarima[39;00m [38;5;28;01mas[39;00m [38;5;21;01mpm[39;00m
+[1;32m      9[0m [38;5;28;01mimport[39;00m [38;5;21;01myfinance[39;00m [38;5;28;01mas[39;00m [38;5;21;01myf[39;00m
 
-File [1;32m~\AppData\Local\Programs\Python\Python311\Lib\site-packages\statsmodels\tsa\seasonal.py:214[0m, in [0;36mseasonal_decompose[1;34m(x, model, filt, period, two_sided, extrapolate_trend)[0m
-[0;32m    210[0m results [38;5;241m=[39m []
-[0;32m    211[0m [38;5;28;01mfor[39;00m s, name [38;5;129;01min[39;00m [38;5;28mzip[39m(
-[0;32m    212[0m     (seasonal, trend, resid, x), ([38;5;124m"[39m[38;5;124mseasonal[39m[38;5;124m"[39m, [38;5;124m"[39m[38;5;124mtrend[39m[38;5;124m"[39m, [38;5;124m"[39m[38;5;124mresid[39m[38;5;124m"[39m, [38;5;28;01mNone[39;00m)
-[0;32m    213[0m ):
-[1;32m--> 214[0m     results[38;5;241m.[39mappend([43mpw[49m[38;5;241;43m.[39;49m[43mwrap[49m[43m([49m[43ms[49m[38;5;241;43m.[39;49m[43msqueeze[49m[43m([49m[43m)[49m[43m,[49m[43m [49m[43mcolumns[49m[38;5;241;43m=[39;49m[43mname[49m[43m)[49m)
-[0;32m    215[0m [38;5;28;01mreturn[39;00m DecomposeResult(
-[0;32m    216[0m     seasonal[38;5;241m=[39mresults[[38;5;241m0[39m],
-[0;32m    217[0m     trend[38;5;241m=[39mresults[[38;5;241m1[39m],
-[0;32m    218[0m     resid[38;5;241m=[39mresults[[38;5;241m2[39m],
-[0;32m    219[0m     observed[38;5;241m=[39mresults[[38;5;241m3[39m],
-[0;32m    220[0m )
-
-File [1;32m~\AppData\Local\Programs\Python\Python311\Lib\site-packages\statsmodels\tools\validation\validation.py:237[0m, in [0;36mPandasWrapper.wrap[1;34m(self, obj, columns, append, trim_start, trim_end)[0m
-[0;32m    235[0m             new[38;5;241m.[39mappend(append [38;5;28;01mif[39;00m c [38;5;129;01mis[39;00m [38;5;28;01mNone[39;00m [38;5;28;01melse[39;00m [38;5;124mf[39m[38;5;124m"[39m[38;5;132;01m{[39;00mc[38;5;132;01m}[39;00m[38;5;124m_[39m[38;5;132;01m{[39;00mappend[38;5;132;01m}[39;00m[38;5;124m"[39m)
-[0;32m    236[0m         columns [38;5;241m=[39m new
-[1;32m--> 237[0m     [38;5;28;01mreturn[39;00m [43mpd[49m[38;5;241;43m.[39;49m[43mDataFrame[49m[43m([49m[43mobj[49m[43m,[49m[43m [49m[43mcolumns[49m[38;5;241;43m=[39;49m[43mcolumns[49m[43m,[49m[43m [49m[43mindex[49m[38;5;241;43m=[39;49m[43mindex[49m[43m)[49m
-[0;32m    238[0m [38;5;28;01melse[39;00m:
-[0;32m    239[0m     [38;5;28;01mraise[39;00m [38;5;167;01mValueError[39;00m([38;5;124m"[39m[38;5;124mCan only wrap 1 or 2-d array_like[39m[38;5;124m"[39m)
-
-File [1;32m~\AppData\Local\Programs\Python\Python311\Lib\site-packages\pandas\core\frame.py:758[0m, in [0;36mDataFrame.__init__[1;34m(self, data, index, columns, dtype, copy)[0m
-[0;32m    747[0m         mgr [38;5;241m=[39m dict_to_mgr(
-[0;32m    748[0m             [38;5;66;03m# error: Item "ndarray" of "Union[ndarray, Series, Index]" has no[39;00m
-[0;32m    749[0m             [38;5;66;03m# attribute "name"[39;00m
-[1;32m   (...)[0m
-[0;32m    755[0m             copy[38;5;241m=[39m_copy,
-[0;32m    756[0m         )
-[0;32m    757[0m     [38;5;28;01melse[39;00m:
-[1;32m--> 758[0m         mgr [38;5;241m=[39m [43mndarray_to_mgr[49m[43m([49m
-[0;32m    759[0m [43m            [49m[43mdata[49m[43m,[49m
-[0;32m    760[0m [43m            [49m[43mindex[49m[43m,[49m
-[0;32m    761[0m [43m            [49m[43mcolumns[49m[43m,[49m
-[0;32m    762[0m [43m            [49m[43mdtype[49m[38;5;241;43m=[39;49m[43mdtype[49m[43m,[49m
-[0;32m    763[0m [43m            [49m[43mcopy[49m[38;5;241;43m=[39;49m[43mcopy[49m[43m,[49m
-[0;32m    764[0m [43m            [49m[43mtyp[49m[38;5;241;43m=[39;49m[43mmanager[49m[43m,[49m
-[0;32m    765[0m [43m        [49m[43m)[49m
-[0;32m    767[0m [38;5;66;03m# For data is list-like, or Iterable (will consume into list)[39;00m
-[0;32m    768[0m [38;5;28;01melif[39;00m is_list_like(data):
-
-File [1;32m~\AppData\Local\Programs\Python\Python311\Lib\site-packages\pandas\core\internals\construction.py:333[0m, in [0;36mndarray_to_mgr[1;34m(values, index, columns, dtype, copy, typ)[0m
-[0;32m    324[0m     values [38;5;241m=[39m sanitize_array(
-[0;32m    325[0m         values,
-[0;32m    326[0m         [38;5;28;01mNone[39;00m,
-[1;32m   (...)[0m
-[0;32m    329[0m         allow_2d[38;5;241m=[39m[38;5;28;01mTrue[39;00m,
-[0;32m    330[0m     )
-[0;32m    332[0m [38;5;66;03m# _prep_ndarraylike ensures that values.ndim == 2 at this point[39;00m
-[1;32m--> 333[0m index, columns [38;5;241m=[39m [43m_get_axes[49m[43m([49m
-[0;32m    334[0m [43m    [49m[43mvalues[49m[38;5;241;43m.[39;49m[43mshape[49m[43m[[49m[38;5;241;43m0[39;49m[43m][49m[43m,[49m[43m [49m[43mvalues[49m[38;5;241;43m.[39;49m[43mshape[49m[43m[[49m[38;5;241;43m1[39;49m[43m][49m[43m,[49m[43m [49m[43mindex[49m[38;5;241;43m=[39;49m[43mindex[49m[43m,[49m[43m [49m[43mcolumns[49m[38;5;241;43m=[39;49m[43mcolumns[49m
-[0;32m    335[0m [43m[49m[43m)[49m
-[0;32m    337[0m _check_values_indices_shape_match(values, index, columns)
-[0;32m    339[0m [38;5;28;01mif[39;00m typ [38;5;241m==[39m [38;5;124m"[39m[38;5;124marray[39m[38;5;124m"[39m:
-
-File [1;32m~\AppData\Local\Programs\Python\Python311\Lib\site-packages\pandas\core\internals\construction.py:738[0m, in [0;36m_get_axes[1;34m(N, K, index, columns)[0m
-[0;32m    736[0m     columns [38;5;241m=[39m default_index(K)
-[0;32m    737[0m [38;5;28;01melse[39;00m:
-[1;32m--> 738[0m     columns [38;5;241m=[39m [43mensure_index[49m[43m([49m[43mcolumns[49m[43m)[49m
-[0;32m    739[0m [38;5;28;01mreturn[39;00m index, columns
-
-File [1;32m~\AppData\Local\Programs\Python\Python311\Lib\site-packages\pandas\core\indexes\base.py:7128[0m, in [0;36mensure_index[1;34m(index_like, copy)[0m
-[0;32m   7126[0m         [38;5;28;01mreturn[39;00m Index(index_like, copy[38;5;241m=[39mcopy, tupleize_cols[38;5;241m=[39m[38;5;28;01mFalse[39;00m)
-[0;32m   7127[0m [38;5;28;01melse[39;00m:
-[1;32m-> 7128[0m     [38;5;28;01mreturn[39;00m [43mIndex[49m[43m([49m[43mindex_like[49m[43m,[49m[43m [49m[43mcopy[49m[38;5;241;43m=[39;49m[43mcopy[49m[43m)[49m
-
-File [1;32m~\AppData\Local\Programs\Python\Python311\Lib\site-packages\pandas\core\indexes\base.py:516[0m, in [0;36mIndex.__new__[1;34m(cls, data, dtype, copy, name, tupleize_cols)[0m
-[0;32m    513[0m         data [38;5;241m=[39m com[38;5;241m.[39masarray_tuplesafe(data, dtype[38;5;241m=[39m_dtype_obj)
-[0;32m    515[0m [38;5;28;01melif[39;00m is_scalar(data):
-[1;32m--> 516[0m     [38;5;28;01mraise[39;00m [38;5;28;43mcls[39;49m[38;5;241;43m.[39;49m[43m_raise_scalar_data_error[49m[43m([49m[43mdata[49m[43m)[49m
-[0;32m    517[0m [38;5;28;01melif[39;00m [38;5;28mhasattr[39m(data, [38;5;124m"[39m[38;5;124m__array__[39m[38;5;124m"[39m):
-[0;32m    518[0m     [38;5;28;01mreturn[39;00m Index(np[38;5;241m.[39masarray(data), dtype[38;5;241m=[39mdtype, copy[38;5;241m=[39mcopy, name[38;5;241m=[39mname)
-
-File [1;32m~\AppData\Local\Programs\Python\Python311\Lib\site-packages\pandas\core\indexes\base.py:5066[0m, in [0;36mIndex._raise_scalar_data_error[1;34m(cls, data)[0m
-[0;32m   5061[0m [38;5;129m@final[39m
-[0;32m   5062[0m [38;5;129m@classmethod[39m
-[0;32m   5063[0m [38;5;28;01mdef[39;00m [38;5;21m_raise_scalar_data_error[39m([38;5;28mcls[39m, data):
-[0;32m   5064[0m     [38;5;66;03m# We return the TypeError so that we can raise it from the constructor[39;00m
-[0;32m   5065[0m     [38;5;66;03m#  in order to keep mypy happy[39;00m
-[1;32m-> 5066[0m     [38;5;28;01mraise[39;00m [38;5;167;01mTypeError[39;00m(
-[0;32m   5067[0m         [38;5;124mf[39m[38;5;124m"[39m[38;5;132;01m{[39;00m[38;5;28mcls[39m[38;5;241m.[39m[38;5;18m__name__[39m[38;5;132;01m}[39;00m[38;5;124m(...) must be called with a collection of some [39m[38;5;124m"[39m
-[0;32m   5068[0m         [38;5;124mf[39m[38;5;124m"[39m[38;5;124mkind, [39m[38;5;132;01m{[39;00m[38;5;28mrepr[39m(data)[38;5;132;01m}[39;00m[38;5;124m was passed[39m[38;5;124m"[39m
-[0;32m   5069[0m     )
-
-[1;31mTypeError[0m: Index(...) must be called with a collection of some kind, 'seasonal' was passed
+[0;31mModuleNotFoundError[0m: No module named 'statsmodels'
 
