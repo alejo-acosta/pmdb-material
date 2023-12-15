@@ -178,6 +178,7 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="3.4-librerias.html">3.4. Librerías</a></li>
 <li class="toctree-l1"><a class="reference internal" href="3.5-pandas.html">3.5. Pandas</a></li>
 <li class="toctree-l1"><a class="reference internal" href="4.0-visualizacion.html">4. Visualización de datos</a></li>
+
 <li class="toctree-l1"><a class="reference internal" href="9.0-curva-indiferencia.html">Ejemplo: Curvas de indiferencia</a></li>
 <li class="toctree-l1"><a class="reference internal" href="9.1-simulacion-shock-mercado.html">Ejemplo: Simulación Shocks oferta y demanda</a></li>
 <li class="toctree-l1"><a class="reference internal" href="9.2-simulacion-gini.html">Ejemplo: Simulación Gini</a></li>
@@ -409,14 +410,14 @@ document.write(`
 <div class="cell_output docutils container">
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
 <span class="ne">ModuleNotFoundError</span><span class="g g-Whitespace">                       </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">line</span> <span class="mi">6</span>
-<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">line</span> <span class="mi">7</span>
 <span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="kn">import</span> <span class="nn">seaborn</span> <span class="k">as</span> <span class="nn">sns</span>
-<span class="ne">----&gt; </span><span class="mi">6</span> <span class="kn">from</span> <span class="nn">statsmodels.tsa.seasonal</span> <span class="kn">import</span> <span class="n">seasonal_decompose</span>
-<span class="g g-Whitespace">      </span><span class="mi">7</span> <span class="kn">import</span> <span class="nn">pmdarima</span> <span class="k">as</span> <span class="nn">pm</span>
+<span class="g g-Whitespace">      </span><span class="mi">6</span> <span class="kn">from</span> <span class="nn">statsmodels.tsa.seasonal</span> <span class="kn">import</span> <span class="n">seasonal_decompose</span>
+<span class="ne">----&gt; </span><span class="mi">7</span> <span class="kn">import</span> <span class="nn">pmdarima</span> <span class="k">as</span> <span class="nn">pm</span>
 <span class="g g-Whitespace">      </span><span class="mi">9</span> <span class="kn">import</span> <span class="nn">yfinance</span> <span class="k">as</span> <span class="nn">yf</span>
+<span class="g g-Whitespace">     </span><span class="mi">10</span> <span class="n">yf</span><span class="o">.</span><span class="n">pdr_override</span><span class="p">()</span>
 
-<span class="ne">ModuleNotFoundError</span>: No module named &#39;statsmodels&#39;
+<span class="ne">ModuleNotFoundError</span>: No module named &#39;pmdarima&#39;
 </pre></div>
 </div>
 </div>

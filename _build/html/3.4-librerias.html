@@ -178,6 +178,7 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">3.4. Librerías</a></li>
 <li class="toctree-l1"><a class="reference internal" href="3.5-pandas.html">3.5. Pandas</a></li>
 <li class="toctree-l1"><a class="reference internal" href="4.0-visualizacion.html">4. Visualización de datos</a></li>
+
 <li class="toctree-l1"><a class="reference internal" href="9.0-curva-indiferencia.html">Ejemplo: Curvas de indiferencia</a></li>
 <li class="toctree-l1"><a class="reference internal" href="9.1-simulacion-shock-mercado.html">Ejemplo: Simulación Shocks oferta y demanda</a></li>
 <li class="toctree-l1"><a class="reference internal" href="9.2-simulacion-gini.html">Ejemplo: Simulación Gini</a></li>
@@ -578,16 +579,16 @@ Requirement already satisfied: six&gt;=1.5 in /usr/lib/python3/dist-packages (fr
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[44, 54, 80, 48, 95,  8, 36, 81, 49, 96],
-       [81, 45, 44, 88, 42, 27, 88, 41, 55, 15],
-       [34, 93, 99, 36, 96, 19, 59, 46, 88, 86],
-       [48, 52, 58, 79, 91, 56, 60, 45, 26, 12],
-       [20, 92, 75, 31, 74, 69, 52, 10, 97, 95],
-       [21, 54,  9, 30, 70, 37, 32, 40, 23, 92],
-       [85, 68, 25, 21, 92, 22, 80, 68, 46, 99],
-       [14, 44, 80, 80,  2, 31, 69, 84, 94,  5],
-       [ 4, 38, 30, 93, 62,  5, 23,  8, 25, 84],
-       [26, 77, 28, 99, 78, 21, 40, 82, 28, 61]])
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[88, 67, 71, 44, 92, 62, 26, 81, 97, 89],
+       [48, 46, 67, 24, 57, 25, 50, 85, 85,  7],
+       [85, 13, 13, 18, 31, 63, 97, 84, 66, 26],
+       [96, 37, 23, 94, 52, 49, 21, 12, 45, 29],
+       [59,  9, 46, 71, 57, 83,  3, 96, 48, 30],
+       [79, 24, 46, 14, 84, 26, 47, 95, 17, 62],
+       [32, 55, 77, 46, 79, 44, 76, 25, 74, 25],
+       [71, 46, 20, 11, 14, 37, 62, 25,  9, 91],
+       [92, 92, 29,  9, 82, 73, 54, 65, 91, 29],
+       [51,  9,  1, 86, 56, 92, 94, 14,  3, 89]])
 </pre></div>
 </div>
 </div>
@@ -645,133 +646,133 @@ Requirement already satisfied: six&gt;=1.5 in /usr/lib/python3/dist-packages (fr
   <tbody>
     <tr>
       <th>0</th>
-      <td>65</td>
-      <td>36</td>
       <td>1</td>
-      <td>93</td>
-      <td>67</td>
-      <td>53</td>
-      <td>36</td>
-      <td>87</td>
-      <td>77</td>
-      <td>77</td>
+      <td>42</td>
+      <td>92</td>
+      <td>98</td>
+      <td>34</td>
+      <td>38</td>
+      <td>2</td>
+      <td>81</td>
+      <td>42</td>
+      <td>13</td>
     </tr>
     <tr>
       <th>1</th>
-      <td>54</td>
-      <td>13</td>
-      <td>93</td>
-      <td>15</td>
-      <td>73</td>
-      <td>42</td>
-      <td>38</td>
-      <td>97</td>
-      <td>95</td>
-      <td>34</td>
+      <td>22</td>
+      <td>87</td>
+      <td>99</td>
+      <td>68</td>
+      <td>26</td>
+      <td>49</td>
+      <td>84</td>
+      <td>19</td>
+      <td>78</td>
+      <td>16</td>
     </tr>
     <tr>
       <th>2</th>
-      <td>94</td>
-      <td>71</td>
-      <td>18</td>
-      <td>72</td>
-      <td>64</td>
+      <td>2</td>
       <td>3</td>
-      <td>99</td>
-      <td>18</td>
-      <td>34</td>
-      <td>32</td>
+      <td>44</td>
+      <td>78</td>
+      <td>68</td>
+      <td>11</td>
+      <td>83</td>
+      <td>80</td>
+      <td>41</td>
+      <td>38</td>
     </tr>
     <tr>
       <th>3</th>
-      <td>99</td>
-      <td>69</td>
-      <td>46</td>
-      <td>35</td>
-      <td>34</td>
+      <td>82</td>
+      <td>26</td>
+      <td>22</td>
+      <td>70</td>
+      <td>37</td>
+      <td>83</td>
+      <td>52</td>
       <td>76</td>
-      <td>17</td>
-      <td>1</td>
-      <td>85</td>
-      <td>65</td>
+      <td>48</td>
+      <td>32</td>
     </tr>
     <tr>
       <th>4</th>
-      <td>36</td>
-      <td>19</td>
-      <td>68</td>
-      <td>42</td>
-      <td>88</td>
-      <td>48</td>
-      <td>6</td>
-      <td>39</td>
+      <td>11</td>
+      <td>14</td>
+      <td>30</td>
+      <td>69</td>
+      <td>27</td>
+      <td>2</td>
+      <td>2</td>
       <td>56</td>
-      <td>73</td>
+      <td>17</td>
+      <td>59</td>
     </tr>
     <tr>
       <th>5</th>
-      <td>6</td>
-      <td>66</td>
+      <td>86</td>
+      <td>75</td>
+      <td>53</td>
+      <td>2</td>
+      <td>7</td>
+      <td>9</td>
       <td>97</td>
-      <td>29</td>
-      <td>19</td>
-      <td>18</td>
-      <td>13</td>
-      <td>42</td>
-      <td>69</td>
-      <td>19</td>
+      <td>63</td>
+      <td>85</td>
+      <td>81</td>
     </tr>
     <tr>
       <th>6</th>
-      <td>15</td>
-      <td>11</td>
-      <td>1</td>
+      <td>10</td>
+      <td>59</td>
+      <td>29</td>
       <td>34</td>
-      <td>81</td>
-      <td>38</td>
-      <td>96</td>
-      <td>49</td>
-      <td>11</td>
-      <td>27</td>
+      <td>33</td>
+      <td>56</td>
+      <td>24</td>
+      <td>37</td>
+      <td>35</td>
+      <td>93</td>
     </tr>
     <tr>
       <th>7</th>
-      <td>28</td>
-      <td>57</td>
-      <td>90</td>
-      <td>96</td>
+      <td>98</td>
       <td>82</td>
-      <td>62</td>
-      <td>50</td>
-      <td>43</td>
-      <td>50</td>
-      <td>47</td>
+      <td>85</td>
+      <td>37</td>
+      <td>49</td>
+      <td>8</td>
+      <td>29</td>
+      <td>61</td>
+      <td>26</td>
+      <td>97</td>
     </tr>
     <tr>
       <th>8</th>
-      <td>30</td>
-      <td>6</td>
+      <td>15</td>
+      <td>87</td>
+      <td>61</td>
+      <td>91</td>
+      <td>78</td>
       <td>50</td>
-      <td>10</td>
-      <td>81</td>
-      <td>32</td>
       <td>45</td>
-      <td>55</td>
-      <td>73</td>
       <td>23</td>
+      <td>66</td>
+      <td>58</td>
     </tr>
     <tr>
       <th>9</th>
-      <td>93</td>
-      <td>1</td>
-      <td>88</td>
-      <td>94</td>
-      <td>67</td>
+      <td>53</td>
+      <td>62</td>
       <td>7</td>
-      <td>75</td>
+      <td>56</td>
       <td>82</td>
-      <td>60</td>
-      <td>74</td>
+      <td>66</td>
+      <td>42</td>
+      <td>79</td>
+      <td>22</td>
+      <td>54</td>
     </tr>
   </tbody>
 </table>
@@ -788,7 +789,7 @@ Requirement already satisfied: six&gt;=1.5 in /usr/lib/python3/dist-packages (fr
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;Axes: &gt;
 </pre></div>
 </div>
-<img alt="_images/875800c2ea8087422dd29c9e209911de01d015e4d93a018861b76a31706e2a8b.png" src="_images/875800c2ea8087422dd29c9e209911de01d015e4d93a018861b76a31706e2a8b.png" />
+<img alt="_images/3bb244a7c13c89d856eaed677fae7c50fde8f1f212b1259b67df194995e08ab2.png" src="_images/3bb244a7c13c89d856eaed677fae7c50fde8f1f212b1259b67df194995e08ab2.png" />
 </div>
 </div>
 </section>
