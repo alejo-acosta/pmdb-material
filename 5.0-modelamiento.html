@@ -1,0 +1,979 @@
+
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+    <title>5. Modelado de datos &#8212; Curso Python</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=5b4479735964841361fd" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
+
+  
+  <link href="_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=5b4479735964841361fd" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=5b4479735964841361fd" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd" />
+  <script src="_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=5b4479735964841361fd"></script>
+
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = '5.0-modelamiento';</script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Ejemplo: Curvas de indiferencia" href="9.0-curva-indiferencia.html" />
+    <link rel="prev" title="3.5. Pandas" href="3.5-pandas.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+
+<a class="navbar-brand logo" href="README.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="_static/python-udla-logo.png" class="logo__image only-light" alt="Curso Python - Home"/>
+    <script>document.write(`<img src="_static/python-udla-logo.png" class="logo__image only-dark" alt="Curso Python - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="README.html">
+                    Introducción
+                </a>
+            </li>
+        </ul>
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="1.0-Introducci%C3%B3n%20a%20la%20programaci%C3%B3n%20y%20bases%20de%20datos.html">1. Introducción a la programación y bases de datos.</a></li>
+<li class="toctree-l1"><a class="reference internal" href="2.0-Bases%20de%20datos%20relacionales.html">2. Bases de datos relacionales</a></li>
+<li class="toctree-l1"><a class="reference internal" href="3.1-Intro%20a%20Python.html">3.1. Programación en Python para el manejo de datos</a></li>
+<li class="toctree-l1"><a class="reference internal" href="3.2-jupyter.html">3.2. Jupyter notebooks</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="3.3-sintaxis.html">3.3. Sintaxis, variables y operadores</a></li>
+<li class="toctree-l1"><a class="reference internal" href="3.4-librerias.html">3.4. Librerías</a></li>
+<li class="toctree-l1"><a class="reference internal" href="3.5-pandas.html">3.5. Pandas</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">5. Modelado de datos</a></li>
+<li class="toctree-l1"><a class="reference internal" href="9.0-curva-indiferencia.html">Ejemplo: Curvas de indiferencia</a></li>
+<li class="toctree-l1"><a class="reference internal" href="9.1-simulacion-shock-mercado.html">Ejemplo: Simulación Shocks oferta y demanda</a></li>
+<li class="toctree-l1"><a class="reference internal" href="9.2-simulacion-gini.html">Ejemplo: Simulación Gini</a></li>
+<li class="toctree-l1"><a class="reference internal" href="9.3-var.html">Vector Autoregression</a></li>
+<li class="toctree-l1"><a class="reference internal" href="9.4.twitter-scraping.html">9.4. Análisis Tweets</a></li>
+<li class="toctree-l1"><a class="reference internal" href="9.5.endi.html">9.5. ENDI</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-launch-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Launch interactive content">
+    <i class="fas fa-rocket"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://colab.research.google.com/github/alejo-acosta/pmdb-material/blob/master/5.0-modelamiento.ipynb" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch onColab"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  
+    <img src="_static/images/logo_colab.png">
+  </span>
+<span class="btn__text-container">Colab</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/5.0-modelamiento.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>5. Modelado de datos</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduccion">5.1. Introducción</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#algunos-ejemplos-de-modelos">Algunos ejemplos de modelos.</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#modelos-de-regresion-lineal">5.2. Modelos de regresión lineal</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="modelado-de-datos">
+<h1>5. Modelado de datos<a class="headerlink" href="#modelado-de-datos" title="Permalink to this heading">#</a></h1>
+<section id="introduccion">
+<h2>5.1. Introducción<a class="headerlink" href="#introduccion" title="Permalink to this heading">#</a></h2>
+<p>Ya hemos visto algunas técnicas cualitativas. Veamos brevemente un resumen de las técnicas cuantitativas que podemos utilizar para entender los datos:</p>
+<p align="left">
+  <img src="https://www.datocms-assets.com/42764/1664970413-chart-selection-diagram.png" alt="" style="background-color:white"/> <br>
+</p>
+<p>Tomado de: <a class="reference external" href="https://extremepresentation.typepad.com/blog/2006/09/choosing_a_good.html">Choosing a good chart</a>.</p>
+<p>Si bien, las técnicas revisadas nos dan un importante entendimiento de los datos, no son suficientes para poder realizar un análisis más profundo. Para ello, es necesario realizar un proceso de modelado. El modelado de datos es un proceso de análisis de datos que busca descubrir patrones y relaciones entre variables. El modelado de datos es una parte fundamental del análisis de datos y es la base para la construcción de modelos de aprendizaje automático (machine learning).</p>
+<p>Primero, entendamos en que campo del conocimiento se encuentra el modelado de datos. El modelado de datos es un proceso que se encuentra en el campo de la estadística. La estadística es una rama de las matemáticas que se encarga de recolectar, organizar, analizar e interpretar datos. Sin embargo, en épocas más recientes se ha desarrollado un campo de conocimiento que se encarga de realizar análisis de datos a gran escala. Este campo de conocimiento es el análisis de datos (data analytics). El cual es un proceso que se encarga de recolectar, organizar, analizar e interpretar datos a gran escala. El análisis de datos es un proceso que se encuentra en el campo de la ciencia de datos (data science). La ciencia de datos es un campo de conocimiento que se encarga de recolectar, organizar, analizar e interpretar datos a gran escala utilizando técnicas de estadística, matemáticas, programación y visualización de datos.</p>
+<p align="left">
+  <img src="https://miro.medium.com/v2/resize:fit:1400/format:webp/1*mgXvzNcwfpnBawI6XTkVRg.png" alt=""  /> <br>
+</p>
+<p>Tomado de: <a class="reference external" href="https://senendu5.medium.com/getting-into-data-science-687731828bb">Medium</a>.</p>
+<p>¿Qué es un modelo?</p>
+<p>Un modelo es una forma de representar la realidad. También se suele decir que un modelo es una abstracción de la realidad, una representación simplificada de la realidad o una representación de la realidad que nos permite entenderla mejor y predecir lo que pasará.</p>
+<p align="left">
+  <img src="https://www.lacan.upc.edu/admoreWeb/wp-content/uploads/2018/04/test2.jpg" alt=""  /> <br>
+</p>
+<section id="algunos-ejemplos-de-modelos">
+<h3>Algunos ejemplos de modelos.<a class="headerlink" href="#algunos-ejemplos-de-modelos" title="Permalink to this heading">#</a></h3>
+<p>Uno de los modelos más simples que podemos encontrar es el del tiro parabólico:</p>
+<p align="left">
+  <img src="https://www.neurochispas.com/wp-content/uploads/2023/06/Formula-para-el-rango-en-movimiento-parabolico.png" alt=""  /> <br>
+</p>
+<p>Si ponemos algunas de estas variables en un modelo matemático, obtenemos la siguiente ecuación:</p>
+<div class="math notranslate nohighlight">
+\[y = ax^2 + bx + c\]</div>
+<ul class="simple">
+<li><p>Donde <span class="math notranslate nohighlight">\(y\)</span> es la altura, <span class="math notranslate nohighlight">\(x\)</span> es la distancia y <span class="math notranslate nohighlight">\(a\)</span>, <span class="math notranslate nohighlight">\(b\)</span> y <span class="math notranslate nohighlight">\(c\)</span> son constantes.</p></li>
+<li><p>En éste caso, tanto <span class="math notranslate nohighlight">\(x\)</span> como <span class="math notranslate nohighlight">\(y\)</span> se les conoce como variables y <span class="math notranslate nohighlight">\(a\)</span>, <span class="math notranslate nohighlight">\(b\)</span> y <span class="math notranslate nohighlight">\(c\)</span> como parámetros.</p></li>
+<li><p>Éste tipo de modelos se los conoce como modelos matemáticos.</p></li>
+</ul>
+<p>Por otro lado, tenemos modelos estocásticos o estadísticos. Un clásico ejemplo es el modelo de regresión lineal:</p>
+<p>(Por ahora no nos preocupemos por el código)</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">seaborn</span> <span class="k">as</span> <span class="nn">sns</span>
+
+<span class="kn">from</span> <span class="nn">scipy</span> <span class="kn">import</span> <span class="n">stats</span>
+
+<span class="c1"># label encoder</span>
+<span class="kn">from</span> <span class="nn">sklearn.preprocessing</span> <span class="kn">import</span> <span class="n">LabelEncoder</span>
+
+<span class="n">sns</span><span class="o">.</span><span class="n">set</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># leer datos</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;https://raw.githubusercontent.com/alejo-acosta/pmdb-material/master/data/house-train.csv&#39;</span><span class="p">)</span>
+
+<span class="c1"># variables categóricas y numéricas</span>
+<span class="n">cat_vars</span> <span class="o">=</span> <span class="p">[</span><span class="n">i</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">df</span><span class="o">.</span><span class="n">columns</span> <span class="k">if</span> <span class="n">i</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">df</span><span class="o">.</span><span class="n">_get_numeric_data</span><span class="p">()</span><span class="o">.</span><span class="n">columns</span><span class="p">]</span>
+<span class="n">num_vars</span> <span class="o">=</span> <span class="p">[</span><span class="n">i</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">df</span><span class="o">.</span><span class="n">columns</span> <span class="k">if</span> <span class="n">i</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">cat_vars</span><span class="p">]</span>
+
+<span class="c1"># eliminar outliers</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">df</span><span class="p">[(</span><span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">stats</span><span class="o">.</span><span class="n">zscore</span><span class="p">(</span><span class="n">df</span><span class="p">[[</span><span class="s1">&#39;SalePrice&#39;</span><span class="p">,</span> <span class="s1">&#39;OverallQual&#39;</span><span class="p">,</span> <span class="s1">&#39;GrLivArea&#39;</span><span class="p">,</span> <span class="s1">&#39;GarageCars&#39;</span><span class="p">,</span> <span class="s1">&#39;GarageArea&#39;</span><span class="p">,</span> <span class="s1">&#39;TotalBsmtSF&#39;</span><span class="p">,</span> <span class="p">]]))</span> <span class="o">&lt;</span> <span class="mi">3</span><span class="p">)</span><span class="o">.</span><span class="n">all</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)]</span>
+
+<span class="c1"># encode categorical variables</span>
+<span class="n">le</span> <span class="o">=</span> <span class="n">LabelEncoder</span><span class="p">()</span>
+
+<span class="k">for</span> <span class="n">col</span> <span class="ow">in</span> <span class="n">cat_vars</span><span class="p">:</span>
+    <span class="n">df</span><span class="p">[</span><span class="n">col</span><span class="p">]</span> <span class="o">=</span> <span class="n">le</span><span class="o">.</span><span class="n">fit_transform</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="n">col</span><span class="p">])</span>
+
+
+<span class="n">df</span><span class="o">.</span><span class="n">shape</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(1420, 81)
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">corr</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="n">num_vars</span><span class="p">]</span><span class="o">.</span><span class="n">corr</span><span class="p">(</span><span class="n">numeric_only</span><span class="o">=</span><span class="kc">True</span><span class="p">)[[</span><span class="s1">&#39;SalePrice&#39;</span><span class="p">]]</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="n">by</span><span class="o">=</span><span class="s1">&#39;SalePrice&#39;</span><span class="p">,</span> <span class="n">ascending</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<span class="n">corr</span> <span class="o">=</span> <span class="n">corr</span><span class="o">.</span><span class="n">style</span><span class="o">.</span><span class="n">background_gradient</span><span class="p">(</span><span class="n">cmap</span><span class="o">=</span><span class="s1">&#39;coolwarm&#39;</span><span class="p">)</span>
+<span class="n">corr</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><style type="text/css">
+#T_ba2e3_row0_col0 {
+  background-color: #b40426;
+  color: #f1f1f1;
+}
+#T_ba2e3_row1_col0 {
+  background-color: #e9785d;
+  color: #f1f1f1;
+}
+#T_ba2e3_row2_col0 {
+  background-color: #f5a081;
+  color: #000000;
+}
+#T_ba2e3_row3_col0 {
+  background-color: #f7ad90;
+  color: #000000;
+}
+#T_ba2e3_row4_col0 {
+  background-color: #f7b194;
+  color: #000000;
+}
+#T_ba2e3_row5_col0 {
+  background-color: #f7b89c;
+  color: #000000;
+}
+#T_ba2e3_row6_col0 {
+  background-color: #f5c1a9;
+  color: #000000;
+}
+#T_ba2e3_row7_col0 {
+  background-color: #f5c2aa;
+  color: #000000;
+}
+#T_ba2e3_row8_col0 {
+  background-color: #f2cab5;
+  color: #000000;
+}
+#T_ba2e3_row9_col0 {
+  background-color: #f1ccb8;
+  color: #000000;
+}
+#T_ba2e3_row10_col0 {
+  background-color: #efcfbf;
+  color: #000000;
+}
+#T_ba2e3_row11_col0 {
+  background-color: #e9d5cb;
+  color: #000000;
+}
+#T_ba2e3_row12_col0 {
+  background-color: #e4d9d2;
+  color: #000000;
+}
+#T_ba2e3_row13_col0 {
+  background-color: #d9dce1;
+  color: #000000;
+}
+#T_ba2e3_row14_col0, #T_ba2e3_row15_col0 {
+  background-color: #cdd9ec;
+  color: #000000;
+}
+#T_ba2e3_row16_col0, #T_ba2e3_row17_col0 {
+  background-color: #c4d5f3;
+  color: #000000;
+}
+#T_ba2e3_row18_col0, #T_ba2e3_row19_col0 {
+  background-color: #b7cff9;
+  color: #000000;
+}
+#T_ba2e3_row20_col0 {
+  background-color: #b1cbfc;
+  color: #000000;
+}
+#T_ba2e3_row21_col0 {
+  background-color: #aac7fd;
+  color: #000000;
+}
+#T_ba2e3_row22_col0 {
+  background-color: #a1c0ff;
+  color: #000000;
+}
+#T_ba2e3_row23_col0 {
+  background-color: #93b5fe;
+  color: #000000;
+}
+#T_ba2e3_row24_col0 {
+  background-color: #81a4fb;
+  color: #f1f1f1;
+}
+#T_ba2e3_row25_col0 {
+  background-color: #7b9ff9;
+  color: #f1f1f1;
+}
+#T_ba2e3_row26_col0 {
+  background-color: #7699f6;
+  color: #f1f1f1;
+}
+#T_ba2e3_row27_col0 {
+  background-color: #6e90f2;
+  color: #f1f1f1;
+}
+#T_ba2e3_row28_col0 {
+  background-color: #6282ea;
+  color: #f1f1f1;
+}
+#T_ba2e3_row29_col0 {
+  background-color: #5e7de7;
+  color: #f1f1f1;
+}
+#T_ba2e3_row30_col0 {
+  background-color: #5b7ae5;
+  color: #f1f1f1;
+}
+#T_ba2e3_row31_col0, #T_ba2e3_row32_col0 {
+  background-color: #5a78e4;
+  color: #f1f1f1;
+}
+#T_ba2e3_row33_col0 {
+  background-color: #4e68d8;
+  color: #f1f1f1;
+}
+#T_ba2e3_row34_col0 {
+  background-color: #4b64d5;
+  color: #f1f1f1;
+}
+#T_ba2e3_row35_col0 {
+  background-color: #4a63d3;
+  color: #f1f1f1;
+}
+#T_ba2e3_row36_col0, #T_ba2e3_row37_col0 {
+  background-color: #3b4cc0;
+  color: #f1f1f1;
+}
+</style>
+<table id="T_ba2e3">
+  <thead>
+    <tr>
+      <th class="blank level0" >&nbsp;</th>
+      <th id="T_ba2e3_level0_col0" class="col_heading level0 col0" >SalePrice</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th id="T_ba2e3_level0_row0" class="row_heading level0 row0" >SalePrice</th>
+      <td id="T_ba2e3_row0_col0" class="data row0 col0" >1.000000</td>
+    </tr>
+    <tr>
+      <th id="T_ba2e3_level0_row1" class="row_heading level0 row1" >OverallQual</th>
+      <td id="T_ba2e3_row1_col0" class="data row1 col0" >0.799280</td>
+    </tr>
+    <tr>
+      <th id="T_ba2e3_level0_row2" class="row_heading level0 row2" >GrLivArea</th>
+      <td id="T_ba2e3_row2_col0" class="data row2 col0" >0.691209</td>
+    </tr>
+    <tr>
+      <th id="T_ba2e3_level0_row3" class="row_heading level0 row3" >GarageCars</th>
+      <td id="T_ba2e3_row3_col0" class="data row3 col0" >0.652158</td>
+    </tr>
+    <tr>
+      <th id="T_ba2e3_level0_row4" class="row_heading level0 row4" >GarageArea</th>
+      <td id="T_ba2e3_row4_col0" class="data row4 col0" >0.639583</td>
+    </tr>
+    <tr>
+      <th id="T_ba2e3_level0_row5" class="row_heading level0 row5" >TotalBsmtSF</th>
+      <td id="T_ba2e3_row5_col0" class="data row5 col0" >0.617726</td>
+    </tr>
+    <tr>
+      <th id="T_ba2e3_level0_row6" class="row_heading level0 row6" >1stFlrSF</th>
+      <td id="T_ba2e3_row6_col0" class="data row6 col0" >0.582620</td>
+    </tr>
+    <tr>
+      <th id="T_ba2e3_level0_row7" class="row_heading level0 row7" >YearBuilt</th>
+      <td id="T_ba2e3_row7_col0" class="data row7 col0" >0.573975</td>
+    </tr>
+    <tr>
+      <th id="T_ba2e3_level0_row8" class="row_heading level0 row8" >FullBath</th>
+      <td id="T_ba2e3_row8_col0" class="data row8 col0" >0.546787</td>
+    </tr>
+    <tr>
+      <th id="T_ba2e3_level0_row9" class="row_heading level0 row9" >YearRemodAdd</th>
+      <td id="T_ba2e3_row9_col0" class="data row9 col0" >0.536000</td>
+    </tr>
+    <tr>
+      <th id="T_ba2e3_level0_row10" class="row_heading level0 row10" >GarageYrBlt</th>
+      <td id="T_ba2e3_row10_col0" class="data row10 col0" >0.516885</td>
+    </tr>
+    <tr>
+      <th id="T_ba2e3_level0_row11" class="row_heading level0 row11" >TotRmsAbvGrd</th>
+      <td id="T_ba2e3_row11_col0" class="data row11 col0" >0.479828</td>
+    </tr>
+    <tr>
+      <th id="T_ba2e3_level0_row12" class="row_heading level0 row12" >Fireplaces</th>
+      <td id="T_ba2e3_row12_col0" class="data row12 col0" >0.461168</td>
+    </tr>
+    <tr>
+      <th id="T_ba2e3_level0_row13" class="row_heading level0 row13" >MasVnrArea</th>
+      <td id="T_ba2e3_row13_col0" class="data row13 col0" >0.411393</td>
+    </tr>
+    <tr>
+      <th id="T_ba2e3_level0_row14" class="row_heading level0 row14" >BsmtFinSF1</th>
+      <td id="T_ba2e3_row14_col0" class="data row14 col0" >0.361936</td>
+    </tr>
+    <tr>
+      <th id="T_ba2e3_level0_row15" class="row_heading level0 row15" >LotFrontage</th>
+      <td id="T_ba2e3_row15_col0" class="data row15 col0" >0.359398</td>
+    </tr>
+    <tr>
+      <th id="T_ba2e3_level0_row16" class="row_heading level0 row16" >OpenPorchSF</th>
+      <td id="T_ba2e3_row16_col0" class="data row16 col0" >0.325225</td>
+    </tr>
+    <tr>
+      <th id="T_ba2e3_level0_row17" class="row_heading level0 row17" >WoodDeckSF</th>
+      <td id="T_ba2e3_row17_col0" class="data row17 col0" >0.324090</td>
+    </tr>
+    <tr>
+      <th id="T_ba2e3_level0_row18" class="row_heading level0 row18" >HalfBath</th>
+      <td id="T_ba2e3_row18_col0" class="data row18 col0" >0.281715</td>
+    </tr>
+    <tr>
+      <th id="T_ba2e3_level0_row19" class="row_heading level0 row19" >2ndFlrSF</th>
+      <td id="T_ba2e3_row19_col0" class="data row19 col0" >0.278211</td>
+    </tr>
+    <tr>
+      <th id="T_ba2e3_level0_row20" class="row_heading level0 row20" >LotArea</th>
+      <td id="T_ba2e3_row20_col0" class="data row20 col0" >0.258683</td>
+    </tr>
+    <tr>
+      <th id="T_ba2e3_level0_row21" class="row_heading level0 row21" >BsmtFullBath</th>
+      <td id="T_ba2e3_row21_col0" class="data row21 col0" >0.236344</td>
+    </tr>
+    <tr>
+      <th id="T_ba2e3_level0_row22" class="row_heading level0 row22" >BsmtUnfSF</th>
+      <td id="T_ba2e3_row22_col0" class="data row22 col0" >0.203526</td>
+    </tr>
+    <tr>
+      <th id="T_ba2e3_level0_row23" class="row_heading level0 row23" >BedroomAbvGr</th>
+      <td id="T_ba2e3_row23_col0" class="data row23 col0" >0.158195</td>
+    </tr>
+    <tr>
+      <th id="T_ba2e3_level0_row24" class="row_heading level0 row24" >ScreenPorch</th>
+      <td id="T_ba2e3_row24_col0" class="data row24 col0" >0.098910</td>
+    </tr>
+    <tr>
+      <th id="T_ba2e3_level0_row25" class="row_heading level0 row25" >MoSold</th>
+      <td id="T_ba2e3_row25_col0" class="data row25 col0" >0.082498</td>
+    </tr>
+    <tr>
+      <th id="T_ba2e3_level0_row26" class="row_heading level0 row26" >3SsnPorch</th>
+      <td id="T_ba2e3_row26_col0" class="data row26 col0" >0.064986</td>
+    </tr>
+    <tr>
+      <th id="T_ba2e3_level0_row27" class="row_heading level0 row27" >PoolArea</th>
+      <td id="T_ba2e3_row27_col0" class="data row27 col0" >0.036755</td>
+    </tr>
+    <tr>
+      <th id="T_ba2e3_level0_row28" class="row_heading level0 row28" >BsmtFinSF2</th>
+      <td id="T_ba2e3_row28_col0" class="data row28 col0" >-0.004782</td>
+    </tr>
+    <tr>
+      <th id="T_ba2e3_level0_row29" class="row_heading level0 row29" >MiscVal</th>
+      <td id="T_ba2e3_row29_col0" class="data row29 col0" >-0.016619</td>
+    </tr>
+    <tr>
+      <th id="T_ba2e3_level0_row30" class="row_heading level0 row30" >BsmtHalfBath</th>
+      <td id="T_ba2e3_row30_col0" class="data row30 col0" >-0.026790</td>
+    </tr>
+    <tr>
+      <th id="T_ba2e3_level0_row31" class="row_heading level0 row31" >Id</th>
+      <td id="T_ba2e3_row31_col0" class="data row31 col0" >-0.028339</td>
+    </tr>
+    <tr>
+      <th id="T_ba2e3_level0_row32" class="row_heading level0 row32" >YrSold</th>
+      <td id="T_ba2e3_row32_col0" class="data row32 col0" >-0.029777</td>
+    </tr>
+    <tr>
+      <th id="T_ba2e3_level0_row33" class="row_heading level0 row33" >LowQualFinSF</th>
+      <td id="T_ba2e3_row33_col0" class="data row33 col0" >-0.073286</td>
+    </tr>
+    <tr>
+      <th id="T_ba2e3_level0_row34" class="row_heading level0 row34" >MSSubClass</th>
+      <td id="T_ba2e3_row34_col0" class="data row34 col0" >-0.083061</td>
+    </tr>
+    <tr>
+      <th id="T_ba2e3_level0_row35" class="row_heading level0 row35" >OverallCond</th>
+      <td id="T_ba2e3_row35_col0" class="data row35 col0" >-0.087776</td>
+    </tr>
+    <tr>
+      <th id="T_ba2e3_level0_row36" class="row_heading level0 row36" >KitchenAbvGr</th>
+      <td id="T_ba2e3_row36_col0" class="data row36 col0" >-0.148215</td>
+    </tr>
+    <tr>
+      <th id="T_ba2e3_level0_row37" class="row_heading level0 row37" >EnclosedPorch</th>
+      <td id="T_ba2e3_row37_col0" class="data row37 col0" >-0.148736</td>
+    </tr>
+  </tbody>
+</table>
+</div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sns</span><span class="o">.</span><span class="n">regplot</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="s1">&#39;GrLivArea&#39;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s1">&#39;SalePrice&#39;</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">df</span><span class="p">,</span> <span class="n">scatter_kws</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;alpha&#39;</span><span class="p">:</span><span class="mf">0.7</span><span class="p">,</span> <span class="s1">&#39;edgecolor&#39;</span><span class="p">:</span><span class="s1">&#39;none&#39;</span><span class="p">},</span> <span class="n">marker</span><span class="o">=</span><span class="s1">&#39;.&#39;</span><span class="p">,</span> <span class="n">line_kws</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;color&#39;</span><span class="p">:</span><span class="s1">&#39;darkorange&#39;</span><span class="p">})</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/ee35ccc9b2380d4d319977282c33e54f7aed6f1e602d8ce1dcbdffdc8dd4912d.png" src="_images/ee35ccc9b2380d4d319977282c33e54f7aed6f1e602d8ce1dcbdffdc8dd4912d.png" />
+</div>
+</div>
+<p>No podemos predecir con exactitud el valor de <span class="math notranslate nohighlight">\(y\)</span> a partir de <span class="math notranslate nohighlight">\(x\)</span>, pero podemos predecir un intervalo de valores en los que se encontrará <span class="math notranslate nohighlight">\(y\)</span> con cierta probabilidad. Por ejemplo, podemos decir que con un 95% de probabilidad, dado un valor determinado de <span class="math notranslate nohighlight">\(x=1000\)</span>, <span class="math notranslate nohighlight">\(y\)</span> se encontrará entre <span class="math notranslate nohighlight">\(75000 y \)</span>125000.</p>
+<p>El gráfico es una representación cualitativa del modelo, pero el modelo en sí tomaría la forma de la siguiente ecuación:</p>
+<div class="math notranslate nohighlight">
+\[y = ax + b\]</div>
+<p>Donde <span class="math notranslate nohighlight">\(y\)</span> es el precio de la vivienda en dólares, <span class="math notranslate nohighlight">\(x\)</span> es el área de construcción en pies cuadrados y <span class="math notranslate nohighlight">\(a\)</span> y <span class="math notranslate nohighlight">\(b\)</span> son las constantes o parámetros del modelo.</p>
+<!-- question box -->
+<div class="alert alert-block alert-info">
+    <b>Pregunta:</b> ¿Cómo se puede interpretar el parámetro a? ¿Cómo se puede interpretar el parámetro b?
+</div>
+<p>Revisar: <a class="reference external" href="https://www.geogebra.org/calculator/pz34cwqh">https://www.geogebra.org/calculator/pz34cwqh</a></p>
+<ol class="arabic simple">
+<li><p>Definir el problema y mirar el panorama general.</p></li>
+<li><p>Obténer los datos</p></li>
+<li><p>Explorar los datos para obtener información.</p></li>
+<li><p>Preparación de los datos.</p></li>
+<li><p>Exploración y selección de modelos</p></li>
+<li><p>Afinar los modelos.</p></li>
+<li><p>Interpretabilidad del modelo.</p></li>
+<li><p>Presentacion de la solución.</p></li>
+<li><p>Desplegar, monitorear y mantener el sistema.</p></li>
+</ol>
+<p>El mapa de machine learning:</p>
+<p align="left">
+  <img src="https://www.wordstream.com/wp-content/uploads/2021/07/machine-learning1-1.png" alt="" style="background-color:white" /> <br>
+</p>
+<p>Tomado de: <a class="reference external" href="https://www.slideshare.net/awahid/big-data-and-machine-learning-for-businesses">Abdul Rahid</a>.</p>
+</section>
+</section>
+<section id="modelos-de-regresion-lineal">
+<h2>5.2. Modelos de regresión lineal<a class="headerlink" href="#modelos-de-regresion-lineal" title="Permalink to this heading">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sns</span><span class="o">.</span><span class="n">regplot</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="s1">&#39;GrLivArea&#39;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s1">&#39;SalePrice&#39;</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">df</span><span class="p">,</span> <span class="n">scatter_kws</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;alpha&#39;</span><span class="p">:</span><span class="mf">0.7</span><span class="p">,</span> <span class="s1">&#39;edgecolor&#39;</span><span class="p">:</span><span class="s1">&#39;none&#39;</span><span class="p">},</span> <span class="n">marker</span><span class="o">=</span><span class="s1">&#39;.&#39;</span><span class="p">,</span> <span class="n">line_kws</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;color&#39;</span><span class="p">:</span><span class="s1">&#39;darkorange&#39;</span><span class="p">})</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlim</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">3000</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/45d984bcd0455e694304e86dfd30b8cf1832a26ae5a04d12b13d01126510102d.png" src="_images/45d984bcd0455e694304e86dfd30b8cf1832a26ae5a04d12b13d01126510102d.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.linear_model</span> <span class="kn">import</span> <span class="n">LinearRegression</span>
+<span class="kn">from</span> <span class="nn">sklearn.model_selection</span> <span class="kn">import</span> <span class="n">train_test_split</span>
+
+<span class="n">X</span> <span class="o">=</span> <span class="n">df</span><span class="p">[[</span><span class="s1">&#39;GrLivArea&#39;</span><span class="p">]]</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;SalePrice&#39;</span><span class="p">]</span>
+
+<span class="n">X_train</span><span class="p">,</span> <span class="n">X_test</span><span class="p">,</span> <span class="n">y_train</span><span class="p">,</span> <span class="n">y_test</span> <span class="o">=</span> <span class="n">train_test_split</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">test_size</span><span class="o">=</span><span class="mf">0.2</span><span class="p">)</span>
+
+<span class="n">lr</span> <span class="o">=</span> <span class="n">LinearRegression</span><span class="p">()</span>
+<span class="n">lr</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span> <span class="n">y_train</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Intercept: &#39;</span><span class="p">,</span> <span class="n">lr</span><span class="o">.</span><span class="n">intercept_</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Coef: &#39;</span><span class="p">,</span> <span class="n">lr</span><span class="o">.</span><span class="n">coef_</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Intercept:  26895.367275531666
+Coef:  [99.51694902]
+</pre></div>
+</div>
+</div>
+</div>
+<!-- question box -->
+<div class="alert alert-block alert-info">
+    <b>Pregunta:</b> ¿En promedio, cuánto costaría una vivienda de 2000 pies cuadrados?
+</div></section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="3.5-pandas.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">3.5. Pandas</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="9.0-curva-indiferencia.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Ejemplo: Curvas de indiferencia</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduccion">5.1. Introducción</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#algunos-ejemplos-de-modelos">Algunos ejemplos de modelos.</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#modelos-de-regresion-lineal">5.2. Modelos de regresión lineal</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Alejandro Acosta León
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2022.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/bootstrap.js?digest=5b4479735964841361fd"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
