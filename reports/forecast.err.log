@@ -34,12 +34,12 @@ plt.style.use('ggplot')
 
 [0;31m---------------------------------------------------------------------------[0m
 [0;31mModuleNotFoundError[0m                       Traceback (most recent call last)
-Cell [0;32mIn[1], line 7[0m
-[1;32m      4[0m [38;5;28;01mimport[39;00m [38;5;21;01mseaborn[39;00m [38;5;28;01mas[39;00m [38;5;21;01msns[39;00m
+Cell [0;32mIn[1], line 9[0m
 [1;32m      6[0m [38;5;28;01mfrom[39;00m [38;5;21;01mstatsmodels[39;00m[38;5;21;01m.[39;00m[38;5;21;01mtsa[39;00m[38;5;21;01m.[39;00m[38;5;21;01mseasonal[39;00m [38;5;28;01mimport[39;00m seasonal_decompose
-[0;32m----> 7[0m [38;5;28;01mimport[39;00m [38;5;21;01mpmdarima[39;00m [38;5;28;01mas[39;00m [38;5;21;01mpm[39;00m
-[1;32m      9[0m [38;5;28;01mimport[39;00m [38;5;21;01myfinance[39;00m [38;5;28;01mas[39;00m [38;5;21;01myf[39;00m
+[1;32m      7[0m [38;5;28;01mimport[39;00m [38;5;21;01mpmdarima[39;00m [38;5;28;01mas[39;00m [38;5;21;01mpm[39;00m
+[0;32m----> 9[0m [38;5;28;01mimport[39;00m [38;5;21;01myfinance[39;00m [38;5;28;01mas[39;00m [38;5;21;01myf[39;00m
 [1;32m     10[0m yf[38;5;241m.[39mpdr_override()
+[1;32m     11[0m [38;5;28;01mimport[39;00m [38;5;21;01mpandas_datareader[39;00m[38;5;21;01m.[39;00m[38;5;21;01mdata[39;00m [38;5;28;01mas[39;00m [38;5;21;01mweb[39;00m
 
-[0;31mModuleNotFoundError[0m: No module named 'pmdarima'
+[0;31mModuleNotFoundError[0m: No module named 'yfinance'
 
