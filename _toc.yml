@@ -11,6 +11,7 @@ chapters:
 - file: 3.5-pandas.ipynb
 - file: 4.0-visualizacion.ipynb
 - file: 5.0-modelamiento.ipynb
+- file: 6.0-sentimiento.ipynb
 # - file: 2.0-sintaxis-variables-operadores.ipynb
 # - file: 3.0-librerias.ipynb
 # - file: 4.0. Pandas.ipynb
